@@ -1,0 +1,4 @@
+ 273  wget http://download.opensuse.org/repositories/network:/ha-clustering:/Stable/RedHat_RHEL-6/x86_64/crmsh-2.1-1.2.x86_64.rpm
+  275  wget http://download.opensuse.org/repositories/network:/ha-clustering:/Stable/RedHat_RHEL-6/x86_64/pssh-2.3.1-4.2.x86_64.rpm
+  277  wget http://download.opensuse.org/repositories/network:/ha-clustering:/Stable/RedHat_RHEL-6/x86_64/python-pssh-2.3.1-4.2.x86_64.rpm
+ 1107  wget http://download.opensuse.org/repositories/network:/ha-clustering:/Stable/RedHat_RHEL-6/x86_64/python-pssh-2.3.1-4.2.x86_64.rpm

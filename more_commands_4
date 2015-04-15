@@ -1,0 +1,119 @@
+ccs -f /etc/cluster/cluster.conf --createcluster TESTPCSCL
+ccs -f /etc/cluster/cluster.conf --addnode msk01-pcstmp01
+ccs -f /etc/cluster/cluster.conf --addnode msk01-pcstmp02
+ccs -f /etc/cluster/cluster.conf --addfencedev pcmk agent=fence_pcmk
+ccs -f /etc/cluster/cluster.conf --addmethod pcmk-redirect msk01-pcstmp01
+ccs -f /etc/cluster/cluster.conf --addmethod pcmk-redirect msk01-pcstmp02
+ccs -f /etc/cluster/cluster.conf --addfenceinst pcmk msk01-pcstmp01 pcmk-redirect port=msk01-pcstmp01
+ccs -f /etc/cluster/cluster.conf --addfenceinst pcmk msk01-pcstmp02 pcmk-redirect port=msk01-pcstmp02
+echo "CMAN_QUORUM_TIMEOUT=0" >> /etc/sysconfig/cman
+
+
+pcs resource create res_mnt1 ocf:heartbeat:Filesystem options="bind" device="/mounts/mount1" directory="/mounts/mnt_point1" fstype="none" op monitor interval="20s"
+
+pcs stonith create vmfence fence_vmware_soap stonith-timeout=120 pcmk_host_list="msk01-pcstmp01 msk01-pcstmp02" pcmk_host_map="msk01-pcstmp01:msk01-pcstmp01 msk01-pcstmp02:msk01-pcstmp02" ipaddr=10.0.80.87 ssl=1 login=pcstmp_svc passwd=P@ssw0rd
+
+
+1481071
+
+Привет!
+
+Саша, высылаю список хостов, которые создал.
+
+Для Siebel Gateway:
+msk01-crmw4		10.20.15.103	root/q1q1q1q1	(Siebel Web preprod)
+msk01-pprodgw01		10.20.15.95	root/q1q1q1	(Siebel Gateway node1)
+msk01-pprodgw02		10.20.15.96	root/q1q1q1	(Siebel Gateway node2)
+msk01-crmgw2		10.20.15.69	root/q1q1q1	(Siebel Gateway cluster IP & cluster hostname, старая машина будет удалена, ip и hostname остается)
+
+ESB
+msk01-esbpre2ap2	10.20.15.100	root/q1q1q1	(ESB node2)
+msk01-haprx01		10.20.15.101	root/q1q1q1	(Haproxy node1)
+msk01-haprx02		10.20.15.102	root/q1q1q1	(Haproxy node2)
+
+
+
+[root@vm-pcs01 ~]# cat /etc/haproxy/haproxy.cfg 
+#---------------------------------------------------------------------
+# Example configuration for a possible web application.  See the
+# full configuration options online.
+#
+#   http://haproxy.1wt.eu/download/1.4/doc/configuration.txt
+#
+#---------------------------------------------------------------------
+
+#---------------------------------------------------------------------
+# Global settings
+#---------------------------------------------------------------------
+global
+    # to have these messages end up in /var/log/haproxy.log you will
+    # need to:
+    #
+    # 1) configure syslog to accept network log events.  This is done
+    #    by adding the '-r' option to the SYSLOGD_OPTIONS in
+    #    /etc/sysconfig/syslog
+    #
+    # 2) configure local2 events to go to the /var/log/haproxy.log
+    #   file. A line like the following can be added to
+    #   /etc/sysconfig/syslog
+    #
+    #    local2.*                       /var/log/haproxy.log
+    #
+    log         127.0.0.1 local2
+
+    chroot      /var/lib/haproxy
+    pidfile     /var/run/haproxy.pid
+    maxconn     4000
+    user        haproxy
+    group       haproxy
+    daemon
+
+    # turn on stats unix socket
+    stats socket /var/lib/haproxy/stats
+
+
+
+
+#---------------------------------------------------------------------
+# common defaults that all the 'listen' and 'backend' sections will
+# use if not designated in their block
+#---------------------------------------------------------------------
+defaults
+    mode                    http
+    log                     global
+##    option                  httplog
+    option                  dontlognull
+    option http-server-close
+##    option forwardfor       except 127.0.0.0/8
+    option                  redispatch
+    retries                 3
+    timeout http-request    10s
+    timeout queue           1m
+    timeout connect         10s
+    timeout client          1m
+    timeout server          1m
+    timeout http-keep-alive 10s
+    timeout check           10s
+    maxconn                 3000
+
+# [HTTP Site Configuration]
+listen LOADBAL 192.168.17.223:80
+       mode http
+#       option httpchk HEAD /healthcheck.txt HTTP/1.0
+       balance roundrobin  # Load Balancing algorithm
+       option forwardfor
+       server vm-web01 192.168.17.224:80 weight 1 maxconn 512 check
+       server vm-web02 192.168.17.225:80 weight 1 maxconn 512 check
+listen LOADBALs 192.168.17.223:443
+       mode tcp
+       balance roundrobin
+       reqadd X-Forwarded-Proto:\ http
+       server server3 192.168.17.224:443 weight 1 maxconn 512 check
+       server server4 192.168.17.225:443 weight 1 maxconn 512 check
+listen stats 192.168.17.223:4997
+   mode http
+   stats enable
+   stats hide-version
+   stats realm Haproxy\ Statistics
+   stats uri /
+   stats auth xz:xz

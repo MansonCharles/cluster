@@ -1,0 +1,13 @@
+<?xml version="1.0" standalone="yes" ?>
+<!-- Copyright (c) 1999, 2011, Oracle. All rights reserved. -->
+<!-- Do not modify the contents of this file by hand. -->
+<SourceConfigs>
+<StagingAreas>
+<StgArea URL="/oracle/t/Siebel_Enterprise_Server/Disk1/stage/langs/en/Disk1/stage/products.xml" />
+<StgArea URL="/oracle/t/Siebel_Enterprise_Server/Disk1/stage/langs/ru/Disk1/stage/products.xml" />
+<StgArea URL="/oracle/t/Siebel_Enterprise_Server/Disk1/stage/products.xml" />
+<StgArea URL="/oracle/t/Siebel_Web_Server_Extension/Disk1/stage/langs/en/Disk1/stage/products.xml" />
+</StagingAreas>
+<ServerConfigs>
+</ServerConfigs>
+</SourceConfigs>

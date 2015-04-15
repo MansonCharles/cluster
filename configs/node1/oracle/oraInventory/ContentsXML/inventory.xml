@@ -1,0 +1,16 @@
+<?xml version="1.0" standalone="yes" ?>
+<!-- Copyright (c) 1999, 2011, Oracle. All rights reserved. -->
+<!-- Do not modify the contents of this file by hand. -->
+<INVENTORY>
+<VERSION_INFO>
+   <SAVED_WITH>11.1.0.9.0</SAVED_WITH>
+   <MINIMUM_VER>2.1.0.6.0</MINIMUM_VER>
+</VERSION_INFO>
+<HOME_LIST>
+<HOME NAME="OraClient11g_home1" LOC="/oracle/app/oracle/product/11.2.0/client_1" TYPE="O" IDX="1"/>
+<HOME NAME="OH1647283365" LOC="/oracle/Middleware/oracle_common" TYPE="O" IDX="2"/>
+<HOME NAME="SES_HOME" LOC="/oracle/Siebel/8.1.1.11.0/ses" TYPE="O" IDX="3"/>
+</HOME_LIST>
+<COMPOSITEHOME_LIST>
+</COMPOSITEHOME_LIST>
+</INVENTORY>

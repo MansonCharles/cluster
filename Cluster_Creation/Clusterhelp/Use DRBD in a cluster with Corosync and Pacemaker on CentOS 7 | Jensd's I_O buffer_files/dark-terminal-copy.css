@@ -1,0 +1,175 @@
+/*
+Name: Dark Terminal Copy
+Description: Black-on-white, no highlighting, useful for terminal sessions
+Version: 1.0
+Author: Dimiter Naydenov
+URL: http://blog.naydenov.net/
+*/
+.crayon-theme-dark-terminal-copy {
+	border-width: 1px !important;
+	border-color: #000000 !important;
+	border-style: solid !important;
+	text-shadow: none !important;
+	background: #000000 !important;
+}
+.crayon-theme-dark-terminal-copy-inline {
+	border-width: 1px !important;
+	border-color: #000000 !important;
+	border-style: solid !important;
+	background: #000103 !important;
+}
+.crayon-theme-dark-terminal-copy .crayon-table .crayon-nums {
+	background: #000000 !important;
+	color: #000000 !important;
+	border-right-width: 1px !important;
+	border-right-color: #ffffff !important;
+}
+.crayon-theme-dark-terminal-copy *::selection {
+	background: transparent !important;
+}
+.crayon-theme-dark-terminal-copy .crayon-code *::selection {
+	background: #ddeeff !important;
+	color: #316ba5 !important;
+}
+.crayon-theme-dark-terminal-copy .crayon-striped-line {
+	background: #000000 !important;
+}
+.crayon-theme-dark-terminal-copy .crayon-striped-num {
+	background: #000000 !important;
+	color: #000000 !important;
+}
+.crayon-theme-dark-terminal-copy .crayon-marked-line {
+	background: #3b3b3b !important;
+	border-width: 1px !important;
+	border-color: #3a3a47 !important;
+}
+.crayon-theme-dark-terminal-copy .crayon-marked-num {
+	color: #000000 !important;
+	background: #000000 !important;
+	border-width: 1px !important;
+	border-color: #000000 !important;
+}
+.crayon-theme-dark-terminal-copy .crayon-marked-line.crayon-striped-line {
+	background: #3b3b3b !important;
+}
+.crayon-theme-dark-terminal-copy .crayon-marked-num.crayon-striped-num {
+	background: #000000 !important;
+	color: #000000 !important;
+}
+.crayon-theme-dark-terminal-copy .crayon-marked-line.crayon-top {
+	border-top-style: solid !important;
+}
+.crayon-theme-dark-terminal-copy .crayon-marked-num.crayon-top {
+	border-top-style: solid !important;
+}
+.crayon-theme-dark-terminal-copy .crayon-marked-line.crayon-bottom {
+	border-bottom-style: solid !important;
+}
+.crayon-theme-dark-terminal-copy .crayon-marked-num.crayon-bottom {
+	border-bottom-style: solid !important;
+}
+.crayon-theme-dark-terminal-copy .crayon-info {
+	background: #faf9d7 !important;
+	border-bottom-width: 1px !important;
+	border-bottom-color: #b1af5e !important;
+	border-bottom-style: solid !important;
+	color: #7e7d34 !important;
+}
+.crayon-theme-dark-terminal-copy .crayon-toolbar {
+	background: #8d8c8c !important;
+	border-bottom-width: 1px !important;
+	border-bottom-color: #2e2e2e !important;
+	border-bottom-style: solid !important;
+}
+.crayon-theme-dark-terminal-copy .crayon-toolbar > div {
+	float: left !important;
+}
+.crayon-theme-dark-terminal-copy .crayon-toolbar .crayon-tools {
+	float: right !important;
+}
+.crayon-theme-dark-terminal-copy .crayon-title {
+	color: #2a2a2a !important;
+}
+.crayon-theme-dark-terminal-copy .crayon-language {
+	color: #494949 !important;
+}
+.crayon-theme-dark-terminal-copy .crayon-button {
+}
+.crayon-theme-dark-terminal-copy .crayon-button:hover {
+	background-color: #bcbcbc !important;
+	color: #666;
+}
+.crayon-theme-dark-terminal-copy .crayon-button.crayon-pressed:hover {
+	background-color: #bcbcbc !important;
+	color: #666;
+}
+.crayon-theme-dark-terminal-copy .crayon-button.crayon-pressed {
+	background-color: #626262 !important;
+	color: #FFF;
+}
+.crayon-theme-dark-terminal-copy .crayon-button.crayon-pressed:active {
+	background-color: #626262 !important;
+	color: #FFF;
+}
+.crayon-theme-dark-terminal-copy .crayon-button:active {
+	background-color: #bcbcbc !important;
+	color: #FFF;
+}
+.crayon-theme-dark-terminal-copy .crayon-pre .crayon-c {
+	color: #ffffff !important;
+}
+.crayon-theme-dark-terminal-copy .crayon-pre .crayon-s {
+	color: #ffffff !important;
+}
+.crayon-theme-dark-terminal-copy .crayon-pre .crayon-p {
+	color: #ffffff !important;
+}
+.crayon-theme-dark-terminal-copy .crayon-pre .crayon-ta {
+	color: #ffffff !important;
+}
+.crayon-theme-dark-terminal-copy .crayon-pre .crayon-k {
+	color: #ffffff !important;
+}
+.crayon-theme-dark-terminal-copy .crayon-pre .crayon-st {
+	color: #ffffff !important;
+}
+.crayon-theme-dark-terminal-copy .crayon-pre .crayon-r {
+	color: #ffffff !important;
+}
+.crayon-theme-dark-terminal-copy .crayon-pre .crayon-t {
+	color: #ffffff !important;
+}
+.crayon-theme-dark-terminal-copy .crayon-pre .crayon-m {
+	color: #ffffff !important;
+}
+.crayon-theme-dark-terminal-copy .crayon-pre .crayon-i {
+	color: #ffffff !important;
+}
+.crayon-theme-dark-terminal-copy .crayon-pre .crayon-e {
+	color: #ffffff !important;
+}
+.crayon-theme-dark-terminal-copy .crayon-pre .crayon-v {
+	color: #ffffff !important;
+}
+.crayon-theme-dark-terminal-copy .crayon-pre .crayon-cn {
+	color: #ffffff !important;
+}
+.crayon-theme-dark-terminal-copy .crayon-pre .crayon-o {
+	color: #ffffff !important;
+}
+.crayon-theme-dark-terminal-copy .crayon-pre .crayon-sy {
+	color: #ffffff !important;
+}
+.crayon-theme-dark-terminal-copy .crayon-pre .crayon-n {
+	color: #ffffff !important;
+	font-style: italic !important;
+}
+.crayon-theme-dark-terminal-copy .crayon-pre .crayon-f {
+	color: #ffffff !important;
+}
+.crayon-theme-dark-terminal-copy .crayon-pre .crayon-h {
+	color: #ffffff !important;
+}
+.crayon-theme-dark-terminal-copy .crayon-pre {
+	color: #ffffff !important;
+}

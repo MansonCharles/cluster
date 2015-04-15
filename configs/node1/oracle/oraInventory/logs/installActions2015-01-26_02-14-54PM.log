@@ -1,0 +1,37 @@
+The file oraparam.ini could not be found at ./oraparam.ini
+Using paramFile: /oracle/Middleware/Oracle_WT1/oui/oraparam.ini
+
+
+Checking swap space: must be greater than 500 MB.   Actual 6199 MB    Passed
+Checking monitor: must be configured to display at least 256 colors.    Actual 16777216    Passed
+
+
+The number of files bootstrapped for the jre is 708.
+
+The number of files bootstrapped for the oui is 88.
+Using the umask value '027' available from oraparam.ini
+
+Execvp of the child jre : the cmdline is /tmp/OraInstall2015-01-26_02-14-54PM/jre/bin/java, and the argv is 
+/tmp/OraInstall2015-01-26_02-14-54PM/jre/bin/java
+-Doracle.installer.library_loc=/tmp/OraInstall2015-01-26_02-14-54PM/oui/lib/linux
+-Doracle.installer.oui_loc=/tmp/OraInstall2015-01-26_02-14-54PM/oui
+-Doracle.installer.bootstrap=TRUE
+-Doracle.installer.startup_location=/oracle/Middleware/Oracle_WT1/oui/bin
+-Doracle.installer.jre_loc=../../jre
+-Doracle.installer.nlsEnabled="TRUE"
+-Doracle.installer.prereqConfigLoc=/tmp/OraInstall2015-01-26_02-14-54PM/prereq 
+-Doracle.installer.unixVersion=3.8.13-55.el6uek.x86_64
+-mx512m
+-XX:MaxPermSize=256m
+-cp
+/tmp/OraInstall2015-01-26_02-14-54PM::/tmp/OraInstall2015-01-26_02-14-54PM/ext/jlib/ccrQueries.jar:/tmp/OraInstall2015-01-26_02-14-54PM/ext/jlib/oneclick.jar:/tmp/OraInstall2015-01-26_02-14-54PM/ext/jlib/xmlparserv2.jar:/tmp/OraInstall2015-01-26_02-14-54PM/ext/jlib/message.jar:/tmp/OraInstall2015-01-26_02-14-54PM/ext/jlib/webtiercd.jar:/tmp/OraInstall2015-01-26_02-14-54PM/ext/jlib/wtinstallhelp.jar:/tmp/OraInstall2015-01-26_02-14-54PM/ext/jlib/osdt_core.jar:/tmp/OraInstall2015-01-26_02-14-54PM/ext/jlib/install.properties:/tmp/OraInstall2015-01-26_02-14-54PM/ext/jlib/ojdbc5.jar:/tmp/OraInstall2015-01-26_02-14-54PM/ext/jlib/commonutils.jar:/tmp/OraInstall2015-01-26_02-14-54PM/ext/jlib/oneofftool.jar:/tmp/OraInstall2015-01-26_02-14-54PM/ext/jlib/engine.jar:/tmp/OraInstall2015-01-26_02-14-54PM/ext/jlib/glassfish.jaxb.xjc_1.0.0.0_2-1-12.jar:/tmp/OraInstall2015-01-26_02-14-54PM/ext/jlib/footprint.xml:/tmp/OraInstall2015-01-26_02-14-54PM/ext/jlib/ojdl-log4j.jar:/tmp/OraInstall2015-01-26_02-14-54PM/ext/jlib/ojdl2.jar:/tmp/OraInstall2015-01-26_02-14-54PM/ext/jlib/template.jar:/tmp/OraInstall2015-01-26_02-14-54PM/ext/jlib/log-config.xml:/tmp/OraInstall2015-01-26_02-14-54PM/ext/jlib/glassfish.jaxb_1.0.0.0_2-1-12.jar:/tmp/OraInstall2015-01-26_02-14-54PM/ext/jlib/xml.jar:/tmp/OraInstall2015-01-26_02-14-54PM/ext/jlib/dms.jar:/tmp/OraInstall2015-01-26_02-14-54PM/ext/jlib/ojdl.jar:/tmp/OraInstall2015-01-26_02-14-54PM/ext/jlib/enginehelp.jar:/tmp/OraInstall2015-01-26_02-14-54PM/oui/jlib/OraInstaller.jar:/tmp/OraInstall2015-01-26_02-14-54PM/oui/jlib/oneclick.jar:/tmp/OraInstall2015-01-26_02-14-54PM/oui/jlib/xmlparserv2.jar:/tmp/OraInstall2015-01-26_02-14-54PM/oui/jlib/share.jar:/tmp/OraInstall2015-01-26_02-14-54PM/oui/jlib/OraInstallerNet.jar:/tmp/OraInstall2015-01-26_02-14-54PM/oui/jlib/emocmutl.jar:/tmp/OraInstall2015-01-26_02-14-54PM/oui/jlib/emCfg.jar:/tmp/OraInstall2015-01-26_02-14-54PM/oui/jlib/OraPrereq.jar:/tmp/OraInstall2015-01-26_02-14-54PM/oui/jlib/jsch.jar:/tmp/OraInstall2015-01-26_02-14-54PM/oui/jlib/ssh.jar:/tmp/OraInstall2015-01-26_02-14-54PM/oui/jlib/remoteinterfaces.jar:/tmp/OraInstall2015-01-26_02-14-54PM/oui/jlib/http_client.jar:/tmp/OraInstall2015-01-26_02-14-54PM/oui/jlib/OraSuiteInstaller.jar:/tmp/OraInstall2015-01-26_02-14-54PM/OPatch/jlib/opatch.jar:/tmp/OraInstall2015-01-26_02-14-54PM/OPatch/jlib/opatchactions.jar:/tmp/OraInstall2015-01-26_02-14-54PM/OPatch/jlib/opatchprereq.jar:/tmp/OraInstall2015-01-26_02-14-54PM/OPatch/jlib/opatchutil.jar:/tmp/OraInstall2015-01-26_02-14-54PM/oui/jlib/InstImages.jar:/tmp/OraInstall2015-01-26_02-14-54PM/oui/jlib/InstHelp.jar:/tmp/OraInstall2015-01-26_02-14-54PM/oui/jlib/InstHelp_de.jar:/tmp/OraInstall2015-01-26_02-14-54PM/oui/jlib/InstHelp_es.jar:/tmp/OraInstall2015-01-26_02-14-54PM/oui/jlib/InstHelp_fr.jar:/tmp/OraInstall2015-01-26_02-14-54PM/oui/jlib/InstHelp_it.jar:/tmp/OraInstall2015-01-26_02-14-54PM/oui/jlib/InstHelp_ja.jar:/tmp/OraInstall2015-01-26_02-14-54PM/oui/jlib/InstHelp_ko.jar:/tmp/OraInstall2015-01-26_02-14-54PM/oui/jlib/InstHelp_pt_BR.jar:/tmp/OraInstall2015-01-26_02-14-54PM/oui/jlib/InstHelp_zh_CN.jar:/tmp/OraInstall2015-01-26_02-14-54PM/oui/jlib/InstHelp_zh_TW.jar:/tmp/OraInstall2015-01-26_02-14-54PM/oui/jlib/oracle_ice.jar:/tmp/OraInstall2015-01-26_02-14-54PM/oui/jlib/help4.jar:/tmp/OraInstall2015-01-26_02-14-54PM/oui/jlib/help4-nls.jar:/tmp/OraInstall2015-01-26_02-14-54PM/oui/jlib/ewt3.jar:/tmp/OraInstall2015-01-26_02-14-54PM/oui/jlib/ewt3-swingaccess.jar:/tmp/OraInstall2015-01-26_02-14-54PM/oui/jlib/ewt3-nls.jar:/tmp/OraInstall2015-01-26_02-14-54PM/oui/jlib/swingaccess.jar::/tmp/OraInstall2015-01-26_02-14-54PM/oui/jlib/jewt4.jar:/tmp/OraInstall2015-01-26_02-14-54PM/oui/jlib/jewt4-nls.jar:/tmp/OraInstall2015-01-26_02-14-54PM/oui/jlib/orai18n-collation.jar:/tmp/OraInstall2015-01-26_02-14-54PM/oui/jlib/orai18n-mapping.jar:/tmp/OraInstall2015-01-26_02-14-54PM/oui/jlib/ojmisc.jar:/tmp/OraInstall2015-01-26_02-14-54PM/oui/jlib/xml.jar:/tmp/OraInstall2015-01-26_02-14-54PM/oui/jlib/srvm.jar:/tmp/OraInstall2015-01-26_02-14-54PM/oui/jlib/classes12.jar
+oracle.sysman.oio.oioc.OiocOneClickInstaller
+-scratchPath
+/tmp/OraInstall2015-01-26_02-14-54PM
+-sourceType
+network
+-timestamp
+2015-01-26_02-14-54PM
+-invPtrLoc
+/etc/oraInst.loc
+-deinstall

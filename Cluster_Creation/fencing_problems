@@ -1,0 +1,32 @@
+Apr 03 15:06:40 [4072] msk01-pprodgw1        cib:     info: cib_perform_op: 	++ /cib/configuration/resources:  <primitive class="stonith" id="fence_vm01" type="fence_vmware_soap"/>
+Apr 03 15:06:40 [4072] msk01-pprodgw1        cib:     info: cib_perform_op: 	++                                  <instance_attributes id="fence_vm01-instance_attributes">
+Apr 03 15:06:40 [4072] msk01-pprodgw1        cib:     info: cib_perform_op: 	++                                    <nvpair id="fence_vm01-instance_attributes-pcmk_host_list" name="pcmk_host_list" value="msk01-pprodgw1"/>
+Apr 03 15:06:40 [4072] msk01-pprodgw1        cib:     info: cib_perform_op: 	++                                    <nvpair id="fence_vm01-instance_attributes-ipaddr" name="ipaddr" value="10.0.80.87"/>
+Apr 03 15:06:40 [4072] msk01-pprodgw1        cib:     info: cib_perform_op: 	++                                    <nvpair id="fence_vm01-instance_attributes-action" name="action" value="reboot"/>
+Apr 03 15:06:40 [4072] msk01-pprodgw1        cib:     info: cib_perform_op: 	++                                    <nvpair id="fence_vm01-instance_attributes-login" name="login" value="ppgw_fence_svc"/>
+Apr 03 15:06:40 [4072] msk01-pprodgw1        cib:     info: cib_perform_op: 	++                                    <nvpair id="fence_vm01-instance_attributes-passwd" name="passwd" value="P@ssw0rd"/>
+Apr 03 15:06:40 [4072] msk01-pprodgw1        cib:     info: cib_perform_op: 	++                                    <nvpair id="fence_vm01-instance_attributes-port" name="port" value="msk01-pprodgw1"/>
+Apr 03 15:06:40 [4072] msk01-pprodgw1        cib:     info: cib_perform_op: 	++                                    <nvpair id="fence_vm01-instance_attributes-ssl" name="ssl" value="1"/>
+Apr 03 15:06:40 [4072] msk01-pprodgw1        cib:     info: cib_perform_op: 	++                                    <nvpair id="fence_vm01-instance_attributes-delay" name="delay" value="15"/>
+Apr 03 15:06:40 [4072] msk01-pprodgw1        cib:     info: cib_perform_op: 	++                                    <nvpair id="fence_vm01-instance_attributes-shell_timeout" name="shell_timeout" value="60"/>
+Apr 03 15:06:40 [4072] msk01-pprodgw1        cib:     info: cib_perform_op: 	++                                    <nvpair id="fence_vm01-instance_attributes-login_timeout" name="login_timeout" value="60"/>
+Apr 03 15:06:40 [4072] msk01-pprodgw1        cib:     info: cib_perform_op: 	++                                    <op id="fence_vm01-monitor-interval-120s" interval="120s" name="monitor" timeout="160s"/>
+Apr 03 15:06:40 [4072] msk01-pprodgw1        cib:     info: cib_perform_op: 	++                                    <op id="fence_vm01-start-interval-0" interval="0" name="start" timeout="70s"/>
+Apr 03 15:06:40 [4072] msk01-pprodgw1        cib:     info: cib_perform_op: 	++ /cib/configuration/resources:  <primitive class="stonith" id="fence_vm02" type="fence_vmware_soap"/>
+Apr 03 15:06:40 [4072] msk01-pprodgw1        cib:     info: cib_perform_op: 	++                                  <instance_attributes id="fence_vm02-instance_attributes">
+Apr 03 15:06:40 [4072] msk01-pprodgw1        cib:     info: cib_perform_op: 	++                                    <nvpair id="fence_vm02-instance_attributes-pcmk_host_list" name="pcmk_host_list" value="msk01-pprodgw2"/>
+Apr 03 15:06:40 [4072] msk01-pprodgw1        cib:     info: cib_perform_op: 	++                                    <nvpair id="fence_vm02-instance_attributes-ipaddr" name="ipaddr" value="10.0.80.87"/>
+Apr 03 15:06:40 [4072] msk01-pprodgw1        cib:     info: cib_perform_op: 	++                                    <nvpair id="fence_vm02-instance_attributes-action" name="action" value="reboot"/>
+Apr 03 15:06:40 [4072] msk01-pprodgw1        cib:     info: cib_perform_op: 	++                                    <nvpair id="fence_vm02-instance_attributes-login" name="login" value="ppgw_fence_svc"/>
+Apr 03 15:06:40 [4072] msk01-pprodgw1        cib:     info: cib_perform_op: 	++                                    <nvpair id="fence_vm02-instance_attributes-passwd" name="passwd" value="P@ssw0rd"/>
+Apr 03 15:06:40 [4072] msk01-pprodgw1        cib:     info: cib_perform_op: 	++                                    <nvpair id="fence_vm02-instance_attributes-port" name="port" value="msk01-pprodgw2"/>
+Apr 03 15:06:40 [4072] msk01-pprodgw1        cib:     info: cib_perform_op: 	++                                    <nvpair id="fence_vm02-instance_attributes-ssl" name="ssl" value="1"/>
+Apr 03 15:06:40 [4072] msk01-pprodgw1        cib:     info: cib_perform_op: 	++                                    <nvpair id="fence_vm02-instance_attributes-shell_timeout" name="shell_timeout" value="60"/>
+Apr 03 15:06:40 [4072] msk01-pprodgw1        cib:     info: cib_perform_op: 	++                                    <nvpair id="fence_vm02-instance_attributes-login_timeout" name="login_timeout" value="60"/>
+Apr 03 15:06:40 [4072] msk01-pprodgw1        cib:     info: cib_perform_op: 	++                                    <op id="fence_vm02-monitor-interval-90s" interval="90s" name="monitor"/>
+Apr 03 15:06:41 [30730] msk01-pprodgw1       lrmd:     info: process_lrmd_get_rsc_info: 	Resource 'fence_vm01' not found (8 active resources)
+Apr 03 15:06:41 [30730] msk01-pprodgw1       lrmd:     info: process_lrmd_rsc_register: 	Added 'fence_vm01' to the rsc list (9 active resources)
+Apr 03 15:06:41 [30731] msk01-pprodgw1       crmd:     info: do_lrm_rsc_op: 	Performing key=11:414:7:ae972d15-aa9d-4b6f-b180-3934538bf635 op=fence_vm01_monitor_0
+Apr 03 15:06:41 [30730] msk01-pprodgw1       lrmd:     info: process_lrmd_get_rsc_info: 	Resource 'fence_vm02' not found (9 active resources)
+Apr 03 15:06:41 [30730] msk01-pprodgw1       lrmd:     info: process_lrmd_rsc_register: 	Added 'fence_vm02' to the rsc list (10 active resources)
+Apr 03 15:06:41 [30731] msk01-pprodgw1       crmd:     info: do_lrm_rsc_op: 	Performing key=12:414:7:ae972d15-aa9d-4b6f-b180-3934538bf635 op=fence_vm02_monitor_0

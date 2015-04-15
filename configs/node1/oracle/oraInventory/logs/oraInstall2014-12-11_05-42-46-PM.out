@@ -1,0 +1,25 @@
+done config ocm
+Executing Command: /bin/csh -c chmod -R 755 /oracle/Siebel/8.1.1.11.0/eappweb
+xml
+Installer baseMap: SECURITY_UPDATES_VIA_MYORACLESUPPORT   false
+Installer baseMap: ORACLE_HOME   /oracle/Siebel/8.1.1.11.0/eappweb
+Installer baseMap: METALINK_PASSWORD   
+Installer baseMap: DECLINE_SECURITY_UPDATES   true
+Installer baseMap: MYORACLESUPPORT_PASSWORD   
+Installer baseMap: SHOW_CONFIG_TOOL_PAGE   false
+Installer baseMap: MYORACLESUPPORT_USERNAME   
+Installer baseMap: SHOW_CUSTOM_TREE_PAGE   false
+Installer baseMap: SELECTED_LANGUAGES   en
+Installer baseMap: SECURITY_UPDATES_VIA_METALINK   false
+Installer baseMap: METALINK_USERNAME   
+Installer baseMap: s_swsecrypto_value   siebel
+Installer baseMap: s_progFolder_Var   null
+Installer baseMap: COLLECTOR_IGNORE_FAILURES   true
+Installer baseMap: SHOW_INSTALL_PROGRESS_PAGE   false
+Installer baseMap: SHOW_WELCOME_PAGE   false
+Installer baseMap: TLDepModes   Custom
+Installer baseMap: COMPONENT_LANGUAGES   en
+Installer baseMap: INSTALL_TYPE   Custom
+Installer baseMap: DEP_MODE   Custom
+Installer baseMap: ORACLE_HOME_NAME   EAPPWEB_HOME
+Installer baseMap: COLLECTOR_IGNORE_CONFIGURATION   false

@@ -1,0 +1,108 @@
+INFO: Environment Variables: 
+
+INFO: 	ORACLE_HOME = /oracle/Middleware/Oracle_WT1
+
+INFO: 	PATH = /oracle/app/oracle/product/11.2.0/client_1/bin:/usr/lib64/qt-3.3/bin:/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/sbin:/home/oracle/bin:/oracle/t/Disk1/install
+
+INFO: 	CLASSPATH = 
+
+INFO: Username:oracle
+
+INFO: Install area Control created with access level  0
+
+INFO: Creating a new Install area Control for this inventory session with new  access level  0
+
+INFO: Install area Control created with access level  1
+
+INFO: Creating a new Install area Control for this inventory session with new  access level  1
+
+INFO: Saving the install inventory which has the access of 1
+INFO: The flags set for this home (/oracle/app/oracle/product/11.2.0/client_1) are:clean
+INFO: Home:/oracle/app/oracle/product/11.2.0/client_1 oraclehomeproperties.xml is not saved because the flags indicate no changes to this file.
+INFO: The flags set for this home (/oracle/Middleware/oracle_common) are:clean
+INFO: Home:/oracle/Middleware/oracle_common oraclehomeproperties.xml is not saved because the flags indicate no changes to this file.
+INFO: The flags set for this home (/oracle/Middleware/Oracle_WT1) are:clean
+INFO: Home:/oracle/Middleware/Oracle_WT1 oraclehomeproperties.xml is not saved because the flags indicate no changes to this file.
+INFO: Updating XML inventory.
+INFO: Saving comps.xml for /oracle/Middleware/Oracle_WT1
+INFO: Current Inventory:
+	Oracle Home: OraClient11g_home1
+		This Oracle Home has not been changed in this session.
+	Oracle Home: OH1647283365
+		This Oracle Home has not been changed in this session.
+	Oracle Home: OH894183004
+		Oracle WebTier and Utilities CD 11.1.1.7.0 
+		Java Development Kit 1.6.0.35.52 
+		Installer SDK Component 11.1.0.9.0 
+		Oracle One-Off Patch Installer 11.1.0.9.9 
+		Oracle Universal Installer 11.1.0.9.0 
+		Enterprise Manager Application Server Plugin -- Common Support 11.1.1.7.0 
+		Oracle Help Share Library 11.1.1.7.0 
+		Oracle Bali Share 11.1.1.7.0 
+		Oracle Identity Management Support Files 11.1.1.7.0 
+		Jython 11.1.1.7.0 
+		Oracle Fusion Middleware Admin Config 11.1.1.6.0 
+		Oracle Application One Off patches Component 11.1.1.7.0 
+		Oracle Change IP Component 11.1.1.7.0 
+		OracleAS Documentation 11.1.1.7.0 
+		Application Server 11g OHS T2P Component 11.1.1.7.0 
+		Application Server 11g Cloning Component 11.1.1.7.0 
+		Oracle Remote Diagnostic Agent 11.1.1.7.0 
+		Buildtools Common Files 11.1.0.7.0 
+		Enterprise Manager Minimal Integration 11.1.0.7.0 
+		LDAP Required Support Instant Client Files 11.1.1.7.0 
+		LDAP Secure Sockets Layer Files 11.1.1.7.0 
+		Oracle Globalization Support 11.1.0.7.0 
+		Expat libraries 2.0.1.0.1 
+		Oracle  Application Development ModPLSQL 11.1.1.7.0 
+		Oracle Help for the Web Shared Library 11.1.1.7.0 
+		Oracle Help for the Web - UIX 11.1.1.7.0 
+		Oracle Help for Java 11.1.1.7.0 
+		Oracle XML Query 11.1.0.7.0 
+		Oracle RAC Required Support Files-HAS 11.1.0.7.0 
+		SQL*Plus Required Support Files 11.1.0.7.0 
+		XDK Required Support Files 11.1.0.7.0 
+		Agent Required Support Files 10.2.0.4.1 
+		Parser Generator Required Support Files 11.1.0.7.0 
+		Precompiler Required Support Files 11.1.0.7.0 
+		Oracle Core Required Support Files 11.1.0.7.0 
+		Oracle JFC Extended Windowing Toolkit 11.1.1.7.0 
+		Oracle Extended Windowing Toolkit 11.1.1.7.0 
+		Oracle Ice Browser 11.1.1.7.0 
+		Oracle Help For Java 4.2.9.0.0 
+		Oracle Locale Builder 11.1.0.7.0 
+		Perl Modules 5.10.0.0.1 
+		Perl Interpreter 5.10.0.0.1 
+		Platform Required Support Files 11.1.0.7.0 
+		Oracle Globalization Support 11.1.0.7.0 
+		Oracle JDBC/OCI Instant Client 11.1.0.7.0 
+		Oracle JDBC/THIN Interfaces 11.1.0.7.0 
+		Oracle Upgrade Assistant 11.1.1.7.0 
+		Oracle Configuration Manager 10.3.7.0.0 
+		XML Parser for Java 11.1.0.7.0 
+		Oracle Application Server Configuration 11.1.1.7.0 
+		RDBMS Required Support Files for Instant Client 11.1.0.7.0 
+		RDBMS Required Support Files 11.1.0.7.0 
+		LDAP Required Support Files 11.1.1.7.0 
+		Oracle Net Required Support Files 11.1.0.7.0 
+		Required Support Files 11.1.0.7.0 
+		Oracle XML Development Kit 11.1.0.7.0 
+		OracleAS Web Cache 11.1.1.7.0 
+		Oracle WebLogic Plugins 11.1.1.7.0 
+		LDAP Audit Framework 11.1.1.7.0 
+		Oracle Application Server Non J2EE Management Files 11.1.1.7.0 
+		Assistant Common Files 11.1.0.7.0 
+		Secure Socket Layer 11.1.0.7.0 
+		Oracle Wallet Manager 11.1.1.7.0 
+		Oracle DMSC (oracle.dmsc) 11.1.1.7.0 
+		Oracle Process Management Node (oracle.opmn) 11.1.1.7.0 
+		Oracle Upgrade Assistant 11.1.1.7.0 
+		Oracle HTTP Server 2.0 11.1.1.7.0 
+		Interim Patch# 7707476
+		Interim Patch# 7393921
+		Interim Patch# 6750400
+		Interim Patch# 7427144
+		Interim Patch# 7663342
+
+INFO: Ending the inventory Session 
+INFO: Disposing the install area control objects

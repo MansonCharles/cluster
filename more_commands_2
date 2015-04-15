@@ -1,0 +1,71 @@
+ccs -f /etc/cluster/cluster.conf --createcluster ZABBIX_AGENT
+ccs -f /etc/cluster/cluster.conf --addnode vm-pcs01
+ccs -f /etc/cluster/cluster.conf --addnode vm-pcs02
+ccs -f /etc/cluster/cluster.conf --addfencedev pcmk agent=fence_pcmk
+ccs -f /etc/cluster/cluster.conf --addmethod pcmk-redirect vm-pcs01
+ccs -f /etc/cluster/cluster.conf --addmethod pcmk-redirect vm-pcs02
+ccs -f /etc/cluster/cluster.conf --addfenceinst pcmk vm-pcs01 pcmk-redirect port=vm-pcs01
+ccs -f /etc/cluster/cluster.conf --addfenceinst pcmk vm-pcs02 pcmk-redirect port=vm-pcs02
+echo "CMAN_QUORUM_TIMEOUT=0" >> /etc/sysconfig/cman
+
+Every 1.0s: cat /proc/drbd                                                                                                                                                                                   Tue Mar 24 16:56:45 2015
+
+version: 8.4.2 (api:1/proto:86-101)
+srcversion: D2C09D2CF4CCB8C91B02D14
+ 0: cs:SyncTarget ro:Secondary/Primary ds:Inconsistent/UpToDate C r-----
+    ns:0 nr:480699352 dw:480698328 dr:0 al:0 bm:29339 lo:1 pe:9 ua:1 ap:0 ep:1 wo:f oos:29167964
+        [=================>..] sync'ed: 94.3% (28484/497912)Mfinish: 0:05:26 speed: 89,344 (65,692) want: 102,400 K/sec
+
+
+
+
+
+
+
+
+
+
+На следующих хостах нужно настроить прием snmp запросов c IP адреса: 10.30.0.11
+
+
+1.3) (то, о чем упомяналось как-то вскользь.. и, на мой взгляд, самое 
+трудоемкое) Нужна база данных. Потому что текущий CRM-препрод смотрит в 
+БД прода - 10.20.14.41, схемы с префиксом PROD3
+
+TABLESPACE_NAME                   M_ALLOC     M_FREE M_USED        MAX
+------------------------------ ---------- ---------- ---------- ----------
+PROD3_IAS_ORASDPM                     300     293.94       6.06 32767.98
+PROD3_SOAINFRA                   74531.97   60463.69   14068.28 98303.95
+PROD3_MDS                             200      92.88 107.13       1000
+PROD3_IAS_IAU                          60      58.38       1.63 32767.98
+
+Соответственно, вариантов развития событий два
+- либо еще одна VM под БД в сети 10.20.15.0/24,
+- либо сделать, как было раньше на проде - два инстанса на одной машине 
+- CRM и OSB. В случае препрода это машина 10.20.15.70
+
+*Итого****нужно дополнительно 3 VM + БД*
+*+ скажи, пожалуйста (укажи ресурс), куда можно будет складировать общие 
+для двух нод кластера OSB файлы + OSB_FS*
+
+
+
+jet_public
+
+vie01-tsmsrv-imm		+
+vie01-oweuro-app3-imm		+
+vie01-oweuro-trs-imm		+
+vie01-oweuro-app2-imm		+
+vie01-x240esx02-imm		+
+vie01-x240esx01-imm		+
+vie01-x240esx04-imm		+
+vie01-x240esx03-imm		+
+vie01-oweuro-app1-imm		+
+vie01-1ckkp02-imm		+
+vie01-oweuro-ns02-imm		+
+vie01-fleet01-imm		+
+vie01-1ckkp01-imm		+
+vie01-fleet02-imm		+
+vie01-owapp02-imm		+
+vie01-oweuro-ns01-imm		+
+fra01-consdb01-imm

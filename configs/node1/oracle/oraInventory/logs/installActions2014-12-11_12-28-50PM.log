@@ -1,0 +1,35 @@
+Using paramFile: /oracle/t/Siebel_Enterprise_Server/Disk1/install/oraparam.ini
+
+
+Checking monitor: must be configured to display at least 256 colors.    Actual 16777216    Passed
+
+The commandline for unzip:
+/oracle/t/Siebel_Enterprise_Server/Disk1/install/unzip -qqqo ../stage/Components/oracle.jdk/1.6.0.21.51/1/DataFiles/\*.jar -d /tmp/OraInstall2014-12-11_12-28-50PM 
+No umask is available from oraparam.ini. Using the default value '007'.
+
+Execvp of the child jre : the cmdline is /tmp/OraInstall2014-12-11_12-28-50PM/jdk/jre/bin/java, and the argv is 
+/tmp/OraInstall2014-12-11_12-28-50PM/jdk/jre/bin/java
+-Doracle.installer.library_loc=/tmp/OraInstall2014-12-11_12-28-50PM/oui/lib/linux
+-Doracle.installer.oui_loc=/tmp/OraInstall2014-12-11_12-28-50PM/oui
+-Doracle.installer.bootstrap=TRUE
+-Doracle.installer.startup_location=/oracle/t/Siebel_Enterprise_Server/Disk1/install
+-Doracle.installer.jre_loc=/tmp/OraInstall2014-12-11_12-28-50PM/jdk/jre
+-Doracle.installer.nlsEnabled="TRUE"
+-Doracle.installer.prereqConfigLoc= 
+-Doracle.installer.unixVersion=3.8.13-55.el6uek.x86_64
+-mx96m
+-cp
+/tmp/OraInstall2014-12-11_12-28-50PM::/tmp/OraInstall2014-12-11_12-28-50PM/ext/jlib/oneclick.jar:/tmp/OraInstall2014-12-11_12-28-50PM/ext/jlib/SESWizard.jar:/tmp/OraInstall2014-12-11_12-28-50PM/ext/jlib/share.jar:/tmp/OraInstall2014-12-11_12-28-50PM/ext/jlib/migration.jar:/tmp/OraInstall2014-12-11_12-28-50PM/ext/jlib/fpinstallerresources.jar:/tmp/OraInstall2014-12-11_12-28-50PM/ext/jlib/utility.jar:/tmp/OraInstall2014-12-11_12-28-50PM/ext/jlib/product.jar:/tmp/OraInstall2014-12-11_12-28-50PM/ext/jlib/jgoodies-looks.jar:/tmp/OraInstall2014-12-11_12-28-50PM/ext/jlib/jewt4.jar:/tmp/OraInstall2014-12-11_12-28-50PM/ext/jlib/readVpd.jar:/tmp/OraInstall2014-12-11_12-28-50PM/ext/jlib/wizardCommonResources.jar:/tmp/OraInstall2014-12-11_12-28-50PM/ext/jlib/wizard.jar:/tmp/OraInstall2014-12-11_12-28-50PM/ext/jlib/apiinstaller.jar:/tmp/OraInstall2014-12-11_12-28-50PM/oui/jlib/OraInstaller.jar:/tmp/OraInstall2014-12-11_12-28-50PM/oui/jlib/oneclick.jar:/tmp/OraInstall2014-12-11_12-28-50PM/oui/jlib/xmlparserv2.jar:/tmp/OraInstall2014-12-11_12-28-50PM/oui/jlib/share.jar:/tmp/OraInstall2014-12-11_12-28-50PM/oui/jlib/OraInstallerNet.jar:/tmp/OraInstall2014-12-11_12-28-50PM/oui/jlib/emocmutl.jar:/tmp/OraInstall2014-12-11_12-28-50PM/oui/jlib/emCfg.jar:/tmp/OraInstall2014-12-11_12-28-50PM/oui/jlib/OraPrereq.jar:/tmp/OraInstall2014-12-11_12-28-50PM/oui/jlib/jsch.jar:/tmp/OraInstall2014-12-11_12-28-50PM/oui/jlib/ssh.jar:/tmp/OraInstall2014-12-11_12-28-50PM/oui/jlib/remoteinterfaces.jar:/tmp/OraInstall2014-12-11_12-28-50PM/oui/jlib/http_client.jar:/tmp/OraInstall2014-12-11_12-28-50PM/oui/jlib/OraSuiteInstaller.jar:/tmp/OraInstall2014-12-11_12-28-50PM/OPatch/jlib/opatch.jar:/tmp/OraInstall2014-12-11_12-28-50PM/OPatch/jlib/opatchactions.jar:/tmp/OraInstall2014-12-11_12-28-50PM/OPatch/jlib/opatchprereq.jar:/tmp/OraInstall2014-12-11_12-28-50PM/OPatch/jlib/opatchutil.jar:/tmp/OraInstall2014-12-11_12-28-50PM/oui/jlib/InstImages.jar:/tmp/OraInstall2014-12-11_12-28-50PM/oui/jlib/InstHelp.jar:/tmp/OraInstall2014-12-11_12-28-50PM/oui/jlib/InstHelp_de.jar:/tmp/OraInstall2014-12-11_12-28-50PM/oui/jlib/InstHelp_es.jar:/tmp/OraInstall2014-12-11_12-28-50PM/oui/jlib/InstHelp_fr.jar:/tmp/OraInstall2014-12-11_12-28-50PM/oui/jlib/InstHelp_it.jar:/tmp/OraInstall2014-12-11_12-28-50PM/oui/jlib/InstHelp_ja.jar:/tmp/OraInstall2014-12-11_12-28-50PM/oui/jlib/InstHelp_ko.jar:/tmp/OraInstall2014-12-11_12-28-50PM/oui/jlib/InstHelp_pt_BR.jar:/tmp/OraInstall2014-12-11_12-28-50PM/oui/jlib/InstHelp_zh_CN.jar:/tmp/OraInstall2014-12-11_12-28-50PM/oui/jlib/InstHelp_zh_TW.jar:/tmp/OraInstall2014-12-11_12-28-50PM/oui/jlib/oracle_ice.jar:/tmp/OraInstall2014-12-11_12-28-50PM/oui/jlib/help4.jar:/tmp/OraInstall2014-12-11_12-28-50PM/oui/jlib/help4-nls.jar:/tmp/OraInstall2014-12-11_12-28-50PM/oui/jlib/ewt3.jar:/tmp/OraInstall2014-12-11_12-28-50PM/oui/jlib/ewt3-swingaccess.jar:/tmp/OraInstall2014-12-11_12-28-50PM/oui/jlib/ewt3-nls.jar:/tmp/OraInstall2014-12-11_12-28-50PM/oui/jlib/swingaccess.jar::/tmp/OraInstall2014-12-11_12-28-50PM/oui/jlib/jewt4.jar:/tmp/OraInstall2014-12-11_12-28-50PM/oui/jlib/jewt4-nls.jar:/tmp/OraInstall2014-12-11_12-28-50PM/oui/jlib/orai18n-collation.jar:/tmp/OraInstall2014-12-11_12-28-50PM/oui/jlib/orai18n-mapping.jar:/tmp/OraInstall2014-12-11_12-28-50PM/oui/jlib/ojmisc.jar:/tmp/OraInstall2014-12-11_12-28-50PM/oui/jlib/xml.jar:/tmp/OraInstall2014-12-11_12-28-50PM/oui/jlib/srvm.jar:/tmp/OraInstall2014-12-11_12-28-50PM/oui/jlib/classes12.jar
+oracle.sysman.oio.oioc.OiocOneClickInstaller
+UnixGroups="{oinstall,dba,}"
+-scratchPath
+/tmp/OraInstall2014-12-11_12-28-50PM
+-sourceLoc
+/oracle/t/Siebel_Enterprise_Server/Disk1/install/../stage/products.xml
+-sourceType
+network
+-timestamp
+2014-12-11_12-28-50PM
+-invPtrLoc
+/etc/oraInst.loc
+-oneclick

@@ -1,0 +1,18 @@
+Type: Install and Configure
+	Location: /oracle/Middleware/Oracle_WT1
+		Oracle Instance Name: instance1
+		Oracle Instance Home: /oracle/Middleware/Oracle_WT1/instances/instance1
+		Standalone Case
+	Disk Space
+		Oracle Home
+			Oracle Home Size: 1016 MB
+			Available: 24980 MB
+		Oracle Instance Home
+			Instance Home Size: 25 MB
+			Available: 23080 MB
+	System Components
+		Oracle Process Manager Notification (OPMN)
+		Oracle HTTP Server (OHS)
+	Accessible URLs
+		Oracle HTTP Server URL : http://siebelgw:7777
+		Oracle HTTP Server SSL URL : https://siebelgw:4443

@@ -1,0 +1,86 @@
+﻿pcstmp_svc / P@ssw0rd
+
+[oracle@siebelapp ~]$ ps xa | grep sieb 
+ 5831 pts/0    S      0:00 watchdog -respond 4 /oracle/Siebel/8.1.1.11.0/ses/siebsrvr/mw/.mw/core_data//siebelapp/watchdog.keepaliv 
+ 5950 pts/0    S+     0:00 grep sieb 
+[oracle@siebelapp ~]$ ./sieb_srv.sh stop 
+Siebel Server "siebelapp" (Enterprise "SBA_82") 
+
+repo crm
+wget http://download.opensuse.org/repositories/network:ha-clustering:Stable/RedHat_RHEL-6/network:ha-clustering:Stable.repo 
+
+
+
+db->gw->http+app 
+
+
+http://10.31.97.19/fins_rus --> ????? ????? --> ????????????????? ????? ???????? --> ??????????? ( ???? ????????? ) 
+rsync -avzhe ssh 
+Username: gpl@jet.msk.su 
+
+Password: AsKkrepFSc 
+
+rpm -Uvh http://www.elrepo.org/elrepo-release-6-6.el6.elrepo.noarch.rpm 
+yum install drbd84-utils.x86_64 
+
+configure primitive p_drbd_siebel ocf:linbit:drbd params drbd_resource="clusterdb_res" op monitor interval="15s" 
+
+configure ms ms_drbd_siebel p_drbd_siebel meta master-max="1" master-nodemax="1" clone-max="2" clone-node-max="1" notify="true" 
+
+configure primitive p_fs_siebel ocf:heartbeat:Filesystem params device="/dev/drbd0" directory="/oracle/Siebel/8.1.1.11.0/ses/" fstype="ext4" 
+
+
+configure group g_siebel p_fs_siebel livefrontendIP0 SiebelGWService 
+
+configure colocation c_siebel_on_drbd inf: g_siebel ms_drbd_siebel:Master 
+
+configure order o_drbd_before_siebel inf: ms_drbd_siebel:promote g_siebel:start 
+
+
+pcs resource update SiebelGWService op start timeout=120s op stop timeout=120s op monitor interval=20s timeout=60s 
+
+
+
+crm_mon --failcounts 
+pcs resource cleanup SiebelGWService 
+pcs resource meta SiebelGWService fail-count=3 
+pcs resource meta SiebelGWService migration-threshold=3 
+
+Recovering from Split-Brain 
+The components of this stack are designed to cope with component failures but there may be cases where a 
+sequence  of  multiple  failures could result  in  DRBD  not  being  confident  that  the  data  on  the  two  hosts  is 
+consistent. In the event that this happens DRBD will break the connection (you can confirm the status of the 
+DRBD relationship by running /etc/init.d/drbd status). You can confirm that split-brain is the cause of 
+the disconnection by checking the errors in /var/log/messages. Should this happen, you need to identify 
+which of the two hosts has the correct data and then have DRBD resynchronize the data; for the steps below, 
+it is assumed that host1 has the correct data (simply switch the hosts if the opposite is true): 
+[root@host2 ~]# drbdadm secondary clusterdb_res 
+[root@host2 ~]# drbdadm -- --discard-my-data connect clusterdb_res 
+[root@host1 ~]# drbdadm connect clusterdb_res 
+You can then check on the state of the resynchronization using /etc/init.d/drbd status. 
+
+drbdadm disconnect clusterdb_res 
+ terminated with exit code 10 
+
+
+// fence_vmware_soap -a vcenter-IP -l username -p password --ssl -z -v -o list 
+// echo c > /proc/sysrq-trigger
+
+
+version: 	2 
+token: 	5000 
+token_retransmits_before_loss_const: 10 
+join: 		60 
+consensus: 	6000 
+vsftype: 	none 
+max_messages:	20 
+clear_node_high_bit: yes 
+secauth: 	off 
+thrads: 	0
+
+
+
+haproxy
+pcs resource create haproxy lsb:haproxy op monitor interval=30s op start interval=0s op stop interval=0s
+pcs resource create res_zabbix_agent lsb:zabbix-agent op monitor interval=30s op start interval=0s op stop interval=0s
+pcs resource create res_cluster_ip ocf:heartbeat:IPaddr2 ip=192.168.17.223 cidr_netmask=24 op monitor interval=30s

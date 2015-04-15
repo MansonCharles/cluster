@@ -1,0 +1,1 @@
+Drupal.locale = { 'strings': {"":{"Next":"\u0412\u043f\u0435\u0440\u0435\u0434"}} };

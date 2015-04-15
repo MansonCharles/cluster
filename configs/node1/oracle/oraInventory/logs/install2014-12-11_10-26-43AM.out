@@ -1,0 +1,873 @@
+Adding to classpath:file:/tmp/OraInstall2014-12-11_10-26-43AM/ext/jlib/webtiercd.jar
+Adding to classpath:file:/tmp/OraInstall2014-12-11_10-26-43AM/ext/jlib/template.jar
+Setting JVM_OPTIONS to 
+Adding /tmp/OraInstall2014-12-11_10-26-43AM for deletion.
+CUSTOM_COPY_RIGHT@oracle.as.install.webtiercd.ui.resources.WelcomeWebtiercdPage.ScreenRes
+configFileName:/tmp/OraInstall2014-12-11_10-26-43AM/ext/jlib/footprint.xml
+Setting current page standalone validations to true
+Setting current page standalone validations to true
+Setting current page standalone validations to true
+Inside startPreReqOperation...prereq
+contextFile:/tmp/OraInstall2014-12-11_10-26-43AM/prereq/oui/agent_prereq_context.xml
+The entry point is: oracle.installType.all
+Check Name:CertifiedVersions
+Check Description:This is a prerequisite condition to test whether the Oracle software is certified on the current O/S or not.
+Expected result: One of redhat-6,oracle-6,oracle-5.6,enterprise-5.4,enterprise-4,enterprise-5,redhat-5.4,redhat-4,redhat-5,SuSE-10,SuSE-11
+Actual Result: oracle-6
+Check complete. The overall result of this check is: Passed
+
+
+
+Check Name:Packages
+Check Description:This is a prerequisite condition to test whether the packages recommended for installing the product are available on the system.
+Checking for binutils-2.20.51.0.2-5.11.el6-x86_64; found binutils-2.20.51.0.2-5.42.el6-x86_64.	Passed
+Checking for compat-libcap1-1.10-1-x86_64; found compat-libcap1-1.10-1-x86_64.	Passed
+Checking for compat-libstdc++-33-3.2.3-69.el6-x86_64; found compat-libstdc++-33-3.2.3-69.el6-x86_64.	Passed
+Checking for compat-libstdc++-33-3.2.3-69.el6-i686; found compat-libstdc++-33-3.2.3-69.el6-i686.	Passed
+Checking for libgcc-4.4.4-13.el6-i686; found libgcc-4.4.7-11.el6-i686.	Passed
+Checking for libgcc-4.4.4-13.el6-x86_64; found libgcc-4.4.7-11.el6-x86_64.	Passed
+Checking for libstdc++-4.4.4-13.el6-x86_64; found libstdc++-4.4.7-11.el6-x86_64.	Passed
+Checking for libstdc++-4.4.4-13.el6-i686; found libstdc++-4.4.7-11.el6-i686.	Passed
+Checking for libstdc++-devel-4.4.4-13.el6-x86_64; found libstdc++-devel-4.4.7-11.el6-x86_64.	Passed
+Checking for sysstat-9.0.4-11.el6-x86_64; found sysstat-9.0.4-27.el6-x86_64.	Passed
+Checking for gcc-4.4.4-13.el6-x86_64; found gcc-4.4.7-11.el6-x86_64.	Passed
+Checking for gcc-c++-4.4.4-13.el6-x86_64; found gcc-c++-4.4.7-11.el6-x86_64.	Passed
+Checking for glibc-2.12-1.7.el6-i686; found glibc-2.12-1.149.el6-i686.	Passed
+Checking for glibc-2.12-1.7.el6-x86_64; found glibc-2.12-1.149.el6-x86_64.	Passed
+Checking for glibc-devel-2.12-1.7.el6-x86_64; found glibc-devel-2.12-1.149.el6-x86_64.	Passed
+Checking for glibc-devel-2.12-1.7.el6; found glibc-devel-2.12-1.149.el6-i686.	Passed
+Checking for libaio-0.3.107-10.el6-x86_64; found libaio-0.3.107-10.el6-x86_64.	Passed
+Checking for libaio-devel-0.3.107-10.el6-x86_64; found libaio-devel-0.3.107-10.el6-x86_64.	Passed
+Check complete. The overall result of this check is: Passed
+
+
+
+Check Name:Kernel
+Check Description:This is a prerequisite condition to test whether the minimum required kernel parameters are configured.
+Checking for VERSION=2.6.32-100.28.5.el6; found VERSION=3.8.13-55.el6uek.x86_64.	Passed
+Checking for hardnofiles=4096; found hardnofiles=65536.	Passed
+Checking for softnofiles=4096; found softnofiles=65536.	Passed
+Check complete. The overall result of this check is: Passed
+
+
+
+Check Name:GLIBC
+Check Description:This is a prerequisite condition to check whether the recommended glibc version is available on the system
+Expected result: ATLEAST=2.12-1.7.el6 
+Actual Result: 2.12-1.149.el6
+Check complete. The overall result of this check is: Passed
+
+
+
+Check Name:TotalMemory
+Check Description:This is a prerequisite condition to test whether the system has sufficient physical memory.
+Expected result: 1024MB
+Actual Result: 4704MB
+Check complete. The overall result of this check is: Passed
+
+
+
+Check Name:Check Env Variable
+Check Description:Check for LD_ASSUME_KERNEL
+Expected result: LD_ASSUME_KERNEL environment variable should not be set in the environment.
+Actual Result: Variable Not set.
+Check complete. The overall result of this check is: Passed
+
+
+
+Setting current page standalone validations to true
+Setting current page standalone validations to true
+NOT FOUND product.properties
+Not WAS
+needWritableDirectory: false
+In processErrorMsgStringOracle Home Directory
+In processErrorMsgString@SpecifyInstallLocnWithMWSpecifactionPage.m_OracleDirectoryInvalidErrorString
+Obtained the single page data..SpecifyInstallLocnWithMWSpecifactionPage
+resultset.getStatus() : true
+Setting current page standalone validations to true
+resultset.getStatus() : true
+Setting collector hub url in screen:null
+Setting current page standalone validations to true
+resultset.getStatus() : true
+Setting current page standalone validations to true
+Entering the exec handler method in get free space for home...
+quotaNeededProperty:null
+isQuotaNeeded : false
+Entering getUnixVolumeFreeSpace false
+In get free space method..
+not required...
+In processErrorMsgString@SpecifyComponentDetails.m_InstanceNameLabelForHanders
+Obtained the single page data..SpecifyComponentDetails
+In processErrorMsgString@SpecifyComponentDetails.m_InstanceNameOnFocusText
+Obtained the single page data..SpecifyComponentDetails
+In processErrorMsgString@SpecifyComponentDetails.m_OhsComponentNameLabelForHanders
+Obtained the single page data..SpecifyComponentDetails
+In processErrorMsgString@SpecifyComponentDetails.m_OhsComponentNameOnFocusText
+Obtained the single page data..SpecifyComponentDetails
+In processErrorMsgStringInstance Home
+resultset.getStatus() : true
+Setting current page standalone validations to true
+resultset.getStatus() : true
+instFreeSpace:null
+instFreeSpace:null
+In doFinish method checking for inventory lock...InstallProgressPage
+Next page is a progress page and the inventory lock is false
+Setting current page standalone validations to true
+Running executeBeforeCopy
+No JDK in inventory 
+Read JDK version from shiphome 1.6.0.35.52
+No inventory
+inventoryLocation: /home/oracle/oraInventory
+The user provided properties object doesnt have the entry for oracle.installer.startup_location. Checking if the value has been set in the System environment
+Source Loc:/oracle/t/Disk1/install/linux/../../stage/products.xml
+Install Log:null
+===========================================
+Install Phase:COPY	 State:BEGIN
+Install Log:Starting File Copy
+Install Log:Copying files for:  Installer SDK Component 11.1.0.9.0 
+Install Log:Copying files for:  Oracle One-Off Patch Installer 11.1.0.9.9 
+Install Log:Copying files for:  Oracle Universal Installer 11.1.0.9.0 
+Install Log:Copying files for:  Oracle Upgrade Assistant for common 11.1.1.7.0 
+Install Log:Copying files for:  Application Server 11g Common Cloning Component 11.1.1.7.0 
+Install Log:Copying files for:  Oracle BPM Management Extension 11.1.1.7.0 
+Install Log:Copying files for:  Enterprise Manager Application Server Integrator Plugin -- SOA 11.1.1.7.0 
+Install Log:Copying files for:  Oracle SOA Management 11.1.1.7.0 
+Install Log:Copying files for:  Oracle Enterprise Manager Application Server WLS Support 11.1.1.7.0 
+Install Log:Copying files for:  Oracle Enterprise Manager Application Server WLS Support 11.1.1.7.0 
+Install Log:Copying files for:  Enterprise Manager Grid Control Core UI Common Files 11.1.1.7.0 
+Install Log:Copying files for:  Enterprise Manager Application Server Plugin -- Common Management Service Support 11.1.1.7.0 
+Install Log:Copying files for:  Enterprise Manager Application Server Plugin -- AS Management Service Support 11.1.1.7.0 
+Install Log:Copying files for:  Enterprise Manager Common Core Files 11.1.1.7.0 
+Install Log:Copying files for:  Enterprise Manager Application Server Integrator Plugin -- Agent Support 11.1.1.7.0 
+Install Log:Copying files for:  AS Control UI Core Files 11.1.1.7.0 
+Install Log:Copying files for:  Repository Creation Utility 11.1.1.7.0 
+Install Log:Copying files for:  Enterprise Manager Grid Control Core Files 11.1.1.7.0 
+Install Log:Copying files for:  Enterprise Manager Common Files 10.2.0.5.6 
+Install Log:Copying files for:  Enterprise Manager Application Server Plugin -- Common Support 11.1.1.7.0 
+Install Log:Copying files for:  Oracle MySQL Connector 11.1.1.7.0 
+Install Log:Copying files for:  JDEVADF 11.1.1.7.0 
+Install Log:Copying files for:  Oracle Help Share Library 11.1.1.7.0 
+Install Log:Copying files for:  Oracle Display Fonts 11.1.1.7.0 
+Install Log:Copying files for:  Oracle Bali Share 11.1.1.7.0 
+Install Log:Copying files for:  Oracle JSCH 11.1.1.7.0 
+Install Log:Copying files for:  Oracle Jakarta 11.1.1.7.0 
+Install Log:Copying files for:  Oracle JGroups 11.1.1.7.0 
+Install Log:Copying files for:  Oracle Diagnostics Health Test Framework 11.1.1.7.0 
+Install Log:Copying files for:  Oracle Apps Trace JRF 11.1.1.7.0 
+Install Log:Copying files for:  OracleAS JRF Datadirect 11.1.1.7.0 
+Install Log:Copying files for:  OracleAS JRF ApplCore 11.1.1.7.0 
+Install Log:Copying files for:  OracleAS OPSS 11.1.1.7.0 
+Install Log:Copying files for:  OracleAS HA Powertools 11.1.1.7.0 
+Install Log:Copying files for:  Oracle Fusion Middleware Common Admin Config 11.1.1.6.0 
+Install Log:Copying files for:  OracleAS AUDIT JRF 11.1.1.7.0 
+Install Log:Copying files for:  Oracle Application Server Kernel Files JRF 11.1.1.7.0 
+Install Log:Copying files for:  Oracle Webcenter Portal: Portlet Server Minimal 11.1.1.7.0 
+Install Log:Copying files for:  Oracle Webcenter Portal: Skin 11.1.1.7.0 
+Install Log:Copying files for:  Oracle WebCenter Portal: Page Editor 11.1.1.7.0 
+Install Log:Copying files for:  Oracle Application Development Framework JRF 11.1.1.7.0 
+Install Log:Copying files for:  OracleAS TopLink JRF 11.1.1.6.0 
+Install Log:Copying files for:  OracleAS TopLink Thirdparty JRF 11.1.1.6.0 
+Install Log:Copying files for:  OracleAS J2EE Thirdparty JRF 11.1.1.7.0 
+Install Log:Copying files for:  OracleAS J2EE JRF 11.1.1.7.0 
+Install Log:Copying files for:  Oracle Java Object Cache JRF 11.1.1.7.0 
+Install Log:Copying files for:  Oracle Dynamic Monitoring Service JRF 11.1.1.7.0 
+Install Log:Copying files for:  OracleAS JRF OWSM 11.1.1.7.0 
+Install Log:Copying files for:  Oracle UIX 11.1.1.7.0 
+Install Log:Copying files for:  Enterprise Manager Application Server Integrator Plugin -- Management Service Support 11.1.1.7.0 
+Install Log:Copying files for:  Jython 11.1.1.7.0 
+Install Log:Copying files for:  OracleAS Documentation 11.1.1.7.0 
+Install Log:Copying files for:  Oracle Remote Diagnostic Agent 11.1.1.7.0 
+Install Log:Copying files for:  Oracle Help for the Web Shared Library 11.1.1.7.0 
+Install Log:Copying files for:  Oracle Help for the Web - Rich Client 11.1.1.7.0 
+Install Log:Copying files for:  Oracle Help for the Web - UIX 11.1.1.7.0 
+Install Log:Copying files for:  Oracle Help for Java 11.1.1.7.0 
+Install Log:Copying files for:  Oracle JFC Extended Windowing Toolkit 11.1.1.7.0 
+Install Log:Copying files for:  Oracle Extended Windowing Toolkit 11.1.1.7.0 
+Install Log:Copying files for:  Oracle Ice Browser 11.1.1.7.0 
+Install Log:Copying files for:  OracleAS JRF 11.1.1.7.0 
+Install Log:Copying files for:  Oracle Upgrade Assistant 11.1.1.7.0 
+Install Log:Copying files for:  Oracle Upgrade Assistant 11.1.1.7.0 
+Install Log:Copying files for:  Oracle AS Common Toplevel Component 11.1.1.2.0 
+Install Phase:COPY	 State:END
+Install Log:File Copy Completed
+===========================================
+Install Phase:LINK	 State:BEGIN
+Install Log:Starting Link Phase
+Install Log:Linking:  Installer SDK Component 11.1.0.9.0 
+Install Log:Linking:  Oracle One-Off Patch Installer 11.1.0.9.9 
+Install Log:Linking:  Oracle Universal Installer 11.1.0.9.0 
+Install Log:Linking:  Oracle Upgrade Assistant for common 11.1.1.7.0 
+Install Log:Linking:  Application Server 11g Common Cloning Component 11.1.1.7.0 
+Install Log:Linking:  Oracle BPM Management Extension 11.1.1.7.0 
+Install Log:Linking:  Enterprise Manager Application Server Integrator Plugin -- SOA 11.1.1.7.0 
+Install Log:Linking:  Oracle SOA Management 11.1.1.7.0 
+Install Log:Linking:  Oracle Enterprise Manager Application Server WLS Support 11.1.1.7.0 
+Install Log:Linking:  Oracle Enterprise Manager Application Server WLS Support 11.1.1.7.0 
+Install Log:Linking:  Enterprise Manager Grid Control Core UI Common Files 11.1.1.7.0 
+Install Log:Linking:  Enterprise Manager Application Server Plugin -- Common Management Service Support 11.1.1.7.0 
+Install Log:Linking:  Enterprise Manager Application Server Plugin -- AS Management Service Support 11.1.1.7.0 
+Install Log:Linking:  Enterprise Manager Common Core Files 11.1.1.7.0 
+Install Log:Linking:  Enterprise Manager Application Server Integrator Plugin -- Agent Support 11.1.1.7.0 
+Install Log:Linking:  AS Control UI Core Files 11.1.1.7.0 
+Install Log:Linking:  Repository Creation Utility 11.1.1.7.0 
+Install Log:Linking:  Enterprise Manager Grid Control Core Files 11.1.1.7.0 
+Install Log:Linking:  Enterprise Manager Common Files 10.2.0.5.6 
+Install Log:Linking:  Enterprise Manager Application Server Plugin -- Common Support 11.1.1.7.0 
+Install Log:Linking:  Oracle MySQL Connector 11.1.1.7.0 
+Install Log:Linking:  JDEVADF 11.1.1.7.0 
+Install Log:Linking:  Oracle Help Share Library 11.1.1.7.0 
+Install Log:Linking:  Oracle Display Fonts 11.1.1.7.0 
+Install Log:Linking:  Oracle Bali Share 11.1.1.7.0 
+Install Log:Linking:  Oracle JSCH 11.1.1.7.0 
+Install Log:Linking:  Oracle Jakarta 11.1.1.7.0 
+Install Log:Linking:  Oracle JGroups 11.1.1.7.0 
+Install Log:Linking:  Oracle Diagnostics Health Test Framework 11.1.1.7.0 
+Install Log:Linking:  Oracle Apps Trace JRF 11.1.1.7.0 
+Install Log:Linking:  OracleAS JRF Datadirect 11.1.1.7.0 
+Install Log:Linking:  OracleAS JRF ApplCore 11.1.1.7.0 
+Install Log:Linking:  OracleAS OPSS 11.1.1.7.0 
+Install Log:Linking:  OracleAS HA Powertools 11.1.1.7.0 
+Install Log:Linking:  Oracle Fusion Middleware Common Admin Config 11.1.1.6.0 
+Install Log:Linking:  OracleAS AUDIT JRF 11.1.1.7.0 
+Install Log:Linking:  Oracle Application Server Kernel Files JRF 11.1.1.7.0 
+Install Log:Linking:  Oracle Webcenter Portal: Portlet Server Minimal 11.1.1.7.0 
+Install Log:Linking:  Oracle Webcenter Portal: Skin 11.1.1.7.0 
+Install Log:Linking:  Oracle WebCenter Portal: Page Editor 11.1.1.7.0 
+Install Log:Linking:  Oracle Application Development Framework JRF 11.1.1.7.0 
+Install Log:Linking:  OracleAS TopLink JRF 11.1.1.6.0 
+Install Log:Linking:  OracleAS TopLink Thirdparty JRF 11.1.1.6.0 
+Install Log:Linking:  OracleAS J2EE Thirdparty JRF 11.1.1.7.0 
+Install Log:Linking:  OracleAS J2EE JRF 11.1.1.7.0 
+Install Log:Linking:  Oracle Java Object Cache JRF 11.1.1.7.0 
+Install Log:Linking:  Oracle Dynamic Monitoring Service JRF 11.1.1.7.0 
+Install Log:Linking:  OracleAS JRF OWSM 11.1.1.7.0 
+Install Log:Linking:  Oracle UIX 11.1.1.7.0 
+Install Log:Linking:  Enterprise Manager Application Server Integrator Plugin -- Management Service Support 11.1.1.7.0 
+Install Log:Linking:  Jython 11.1.1.7.0 
+Install Log:Linking:  OracleAS Documentation 11.1.1.7.0 
+Install Log:Linking:  Oracle Remote Diagnostic Agent 11.1.1.7.0 
+Install Log:Linking:  Oracle Help for the Web Shared Library 11.1.1.7.0 
+Install Log:Linking:  Oracle Help for the Web - Rich Client 11.1.1.7.0 
+Install Log:Linking:  Oracle Help for the Web - UIX 11.1.1.7.0 
+Install Log:Linking:  Oracle Help for Java 11.1.1.7.0 
+Install Log:Linking:  Oracle JFC Extended Windowing Toolkit 11.1.1.7.0 
+Install Log:Linking:  Oracle Extended Windowing Toolkit 11.1.1.7.0 
+Install Log:Linking:  Oracle Ice Browser 11.1.1.7.0 
+Install Log:Linking:  OracleAS JRF 11.1.1.7.0 
+Install Log:Linking:  Oracle Upgrade Assistant 11.1.1.7.0 
+Install Log:Linking:  Oracle Upgrade Assistant 11.1.1.7.0 
+Install Log:Linking:  Oracle AS Common Toplevel Component 11.1.1.2.0 
+Install Phase:LINK	 State:END
+Install Log:Linking Completed
+===========================================
+Install Phase:SETUP	 State:BEGIN
+Install Log:Setting Up Installed Components
+Install Log:Setting Up:  Installer SDK Component 11.1.0.9.0 
+Install Log:Setting Up:  Oracle One-Off Patch Installer 11.1.0.9.9 
+Install Log:Setting Up:  Oracle Universal Installer 11.1.0.9.0 
+Install Log:Setting Up:  Oracle Upgrade Assistant for common 11.1.1.7.0 
+Install Log:Setting Up:  Application Server 11g Common Cloning Component 11.1.1.7.0 
+Install Log:Setting Up:  Oracle BPM Management Extension 11.1.1.7.0 
+Install Log:Setting Up:  Enterprise Manager Application Server Integrator Plugin -- SOA 11.1.1.7.0 
+Install Log:Setting Up:  Oracle SOA Management 11.1.1.7.0 
+Install Log:Setting Up:  Oracle Enterprise Manager Application Server WLS Support 11.1.1.7.0 
+Install Log:Setting Up:  Oracle Enterprise Manager Application Server WLS Support 11.1.1.7.0 
+Install Log:Setting Up:  Enterprise Manager Grid Control Core UI Common Files 11.1.1.7.0 
+Install Log:Setting Up:  Enterprise Manager Application Server Plugin -- Common Management Service Support 11.1.1.7.0 
+Install Log:Setting Up:  Enterprise Manager Application Server Plugin -- AS Management Service Support 11.1.1.7.0 
+Install Log:Setting Up:  Enterprise Manager Common Core Files 11.1.1.7.0 
+Install Log:Setting Up:  Enterprise Manager Application Server Integrator Plugin -- Agent Support 11.1.1.7.0 
+Install Log:Setting Up:  AS Control UI Core Files 11.1.1.7.0 
+Install Log:Setting Up:  Repository Creation Utility 11.1.1.7.0 
+Install Log:Setting Up:  Enterprise Manager Grid Control Core Files 11.1.1.7.0 
+Install Log:Setting Up:  Enterprise Manager Common Files 10.2.0.5.6 
+Install Log:Setting Up:  Enterprise Manager Application Server Plugin -- Common Support 11.1.1.7.0 
+Install Log:Setting Up:  Oracle MySQL Connector 11.1.1.7.0 
+Install Log:Setting Up:  JDEVADF 11.1.1.7.0 
+Install Log:Setting Up:  Oracle Help Share Library 11.1.1.7.0 
+Install Log:Setting Up:  Oracle Display Fonts 11.1.1.7.0 
+Install Log:Setting Up:  Oracle Bali Share 11.1.1.7.0 
+Install Log:Setting Up:  Oracle JSCH 11.1.1.7.0 
+Install Log:Setting Up:  Oracle Jakarta 11.1.1.7.0 
+Install Log:Setting Up:  Oracle JGroups 11.1.1.7.0 
+Install Log:Setting Up:  Oracle Diagnostics Health Test Framework 11.1.1.7.0 
+Install Log:Setting Up:  Oracle Apps Trace JRF 11.1.1.7.0 
+Install Log:Setting Up:  OracleAS JRF Datadirect 11.1.1.7.0 
+Install Log:Setting Up:  OracleAS JRF ApplCore 11.1.1.7.0 
+Install Log:Setting Up:  OracleAS OPSS 11.1.1.7.0 
+Install Log:Setting Up:  OracleAS HA Powertools 11.1.1.7.0 
+Install Log:Setting Up:  Oracle Fusion Middleware Common Admin Config 11.1.1.6.0 
+Install Log:Setting Up:  OracleAS AUDIT JRF 11.1.1.7.0 
+Install Log:Setting Up:  Oracle Application Server Kernel Files JRF 11.1.1.7.0 
+Install Log:Setting Up:  Oracle Webcenter Portal: Portlet Server Minimal 11.1.1.7.0 
+Install Log:Setting Up:  Oracle Webcenter Portal: Skin 11.1.1.7.0 
+Install Log:Setting Up:  Oracle WebCenter Portal: Page Editor 11.1.1.7.0 
+Install Log:Setting Up:  Oracle Application Development Framework JRF 11.1.1.7.0 
+Install Log:Setting Up:  OracleAS TopLink JRF 11.1.1.6.0 
+Install Log:Setting Up:  OracleAS TopLink Thirdparty JRF 11.1.1.6.0 
+Install Log:Setting Up:  OracleAS J2EE Thirdparty JRF 11.1.1.7.0 
+Install Log:Setting Up:  OracleAS J2EE JRF 11.1.1.7.0 
+Install Log:Setting Up:  Oracle Java Object Cache JRF 11.1.1.7.0 
+Install Log:Setting Up:  Oracle Dynamic Monitoring Service JRF 11.1.1.7.0 
+Install Log:Setting Up:  OracleAS JRF OWSM 11.1.1.7.0 
+Install Log:Setting Up:  Oracle UIX 11.1.1.7.0 
+Install Log:Setting Up:  Enterprise Manager Application Server Integrator Plugin -- Management Service Support 11.1.1.7.0 
+Install Log:Setting Up:  Jython 11.1.1.7.0 
+Install Log:Setting Up:  OracleAS Documentation 11.1.1.7.0 
+Install Log:Setting Up:  Oracle Remote Diagnostic Agent 11.1.1.7.0 
+Install Log:Setting Up:  Oracle Help for the Web Shared Library 11.1.1.7.0 
+Install Log:Setting Up:  Oracle Help for the Web - Rich Client 11.1.1.7.0 
+Install Log:Setting Up:  Oracle Help for the Web - UIX 11.1.1.7.0 
+Install Log:Setting Up:  Oracle Help for Java 11.1.1.7.0 
+Install Log:Setting Up:  Oracle JFC Extended Windowing Toolkit 11.1.1.7.0 
+Install Log:Setting Up:  Oracle Extended Windowing Toolkit 11.1.1.7.0 
+Install Log:Setting Up:  Oracle Ice Browser 11.1.1.7.0 
+Install Log:Setting Up:  OracleAS JRF 11.1.1.7.0 
+Install Log:Setting Up:  Oracle Upgrade Assistant 11.1.1.7.0 
+Install Log:Setting Up:  Oracle Upgrade Assistant 11.1.1.7.0 
+Install Log:Setting Up:  Oracle AS Common Toplevel Component 11.1.1.2.0 
+Install Phase:SETUP	 State:END
+Install Log:Setup Completed
+Install Log:Saving the inventory. It may take few minutes.
+Inside onDoneProgress method ....
+inventoryLocation: /home/oracle/oraInventory
+Source Loc:/oracle/t/Disk1/install/linux/../../stage/products.xml
+Install Log:Install Completed
+===========================================
+Install Phase:COPY	 State:BEGIN
+Install Log:Starting File Copy
+Install Log:Copying files for:  Java Development Kit 1.6.0.35.52 
+Install Log:Copying files for:  Installer SDK Component 11.1.0.9.0 
+Install Log:Copying files for:  Oracle One-Off Patch Installer 11.1.0.9.9 
+Install Log:Copying files for:  Oracle Universal Installer 11.1.0.9.0 
+Install Log:Copying files for:  Enterprise Manager Application Server Plugin -- Common Support 11.1.1.7.0 
+Install Log:Copying files for:  Oracle Help Share Library 11.1.1.7.0 
+Install Log:Copying files for:  Oracle Bali Share 11.1.1.7.0 
+Install Log:Copying files for:  Oracle Identity Management Support Files 11.1.1.7.0 
+Install Log:Copying files for:  Jython 11.1.1.7.0 
+Install Log:Copying files for:  Oracle Fusion Middleware Admin Config 11.1.1.6.0 
+Install Log:Copying files for:  Oracle Application One Off patches Component 11.1.1.7.0 
+Install Log:Copying files for:  Oracle Change IP Component 11.1.1.7.0 
+Install Log:Copying files for:  OracleAS Documentation 11.1.1.7.0 
+Install Log:Copying files for:  Application Server 11g OHS T2P Component 11.1.1.7.0 
+Install Log:Copying files for:  Application Server 11g Cloning Component 11.1.1.7.0 
+Install Log:Copying files for:  Oracle Remote Diagnostic Agent 11.1.1.7.0 
+Install Log:Copying files for:  Buildtools Common Files 11.1.0.7.0 
+Install Log:Copying files for:  Enterprise Manager Minimal Integration 11.1.0.7.0 
+Install Log:Copying files for:  LDAP Required Support Instant Client Files 11.1.1.7.0 
+Install Log:Copying files for:  LDAP Secure Sockets Layer Files 11.1.1.7.0 
+Install Log:Copying files for:  Oracle Globalization Support 11.1.0.7.0 
+Install Log:Copying files for:  Expat libraries 2.0.1.0.1 
+Install Log:Copying files for:  Oracle  Application Development ModPLSQL 11.1.1.7.0 
+Install Log:Copying files for:  Oracle Help for the Web Shared Library 11.1.1.7.0 
+Install Log:Copying files for:  Oracle Help for the Web - UIX 11.1.1.7.0 
+Install Log:Copying files for:  Oracle Help for Java 11.1.1.7.0 
+Install Log:Copying files for:  Oracle XML Query 11.1.0.7.0 
+Install Log:Copying files for:  Oracle RAC Required Support Files-HAS 11.1.0.7.0 
+Install Log:Copying files for:  SQL*Plus Required Support Files 11.1.0.7.0 
+Install Log:Copying files for:  XDK Required Support Files 11.1.0.7.0 
+Install Log:Copying files for:  Agent Required Support Files 10.2.0.4.1 
+Install Log:Copying files for:  Parser Generator Required Support Files 11.1.0.7.0 
+Install Log:Copying files for:  Precompiler Required Support Files 11.1.0.7.0 
+Install Log:Copying files for:  Oracle Core Required Support Files 11.1.0.7.0 
+Install Log:Copying files for:  Oracle JFC Extended Windowing Toolkit 11.1.1.7.0 
+Install Log:Copying files for:  Oracle Extended Windowing Toolkit 11.1.1.7.0 
+Install Log:Copying files for:  Oracle Ice Browser 11.1.1.7.0 
+Install Log:Copying files for:  Oracle Help For Java 4.2.9.0.0 
+Install Log:Copying files for:  Oracle Locale Builder 11.1.0.7.0 
+Install Log:Copying files for:  Perl Modules 5.10.0.0.1 
+Install Log:Copying files for:  Perl Interpreter 5.10.0.0.1 
+Install Log:Copying files for:  Platform Required Support Files 11.1.0.7.0 
+Install Log:Copying files for:  Oracle Globalization Support 11.1.0.7.0 
+Install Log:Copying files for:  Oracle JDBC/OCI Instant Client 11.1.0.7.0 
+Install Log:Copying files for:  Oracle JDBC/THIN Interfaces 11.1.0.7.0 
+Install Log:Copying files for:  Oracle Upgrade Assistant 11.1.1.7.0 
+Install Log:Copying files for:  Oracle Configuration Manager 10.3.7.0.0 
+Install Log:Copying files for:  XML Parser for Java 11.1.0.7.0 
+Install Log:Copying files for:  Oracle Application Server Configuration 11.1.1.7.0 
+Install Log:Copying files for:  RDBMS Required Support Files for Instant Client 11.1.0.7.0 
+Install Log:Copying files for:  RDBMS Required Support Files 11.1.0.7.0 
+Install Log:Copying files for:  LDAP Required Support Files 11.1.1.7.0 
+Install Log:Copying files for:  Oracle Net Required Support Files 11.1.0.7.0 
+Install Log:Copying files for:  Required Support Files 11.1.0.7.0 
+Install Log:Copying files for:  Oracle XML Development Kit 11.1.0.7.0 
+Install Log:Copying files for:  OracleAS Web Cache 11.1.1.7.0 
+Install Log:Copying files for:  Oracle WebLogic Plugins 11.1.1.7.0 
+Install Log:Copying files for:  LDAP Audit Framework 11.1.1.7.0 
+Install Log:Copying files for:  Oracle Application Server Non J2EE Management Files 11.1.1.7.0 
+Install Log:Copying files for:  Assistant Common Files 11.1.0.7.0 
+Install Log:Copying files for:  Secure Socket Layer 11.1.0.7.0 
+Install Log:Copying files for:  Oracle Wallet Manager 11.1.1.7.0 
+Install Log:Copying files for:  Oracle DMSC (oracle.dmsc) 11.1.1.7.0 
+Install Log:Copying files for:  Oracle Process Management Node (oracle.opmn) 11.1.1.7.0 
+Install Log:Copying files for:  Oracle Upgrade Assistant 11.1.1.7.0 
+Install Log:Copying files for:  Oracle HTTP Server 2.0 11.1.1.7.0 
+Install Log:Copying files for:  Oracle WebTier and Utilities CD 11.1.1.7.0 
+Install Phase:COPY	 State:END
+Install Log:File Copy Completed
+===========================================
+Install Phase:LINK	 State:BEGIN
+Install Log:Starting Link Phase
+Install Log:Linking:  Java Development Kit 1.6.0.35.52 
+Install Log:Linking:  Installer SDK Component 11.1.0.9.0 
+Install Log:Linking:  Oracle One-Off Patch Installer 11.1.0.9.9 
+Install Log:Linking:  Oracle Universal Installer 11.1.0.9.0 
+Install Log:Linking:  Enterprise Manager Application Server Plugin -- Common Support 11.1.1.7.0 
+Install Log:Linking:  Oracle Help Share Library 11.1.1.7.0 
+Install Log:Linking:  Oracle Bali Share 11.1.1.7.0 
+Install Log:Linking:  Oracle Identity Management Support Files 11.1.1.7.0 
+Install Log:Linking:  Jython 11.1.1.7.0 
+Install Log:Linking:  Oracle Fusion Middleware Admin Config 11.1.1.6.0 
+Install Log:Linking:  Oracle Application One Off patches Component 11.1.1.7.0 
+Install Log:Linking:  Oracle Change IP Component 11.1.1.7.0 
+Install Log:Linking:  OracleAS Documentation 11.1.1.7.0 
+Install Log:Linking:  Application Server 11g OHS T2P Component 11.1.1.7.0 
+Install Log:Linking:  Application Server 11g Cloning Component 11.1.1.7.0 
+Install Log:Linking:  Oracle Remote Diagnostic Agent 11.1.1.7.0 
+Install Log:Linking:  Buildtools Common Files 11.1.0.7.0 
+Install Log:Linking:  Enterprise Manager Minimal Integration 11.1.0.7.0 
+Install Log:Linking:  LDAP Required Support Instant Client Files 11.1.1.7.0 
+Install Log:Linking:  LDAP Secure Sockets Layer Files 11.1.1.7.0 
+Install Log:Linking:  Oracle Globalization Support 11.1.0.7.0 
+Install Log:Linking:  Expat libraries 2.0.1.0.1 
+Install Log:Linking:  Oracle  Application Development ModPLSQL 11.1.1.7.0 
+Install Log:Linking:  Oracle Help for the Web Shared Library 11.1.1.7.0 
+Install Log:Linking:  Oracle Help for the Web - UIX 11.1.1.7.0 
+Install Log:Linking:  Oracle Help for Java 11.1.1.7.0 
+Install Log:Linking:  Oracle XML Query 11.1.0.7.0 
+Install Log:Linking:  Oracle RAC Required Support Files-HAS 11.1.0.7.0 
+Install Log:Linking:  SQL*Plus Required Support Files 11.1.0.7.0 
+Install Log:Linking:  XDK Required Support Files 11.1.0.7.0 
+Install Log:Linking:  Agent Required Support Files 10.2.0.4.1 
+Install Log:Linking:  Parser Generator Required Support Files 11.1.0.7.0 
+Install Log:Linking:  Precompiler Required Support Files 11.1.0.7.0 
+Install Log:Linking:  Oracle Core Required Support Files 11.1.0.7.0 
+Install Log:Linking:  Oracle JFC Extended Windowing Toolkit 11.1.1.7.0 
+Install Log:Linking:  Oracle Extended Windowing Toolkit 11.1.1.7.0 
+Install Log:Linking:  Oracle Ice Browser 11.1.1.7.0 
+Install Log:Linking:  Oracle Help For Java 4.2.9.0.0 
+Install Log:Linking:  Oracle Locale Builder 11.1.0.7.0 
+Install Log:Linking:  Perl Modules 5.10.0.0.1 
+Install Log:Linking:  Perl Interpreter 5.10.0.0.1 
+Install Log:Linking:  Platform Required Support Files 11.1.0.7.0 
+Install Log:Linking:  Oracle Globalization Support 11.1.0.7.0 
+Install Log:Linking:  Oracle JDBC/OCI Instant Client 11.1.0.7.0 
+Install Log:Linking:  Oracle JDBC/THIN Interfaces 11.1.0.7.0 
+Install Log:Linking:  Oracle Upgrade Assistant 11.1.1.7.0 
+Install Log:Linking:  Oracle Configuration Manager 10.3.7.0.0 
+Install Log:Linking:  XML Parser for Java 11.1.0.7.0 
+Install Log:Linking:  Oracle Application Server Configuration 11.1.1.7.0 
+Install Log:Linking:  RDBMS Required Support Files for Instant Client 11.1.0.7.0 
+Install Log:Linking:  RDBMS Required Support Files 11.1.0.7.0 
+Install Log:Linking:  LDAP Required Support Files 11.1.1.7.0 
+Install Log:Linking:  Oracle Net Required Support Files 11.1.0.7.0 
+Install Log:Linking:  Required Support Files 11.1.0.7.0 
+Install Log:Linking:  Oracle XML Development Kit 11.1.0.7.0 
+Install Log:Linking:  OracleAS Web Cache 11.1.1.7.0 
+Install Log:Linking:  Oracle WebLogic Plugins 11.1.1.7.0 
+Install Log:Linking:  LDAP Audit Framework 11.1.1.7.0 
+Install Log:Linking:  Oracle Application Server Non J2EE Management Files 11.1.1.7.0 
+Install Log:Linking:  Assistant Common Files 11.1.0.7.0 
+Install Log:Linking:  Secure Socket Layer 11.1.0.7.0 
+Install Log:Linking:  Oracle Wallet Manager 11.1.1.7.0 
+Install Log:Linking:  Oracle DMSC (oracle.dmsc) 11.1.1.7.0 
+Install Log:Linking:  Oracle Process Management Node (oracle.opmn) 11.1.1.7.0 
+Install Log:Linking:  Oracle Upgrade Assistant 11.1.1.7.0 
+Install Log:Linking:  Oracle HTTP Server 2.0 11.1.1.7.0 
+Install Log:Linking:  Oracle WebTier and Utilities CD 11.1.1.7.0 
+Install Phase:LINK	 State:END
+Install Log:Linking Completed
+===========================================
+Install Phase:SETUP	 State:BEGIN
+Install Log:Setting Up Installed Components
+Install Log:Setting Up:  Java Development Kit 1.6.0.35.52 
+Install Log:Setting Up:  Installer SDK Component 11.1.0.9.0 
+Install Log:Setting Up:  Oracle One-Off Patch Installer 11.1.0.9.9 
+Install Log:Setting Up:  Oracle Universal Installer 11.1.0.9.0 
+Install Log:Setting Up:  Enterprise Manager Application Server Plugin -- Common Support 11.1.1.7.0 
+Install Log:Setting Up:  Oracle Help Share Library 11.1.1.7.0 
+Install Log:Setting Up:  Oracle Bali Share 11.1.1.7.0 
+Install Log:Setting Up:  Oracle Identity Management Support Files 11.1.1.7.0 
+Install Log:Setting Up:  Jython 11.1.1.7.0 
+Install Log:Setting Up:  Oracle Fusion Middleware Admin Config 11.1.1.6.0 
+Install Log:Setting Up:  Oracle Application One Off patches Component 11.1.1.7.0 
+Install Log:Setting Up:  Oracle Change IP Component 11.1.1.7.0 
+Install Log:Setting Up:  OracleAS Documentation 11.1.1.7.0 
+Install Log:Setting Up:  Application Server 11g OHS T2P Component 11.1.1.7.0 
+Install Log:Setting Up:  Application Server 11g Cloning Component 11.1.1.7.0 
+Install Log:Setting Up:  Oracle Remote Diagnostic Agent 11.1.1.7.0 
+Install Log:Setting Up:  Buildtools Common Files 11.1.0.7.0 
+Install Log:Setting Up:  Enterprise Manager Minimal Integration 11.1.0.7.0 
+Install Log:Setting Up:  LDAP Required Support Instant Client Files 11.1.1.7.0 
+Install Log:Setting Up:  LDAP Secure Sockets Layer Files 11.1.1.7.0 
+Install Log:Setting Up:  Oracle Globalization Support 11.1.0.7.0 
+Install Log:Setting Up:  Expat libraries 2.0.1.0.1 
+Install Log:Setting Up:  Oracle  Application Development ModPLSQL 11.1.1.7.0 
+Install Log:Setting Up:  Oracle Help for the Web Shared Library 11.1.1.7.0 
+Install Log:Setting Up:  Oracle Help for the Web - UIX 11.1.1.7.0 
+Install Log:Setting Up:  Oracle Help for Java 11.1.1.7.0 
+Install Log:Setting Up:  Oracle XML Query 11.1.0.7.0 
+Install Log:Setting Up:  Oracle RAC Required Support Files-HAS 11.1.0.7.0 
+Install Log:Setting Up:  SQL*Plus Required Support Files 11.1.0.7.0 
+Install Log:Setting Up:  XDK Required Support Files 11.1.0.7.0 
+Install Log:Setting Up:  Agent Required Support Files 10.2.0.4.1 
+Install Log:Setting Up:  Parser Generator Required Support Files 11.1.0.7.0 
+Install Log:Setting Up:  Precompiler Required Support Files 11.1.0.7.0 
+Install Log:Setting Up:  Oracle Core Required Support Files 11.1.0.7.0 
+Install Log:Setting Up:  Oracle JFC Extended Windowing Toolkit 11.1.1.7.0 
+Install Log:Setting Up:  Oracle Extended Windowing Toolkit 11.1.1.7.0 
+Install Log:Setting Up:  Oracle Ice Browser 11.1.1.7.0 
+Install Log:Setting Up:  Oracle Help For Java 4.2.9.0.0 
+Install Log:Setting Up:  Oracle Locale Builder 11.1.0.7.0 
+Install Log:Setting Up:  Perl Modules 5.10.0.0.1 
+Install Log:Setting Up:  Perl Interpreter 5.10.0.0.1 
+Install Log:Setting Up:  Platform Required Support Files 11.1.0.7.0 
+Install Log:Setting Up:  Oracle Globalization Support 11.1.0.7.0 
+Install Log:Setting Up:  Oracle JDBC/OCI Instant Client 11.1.0.7.0 
+Install Log:Setting Up:  Oracle JDBC/THIN Interfaces 11.1.0.7.0 
+Install Log:Setting Up:  Oracle Upgrade Assistant 11.1.1.7.0 
+Install Log:Setting Up:  Oracle Configuration Manager 10.3.7.0.0 
+Install Log:Setting Up:  XML Parser for Java 11.1.0.7.0 
+Install Log:Setting Up:  Oracle Application Server Configuration 11.1.1.7.0 
+Install Log:Setting Up:  RDBMS Required Support Files for Instant Client 11.1.0.7.0 
+Install Log:Setting Up:  RDBMS Required Support Files 11.1.0.7.0 
+Install Log:Setting Up:  LDAP Required Support Files 11.1.1.7.0 
+Install Log:Setting Up:  Oracle Net Required Support Files 11.1.0.7.0 
+Install Log:Setting Up:  Required Support Files 11.1.0.7.0 
+Install Log:Setting Up:  Oracle XML Development Kit 11.1.0.7.0 
+Install Log:Setting Up:  OracleAS Web Cache 11.1.1.7.0 
+Install Log:Setting Up:  Oracle WebLogic Plugins 11.1.1.7.0 
+Install Log:Setting Up:  LDAP Audit Framework 11.1.1.7.0 
+Install Log:Setting Up:  Oracle Application Server Non J2EE Management Files 11.1.1.7.0 
+Install Log:Setting Up:  Assistant Common Files 11.1.0.7.0 
+Install Log:Setting Up:  Secure Socket Layer 11.1.0.7.0 
+Install Log:Setting Up:  Oracle Wallet Manager 11.1.1.7.0 
+Install Log:Setting Up:  Oracle DMSC (oracle.dmsc) 11.1.1.7.0 
+Install Log:Setting Up:  Oracle Process Management Node (oracle.opmn) 11.1.1.7.0 
+Install Log:Setting Up:  Oracle Upgrade Assistant 11.1.1.7.0 
+Install Log:Setting Up:  Oracle HTTP Server 2.0 11.1.1.7.0 
+Install Log:Setting Up:  Oracle WebTier and Utilities CD 11.1.1.7.0 
+Install Phase:SETUP	 State:END
+Install Log:Setup Completed
+Install Log:Saving the inventory. It may take few minutes.
+Inside onDoneProgress method ....
+inventoryLocation: /home/oracle/oraInventory
+DEBUG >>> : Adding ref home ...
+DEBUG >>> : Saving inventory ...
+DEBUG >>> : Added ref home .../oracle/Middleware/oracle_common
+Registering the Middleware Home ....
+/bin/chmod: cannot access `/oracle/Middleware/Oracle_WT1/css/admin/init.cssd': No such file or directory
+Removing the Middleware Home Entry from OracleHomeproperties ....
+Entering executeOneoffTool method
+oneoffFolder :/oracle/Middleware/Oracle_WT1/oneoffpatches
+Filter file listing...
+----------------------
+[F] : /oracle/Middleware/Oracle_WT1/oneoffpatches/p7707476_111070_Generic.zip
+[F] : /oracle/Middleware/Oracle_WT1/oneoffpatches/p7393921_111070_Generic.zip
+[F] : /oracle/Middleware/Oracle_WT1/oneoffpatches/p6750400_111070_Generic.zip
+[F] : /oracle/Middleware/Oracle_WT1/oneoffpatches/p7572595_111070_Linux-x86.zip
+[F] : /oracle/Middleware/Oracle_WT1/oneoffpatches/p7427144_111070_Generic.zip
+[F] : /oracle/Middleware/Oracle_WT1/oneoffpatches/p7663342_111070_Generic.zip
+[F] : /oracle/Middleware/Oracle_WT1/oneoffpatches/p6599470_111070_Generic.zip
+[F] : /oracle/Middleware/Oracle_WT1/oneoffpatches/p6845838_111070_Generic.zip
+[F] : /oracle/Middleware/Oracle_WT1/oneoffpatches/p7284982_111070_Generic.zip
+
+Entering Linux or other platforms
+Changing file permissions
+OneoffTool  Script Location: /tmp/tmpOneoffTool1418283725105.sh
+oneoff command is: /oracle/Middleware/Oracle_WT1/OPatch/opatch apply /oracle/Middleware/Oracle_WT1/oneoffpatches/p7707476_111070_Generic.zip -oh /oracle/Middleware/Oracle_WT1 -silent -invPtrLoc /etc/oraInst.loc
+[ProcessManager] Invoking:/tmp/tmpOneoffTool1418283725105.sh
+    stdout=[Oracle Interim Patch Installer version 11.1.0.9.9
+Copyright (c) 2012, Oracle Corporation.  All rights reserved.
+
+
+Oracle Home       : /oracle/Middleware/Oracle_WT1
+Central Inventory : /home/oracle/oraInventory
+   from           : /etc/oraInst.loc
+OPatch version    : 11.1.0.9.9
+OUI version       : 11.1.0.9.0
+Log file location : /oracle/Middleware/Oracle_WT1/cfgtoollogs/opatch/opatch2014-12-11_11-42-05AM_1.log
+
+Applying interim patch '7707476' to OH '/oracle/Middleware/Oracle_WT1'
+Verifying environment and performing prerequisite checks...
+All checks passed.
+Backing up files...
+
+Patching component oracle.dbjava.ic, 11.1.0.7.0...
+
+Patching component oracle.dbjava.jdbc, 11.1.0.7.0...
+
+Verifying the update...
+Patch 7707476 successfully applied
+Log file location: /oracle/Middleware/Oracle_WT1/cfgtoollogs/opatch/opatch2014-12-11_11-42-05AM_1.log
+
+OPatch succeeded.
+]    
+    stderr=[]    
+sbStderr.length():0
+sbStderr is empty
+[Applying patch /oracle/Middleware/Oracle_WT1/oneoffpatches/p7707476_111070_Generic.zip and the Opatch applied sucessfully ]
+oneoff command is: /oracle/Middleware/Oracle_WT1/OPatch/opatch apply /oracle/Middleware/Oracle_WT1/oneoffpatches/p7393921_111070_Generic.zip -oh /oracle/Middleware/Oracle_WT1 -silent -invPtrLoc /etc/oraInst.loc
+[ProcessManager] Invoking:/tmp/tmpOneoffTool1418283725105.sh
+    stdout=[Oracle Interim Patch Installer version 11.1.0.9.9
+Copyright (c) 2012, Oracle Corporation.  All rights reserved.
+
+
+Oracle Home       : /oracle/Middleware/Oracle_WT1
+Central Inventory : /home/oracle/oraInventory
+   from           : /etc/oraInst.loc
+OPatch version    : 11.1.0.9.9
+OUI version       : 11.1.0.9.0
+Log file location : /oracle/Middleware/Oracle_WT1/cfgtoollogs/opatch/opatch2014-12-11_11-42-22AM_1.log
+
+Applying interim patch '7393921' to OH '/oracle/Middleware/Oracle_WT1'
+Verifying environment and performing prerequisite checks...
+All checks passed.
+Backing up files...
+
+Patching component oracle.xdk.parser.java, 11.1.0.7.0...
+
+Verifying the update...
+Patch 7393921 successfully applied
+Log file location: /oracle/Middleware/Oracle_WT1/cfgtoollogs/opatch/opatch2014-12-11_11-42-22AM_1.log
+
+OPatch succeeded.
+]    
+    stderr=[]    
+sbStderr.length():0
+sbStderr is empty
+[Applying patch /oracle/Middleware/Oracle_WT1/oneoffpatches/p7707476_111070_Generic.zip and the Opatch applied sucessfully , Applying patch /oracle/Middleware/Oracle_WT1/oneoffpatches/p7393921_111070_Generic.zip and the Opatch applied sucessfully ]
+oneoff command is: /oracle/Middleware/Oracle_WT1/OPatch/opatch apply /oracle/Middleware/Oracle_WT1/oneoffpatches/p6750400_111070_Generic.zip -oh /oracle/Middleware/Oracle_WT1 -silent -invPtrLoc /etc/oraInst.loc
+[ProcessManager] Invoking:/tmp/tmpOneoffTool1418283725105.sh
+    stdout=[Oracle Interim Patch Installer version 11.1.0.9.9
+Copyright (c) 2012, Oracle Corporation.  All rights reserved.
+
+
+Oracle Home       : /oracle/Middleware/Oracle_WT1
+Central Inventory : /home/oracle/oraInventory
+   from           : /etc/oraInst.loc
+OPatch version    : 11.1.0.9.9
+OUI version       : 11.1.0.9.0
+Log file location : /oracle/Middleware/Oracle_WT1/cfgtoollogs/opatch/opatch2014-12-11_11-42-30AM_1.log
+
+Applying interim patch '6750400' to OH '/oracle/Middleware/Oracle_WT1'
+Verifying environment and performing prerequisite checks...
+All checks passed.
+Backing up files...
+
+Patching component oracle.dbjava.ic, 11.1.0.7.0...
+
+Patching component oracle.dbjava.jdbc, 11.1.0.7.0...
+
+Verifying the update...
+Patch 6750400 successfully applied
+Log file location: /oracle/Middleware/Oracle_WT1/cfgtoollogs/opatch/opatch2014-12-11_11-42-30AM_1.log
+
+OPatch succeeded.
+]    
+    stderr=[]    
+sbStderr.length():0
+sbStderr is empty
+[Applying patch /oracle/Middleware/Oracle_WT1/oneoffpatches/p7707476_111070_Generic.zip and the Opatch applied sucessfully , Applying patch /oracle/Middleware/Oracle_WT1/oneoffpatches/p7393921_111070_Generic.zip and the Opatch applied sucessfully , Applying patch /oracle/Middleware/Oracle_WT1/oneoffpatches/p6750400_111070_Generic.zip and the Opatch applied sucessfully ]
+oneoff command is: /oracle/Middleware/Oracle_WT1/OPatch/opatch apply /oracle/Middleware/Oracle_WT1/oneoffpatches/p7572595_111070_Linux-x86.zip -oh /oracle/Middleware/Oracle_WT1 -silent -invPtrLoc /etc/oraInst.loc
+[ProcessManager] Invoking:/tmp/tmpOneoffTool1418283725105.sh
+    stdout=[Oracle Interim Patch Installer version 11.1.0.9.9
+Copyright (c) 2012, Oracle Corporation.  All rights reserved.
+
+
+Oracle Home       : /oracle/Middleware/Oracle_WT1
+Central Inventory : /home/oracle/oraInventory
+   from           : /etc/oraInst.loc
+OPatch version    : 11.1.0.9.9
+OUI version       : 11.1.0.9.0
+Log file location : /oracle/Middleware/Oracle_WT1/cfgtoollogs/opatch/opatch2014-12-11_11-42-49AM_1.log
+
+Applying interim patch '7572595' to OH '/oracle/Middleware/Oracle_WT1'
+Verifying environment and performing prerequisite checks...
+Prerequisite check "CheckPatchApplicableOnCurrentPlatform" failed.
+The details are:
+Patch ( 7572595 ) is not applicable on current platform.
+Platform ID needed is : 226
+Platform IDs supported by patch are: 46 
+Patch 7572595: Optional component(s) missing : [ oracle.rdbms, 11.1.0.7.0 ] 
+Log file location: /oracle/Middleware/Oracle_WT1/cfgtoollogs/opatch/opatch2014-12-11_11-42-49AM_1.log
+
+Recommended actions: This patch requires some components to be installed in the home. Either the Oracle Home doesn't have the components or this patch is not suitable for this Oracle Home.
+
+OPatch failed with error code 39
+]    
+    stderr=[]    
+sbStderr.length():0
+sbStderr is empty
+[Applying patch /oracle/Middleware/Oracle_WT1/oneoffpatches/p7707476_111070_Generic.zip and the Opatch applied sucessfully , Applying patch /oracle/Middleware/Oracle_WT1/oneoffpatches/p7393921_111070_Generic.zip and the Opatch applied sucessfully , Applying patch /oracle/Middleware/Oracle_WT1/oneoffpatches/p6750400_111070_Generic.zip and the Opatch applied sucessfully , Applying patch /oracle/Middleware/Oracle_WT1/oneoffpatches/p7572595_111070_Linux-x86.zip and the Opatch applied sucessfully ]
+oneoff command is: /oracle/Middleware/Oracle_WT1/OPatch/opatch apply /oracle/Middleware/Oracle_WT1/oneoffpatches/p7427144_111070_Generic.zip -oh /oracle/Middleware/Oracle_WT1 -silent -invPtrLoc /etc/oraInst.loc
+[ProcessManager] Invoking:/tmp/tmpOneoffTool1418283725105.sh
+    stdout=[Oracle Interim Patch Installer version 11.1.0.9.9
+Copyright (c) 2012, Oracle Corporation.  All rights reserved.
+
+
+Oracle Home       : /oracle/Middleware/Oracle_WT1
+Central Inventory : /home/oracle/oraInventory
+   from           : /etc/oraInst.loc
+OPatch version    : 11.1.0.9.9
+OUI version       : 11.1.0.9.0
+Log file location : /oracle/Middleware/Oracle_WT1/cfgtoollogs/opatch/opatch2014-12-11_11-42-55AM_1.log
+
+Applying interim patch '7427144' to OH '/oracle/Middleware/Oracle_WT1'
+Verifying environment and performing prerequisite checks...
+All checks passed.
+Backing up files...
+
+Patching component oracle.xdk.parser.java, 11.1.0.7.0...
+
+Verifying the update...
+Patch 7427144 successfully applied
+Log file location: /oracle/Middleware/Oracle_WT1/cfgtoollogs/opatch/opatch2014-12-11_11-42-55AM_1.log
+
+OPatch succeeded.
+]    
+    stderr=[]    
+sbStderr.length():0
+sbStderr is empty
+[Applying patch /oracle/Middleware/Oracle_WT1/oneoffpatches/p7707476_111070_Generic.zip and the Opatch applied sucessfully , Applying patch /oracle/Middleware/Oracle_WT1/oneoffpatches/p7393921_111070_Generic.zip and the Opatch applied sucessfully , Applying patch /oracle/Middleware/Oracle_WT1/oneoffpatches/p6750400_111070_Generic.zip and the Opatch applied sucessfully , Applying patch /oracle/Middleware/Oracle_WT1/oneoffpatches/p7572595_111070_Linux-x86.zip and the Opatch applied sucessfully , Applying patch /oracle/Middleware/Oracle_WT1/oneoffpatches/p7427144_111070_Generic.zip and the Opatch applied sucessfully ]
+oneoff command is: /oracle/Middleware/Oracle_WT1/OPatch/opatch apply /oracle/Middleware/Oracle_WT1/oneoffpatches/p7663342_111070_Generic.zip -oh /oracle/Middleware/Oracle_WT1 -silent -invPtrLoc /etc/oraInst.loc
+[ProcessManager] Invoking:/tmp/tmpOneoffTool1418283725105.sh
+    stdout=[Oracle Interim Patch Installer version 11.1.0.9.9
+Copyright (c) 2012, Oracle Corporation.  All rights reserved.
+
+
+Oracle Home       : /oracle/Middleware/Oracle_WT1
+Central Inventory : /home/oracle/oraInventory
+   from           : /etc/oraInst.loc
+OPatch version    : 11.1.0.9.9
+OUI version       : 11.1.0.9.0
+Log file location : /oracle/Middleware/Oracle_WT1/cfgtoollogs/opatch/opatch2014-12-11_11-43-03AM_1.log
+
+Applying interim patch '7663342' to OH '/oracle/Middleware/Oracle_WT1'
+Verifying environment and performing prerequisite checks...
+All checks passed.
+Backing up files...
+
+Patching component oracle.xdk.parser.java, 11.1.0.7.0...
+
+Verifying the update...
+Patch 7663342 successfully applied
+Log file location: /oracle/Middleware/Oracle_WT1/cfgtoollogs/opatch/opatch2014-12-11_11-43-03AM_1.log
+
+OPatch succeeded.
+]    
+    stderr=[]    
+sbStderr.length():0
+sbStderr is empty
+[Applying patch /oracle/Middleware/Oracle_WT1/oneoffpatches/p7707476_111070_Generic.zip and the Opatch applied sucessfully , Applying patch /oracle/Middleware/Oracle_WT1/oneoffpatches/p7393921_111070_Generic.zip and the Opatch applied sucessfully , Applying patch /oracle/Middleware/Oracle_WT1/oneoffpatches/p6750400_111070_Generic.zip and the Opatch applied sucessfully , Applying patch /oracle/Middleware/Oracle_WT1/oneoffpatches/p7572595_111070_Linux-x86.zip and the Opatch applied sucessfully , Applying patch /oracle/Middleware/Oracle_WT1/oneoffpatches/p7427144_111070_Generic.zip and the Opatch applied sucessfully , Applying patch /oracle/Middleware/Oracle_WT1/oneoffpatches/p7663342_111070_Generic.zip and the Opatch applied sucessfully ]
+oneoff command is: /oracle/Middleware/Oracle_WT1/OPatch/opatch apply /oracle/Middleware/Oracle_WT1/oneoffpatches/p6599470_111070_Generic.zip -oh /oracle/Middleware/Oracle_WT1 -silent -invPtrLoc /etc/oraInst.loc
+[ProcessManager] Invoking:/tmp/tmpOneoffTool1418283725105.sh
+    stdout=[Oracle Interim Patch Installer version 11.1.0.9.9
+Copyright (c) 2012, Oracle Corporation.  All rights reserved.
+
+
+Oracle Home       : /oracle/Middleware/Oracle_WT1
+Central Inventory : /home/oracle/oraInventory
+   from           : /etc/oraInst.loc
+OPatch version    : 11.1.0.9.9
+OUI version       : 11.1.0.9.0
+Log file location : /oracle/Middleware/Oracle_WT1/cfgtoollogs/opatch/opatch2014-12-11_11-43-11AM_1.log
+
+Applying interim patch '6599470' to OH '/oracle/Middleware/Oracle_WT1'
+Verifying environment and performing prerequisite checks...
+All checks passed.
+Backing up files...
+
+Patching component oracle.dbjava.ic, 11.1.0.7.0...
+
+Patching component oracle.dbjava.jdbc, 11.1.0.7.0...
+
+Verifying the update...
+Patch 6599470 successfully applied
+Log file location: /oracle/Middleware/Oracle_WT1/cfgtoollogs/opatch/opatch2014-12-11_11-43-11AM_1.log
+
+OPatch succeeded.
+]    
+    stderr=[]    
+sbStderr.length():0
+sbStderr is empty
+[Applying patch /oracle/Middleware/Oracle_WT1/oneoffpatches/p7707476_111070_Generic.zip and the Opatch applied sucessfully , Applying patch /oracle/Middleware/Oracle_WT1/oneoffpatches/p7393921_111070_Generic.zip and the Opatch applied sucessfully , Applying patch /oracle/Middleware/Oracle_WT1/oneoffpatches/p6750400_111070_Generic.zip and the Opatch applied sucessfully , Applying patch /oracle/Middleware/Oracle_WT1/oneoffpatches/p7572595_111070_Linux-x86.zip and the Opatch applied sucessfully , Applying patch /oracle/Middleware/Oracle_WT1/oneoffpatches/p7427144_111070_Generic.zip and the Opatch applied sucessfully , Applying patch /oracle/Middleware/Oracle_WT1/oneoffpatches/p7663342_111070_Generic.zip and the Opatch applied sucessfully , Applying patch /oracle/Middleware/Oracle_WT1/oneoffpatches/p6599470_111070_Generic.zip and the Opatch applied sucessfully ]
+oneoff command is: /oracle/Middleware/Oracle_WT1/OPatch/opatch apply /oracle/Middleware/Oracle_WT1/oneoffpatches/p6845838_111070_Generic.zip -oh /oracle/Middleware/Oracle_WT1 -silent -invPtrLoc /etc/oraInst.loc
+[ProcessManager] Invoking:/tmp/tmpOneoffTool1418283725105.sh
+    stdout=[Oracle Interim Patch Installer version 11.1.0.9.9
+Copyright (c) 2012, Oracle Corporation.  All rights reserved.
+
+
+Oracle Home       : /oracle/Middleware/Oracle_WT1
+Central Inventory : /home/oracle/oraInventory
+   from           : /etc/oraInst.loc
+OPatch version    : 11.1.0.9.9
+OUI version       : 11.1.0.9.0
+Log file location : /oracle/Middleware/Oracle_WT1/cfgtoollogs/opatch/opatch2014-12-11_11-43-21AM_1.log
+
+Applying interim patch '6845838' to OH '/oracle/Middleware/Oracle_WT1'
+Verifying environment and performing prerequisite checks...
+All checks passed.
+Backing up files...
+
+Patching component oracle.dbjava.ic, 11.1.0.7.0...
+
+Patching component oracle.dbjava.jdbc, 11.1.0.7.0...
+
+Verifying the update...
+Patch 6845838 successfully applied
+Log file location: /oracle/Middleware/Oracle_WT1/cfgtoollogs/opatch/opatch2014-12-11_11-43-21AM_1.log
+
+OPatch succeeded.
+]    
+    stderr=[]    
+sbStderr.length():0
+sbStderr is empty
+[Applying patch /oracle/Middleware/Oracle_WT1/oneoffpatches/p7707476_111070_Generic.zip and the Opatch applied sucessfully , Applying patch /oracle/Middleware/Oracle_WT1/oneoffpatches/p7393921_111070_Generic.zip and the Opatch applied sucessfully , Applying patch /oracle/Middleware/Oracle_WT1/oneoffpatches/p6750400_111070_Generic.zip and the Opatch applied sucessfully , Applying patch /oracle/Middleware/Oracle_WT1/oneoffpatches/p7572595_111070_Linux-x86.zip and the Opatch applied sucessfully , Applying patch /oracle/Middleware/Oracle_WT1/oneoffpatches/p7427144_111070_Generic.zip and the Opatch applied sucessfully , Applying patch /oracle/Middleware/Oracle_WT1/oneoffpatches/p7663342_111070_Generic.zip and the Opatch applied sucessfully , Applying patch /oracle/Middleware/Oracle_WT1/oneoffpatches/p6599470_111070_Generic.zip and the Opatch applied sucessfully , Applying patch /oracle/Middleware/Oracle_WT1/oneoffpatches/p6845838_111070_Generic.zip and the Opatch applied sucessfully ]
+oneoff command is: /oracle/Middleware/Oracle_WT1/OPatch/opatch apply /oracle/Middleware/Oracle_WT1/oneoffpatches/p7284982_111070_Generic.zip -oh /oracle/Middleware/Oracle_WT1 -silent -invPtrLoc /etc/oraInst.loc
+[ProcessManager] Invoking:/tmp/tmpOneoffTool1418283725105.sh
+    stdout=[Oracle Interim Patch Installer version 11.1.0.9.9
+Copyright (c) 2012, Oracle Corporation.  All rights reserved.
+
+
+Oracle Home       : /oracle/Middleware/Oracle_WT1
+Central Inventory : /home/oracle/oraInventory
+   from           : /etc/oraInst.loc
+OPatch version    : 11.1.0.9.9
+OUI version       : 11.1.0.9.0
+Log file location : /oracle/Middleware/Oracle_WT1/cfgtoollogs/opatch/opatch2014-12-11_11-43-38AM_1.log
+
+Applying interim patch '7284982' to OH '/oracle/Middleware/Oracle_WT1'
+Verifying environment and performing prerequisite checks...
+Interim patch 7284982 is a subset of the patch(es) [  7707476 ] in OH /oracle/Middleware/Oracle_WT1.
+All the fixes of this patch 7284982 is already present in the Oracle Home. No need to apply this patch.
+Log file location: /oracle/Middleware/Oracle_WT1/cfgtoollogs/opatch/opatch2014-12-11_11-43-38AM_1.log
+
+Recommended actions: The fixes by this patch are currently in the Oracle Home. There is no need to apply this patch.
+
+OPatch failed with error code 56
+]    
+    stderr=[]    
+sbStderr.length():0
+sbStderr is empty
+[Applying patch /oracle/Middleware/Oracle_WT1/oneoffpatches/p7707476_111070_Generic.zip and the Opatch applied sucessfully , Applying patch /oracle/Middleware/Oracle_WT1/oneoffpatches/p7393921_111070_Generic.zip and the Opatch applied sucessfully , Applying patch /oracle/Middleware/Oracle_WT1/oneoffpatches/p6750400_111070_Generic.zip and the Opatch applied sucessfully , Applying patch /oracle/Middleware/Oracle_WT1/oneoffpatches/p7572595_111070_Linux-x86.zip and the Opatch applied sucessfully , Applying patch /oracle/Middleware/Oracle_WT1/oneoffpatches/p7427144_111070_Generic.zip and the Opatch applied sucessfully , Applying patch /oracle/Middleware/Oracle_WT1/oneoffpatches/p7663342_111070_Generic.zip and the Opatch applied sucessfully , Applying patch /oracle/Middleware/Oracle_WT1/oneoffpatches/p6599470_111070_Generic.zip and the Opatch applied sucessfully , Applying patch /oracle/Middleware/Oracle_WT1/oneoffpatches/p6845838_111070_Generic.zip and the Opatch applied sucessfully , Applying patch /oracle/Middleware/Oracle_WT1/oneoffpatches/p7284982_111070_Generic.zip and the Opatch applied sucessfully ]
+Setting current page standalone validations to true
+[RootScriptUtils.getRootActions] privilegedPorts = null
+[RootScriptUtils.getRootActions] isOhsSelectedForConfiguration = true
+[RootScriptUtils.getRootActions] isWebCacheSelectedForConfiguration = false
+[RootScriptUtils.getRootActions] oracleHome = /oracle/Middleware/Oracle_WT1
+JAVA.LIBRARY.PATH:/tmp/OraInstall2014-12-11_10-26-43AM/jdk/jre/lib/i386/server:/tmp/OraInstall2014-12-11_10-26-43AM/jdk/jre/lib/i386:/tmp/OraInstall2014-12-11_10-26-43AM/jdk/jre/../lib/i386:/usr/java/packages/lib/i386:/lib:/usr/lib:/oracle/Middleware/Oracle_WT1/lib/:/oracle/Middleware/Oracle_WT1/jdk/jre/lib/i386/
+getting all the checkpoint properties..
+getting all the checkpoint properties..
+opmnctl startall: starting opmn and all managed processes...
+progress in calculate progress50
+opmnctl reload: reconfiguring opmn...
+progress in calculate progress50
+In Config Module Finish Event...
+Setting m_MBText=MB
+Setting current page standalone validations to true
+inventoryLocation: /home/oracle/oraInventory
+outputFile:/home/oracle/oraInventory/logs/installProfile2014-12-11_10-26-43AM.log
+in writeProfile method..
+Calling OUI Exit Operations Here.
+inventoryLocation: /home/oracle/oraInventory

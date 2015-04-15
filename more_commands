@@ -1,0 +1,48 @@
+﻿ccs -f /etc/cluster/cluster.conf --createcluster PREPRODGW
+ccs -f /etc/cluster/cluster.conf --addnode msk01-pprodgw1
+ccs -f /etc/cluster/cluster.conf --addnode msk01-pprodgw2
+ccs -f /etc/cluster/cluster.conf --addfencedev pcmk agent=fence_pcmk
+ccs -f /etc/cluster/cluster.conf --addmethod pcmk-redirect msk01-pprodgw1
+ccs -f /etc/cluster/cluster.conf --addmethod pcmk-redirect msk01-pprodgw2
+ccs -f /etc/cluster/cluster.conf --addfenceinst pcmk msk01-pprodgw1 pcmk-redirect port=msk01-pprodgw1
+ccs -f /etc/cluster/cluster.conf --addfenceinst pcmk msk01-pprodgw2 pcmk-redirect port=msk01-pprodgw2
+echo "CMAN_QUORUM_TIMEOUT=0" >> /etc/sysconfig/cman
+
+
+
+configure primitive res_drbd_siebel ocf:linbit:drbd params drbd_resource="clusterdb_res" op monitor interval="15s"
+
+configure ms ms_drbd_siebel res_drbd_siebel meta master-max="1" master-nodemax="1" clone-max="2" clone-node-max="1" notify="true"
+
+configure primitive res_fs_siebel ocf:heartbeat:Filesystem params device="/dev/drbd0" directory="/oracle/Siebel/8.1.1.11.0/ses/" fstype="ext4"
+
+
+configure group rg_siebel res_fs_siebel
+
+configure colocation c_siebel_on_drbd inf: rg_siebel ms_drbd_siebel:Master
+
+configure order o_drbd_before_siebel inf: ms_drbd_siebel:promote rg_siebel:start
+
+
+
+pcs resource create res_mnt_sieb_fs ocf:heartbeat:Filesystem op="bind" device="/oracle/Siebel/fs/" directory="/opt/siebel/fs/" 
+
+pcs resource create res_smb_share lsb:smb op monitor interval="20s" timeout="10s"
+
+
+pcs resource create res_cluster_ip ocf:heartbeat:IPaddr2 ip=10.20.15.69 cidr_netmask=24 op monitor interval=30s
+
+pcs resource create res_zabbix_agent lsb:zabbix-agent op monitor interval="20s" timeout="10s"
+pcs resource group add rg_siebel res_zabbix_agent
+
+
+pcs resource create res_sieb_gw lsb:sieb_srv timeout="60s"
+pcs resource update res_sieb_gw op start timeout=120s op stop timeout=120s op monitor interval=20s timeout=60s
+pcs resource group add rg_siebel res_sieb_gw
+
+
+crm configure property maintenance-mode=true
+
+
+chkconfig corosync off  !!!
+

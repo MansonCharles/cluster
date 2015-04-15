@@ -1,0 +1,17 @@
+
+[Dir Hist New Right Panel]
+0=/home/oracle
+
+[cmdline]
+0=
+
+[Dir Hist New Left Panel]
+0=/home/oracle
+1=/home
+2=/
+3=/oracle
+4=/oracle/Siebel
+5=/oracle/Siebel/8.1.1.11.0
+6=/oracle/Siebel/8.1.1.11.0/ses
+7=/oracle/Siebel/8.1.1.11.0/ses/gtwysrvr
+8=/oracle/Siebel/8.1.1.11.0/ses/gtwysrvr/log

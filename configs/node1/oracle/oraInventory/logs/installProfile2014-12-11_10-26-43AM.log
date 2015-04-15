@@ -1,0 +1,43 @@
+Copyright (c) 1999, 2013, Oracle and/or its affiliates. All rights reserved.
+#This is the time taken for the interview/data collection phase.
+Interview Time : 185 seconds.
+#Time taken to copy files to the machine
+Install Time : 146 seconds.
+#Time taken to link files on the machine. This is not applicable to Windows Systems.
+Link Time : 0 seconds.
+#Time taken to configure the product.
+Configuration Time : 17 seconds.
+#This is the time taken to complete the full install session.
+Session Time : 1601 seconds.
+#Operating System on the machine
+Operating System : Linux
+#Processor on the machine
+Processor Architecture : i386
+#The cycle speed of the CPU
+CPU Speed : 2.0830078125 GHz
+#This is the number of CPUs available to the installer's JVM
+CPU Number : 2 Processors.
+#This is the total RAM on the system
+Total Memory : 4704 MB.
+#RAM available to the installer's JVM during the install session.
+Available Memory : 40 MB.
+#Available Swap space on this machine when installer started
+Available Swap Space : 6199 MB.
+#Maximum number of threads at any given instance during this install session.
+Peak Thread Count : 21 Threads.
+#Installation Directory
+Oracle Home : /oracle/Middleware/Oracle_WT1
+#Indicates SILENT or GUI mode install type.
+Install Mode : GUI
+#Total size of files copied on the machine by the installer
+Oracle Home Size : 0.9925555745139718 GB.
+#The location of the shiphome
+Installed From : /oracle/t/Disk1/install/linux/../../stage/products.xml
+#Time Taken For Step: Create And Start AS Instance
+ACTION(Web Tier Configuration) STEP.Create And Start AS Instance : 3 seconds.
+#Time Taken For Step: Create And Start OHS Component
+ACTION(Web Tier Configuration) STEP.Create And Start OHS Component : 9 seconds.
+#Time Taken For ConfigAction:Web Tier Configuration
+ACTION.Web Tier Configuration : 13 seconds.
+
+

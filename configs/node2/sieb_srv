@@ -1,0 +1,33 @@
+#!/bin/bash
+# chkconfig: 345 72 32
+# description: siebel auto start-stop script.
+### BEGIN INIT INFO
+# Provides: sieb_srv
+# Required-Start:
+# Required-Stop:
+# Default-Start: 2 3 4 5
+# Default-Stop: 0 1 6
+# Short-Description: start and stop siebel
+# Description: Start, stop and save siebel
+### END INIT INFO
+RETVAL=0
+case "$1" in
+    'start')
+        touch /var/lock/subsys/sieb_srv
+        su - oracle -c "/home/oracle/sieb_srv.sh start"
+	RETVAL=$?
+        ;;
+    'stop')
+        rm -if /var/lock/subsys/sieb_srv
+        su - oracle -c "/home/oracle/sieb_srv.sh stop"
+	RETVAL=$?
+        ;;
+    'status')
+        su - oracle -c "/home/oracle/sieb_srv.sh status"
+	RETVAL=$?
+        ;;
+    *)
+        echo $"Usage: $0 {start|stop|status}"
+        RETVAL=1
+esac
+exit $RETVAL

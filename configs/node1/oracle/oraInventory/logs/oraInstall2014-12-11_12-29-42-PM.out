@@ -1,0 +1,37 @@
+done config ocm
+Executing Command: /bin/csh -c chmod -R 755 /oracle/Siebel/8.1.1.11.0/ses
+.xml
+Installer baseMap: SECURITY_UPDATES_VIA_MYORACLESUPPORT   false
+Installer baseMap: ORACLE_HOME   /oracle/Siebel/8.1.1.11.0/ses
+Installer baseMap: METALINK_PASSWORD   
+Installer baseMap: DECLINE_SECURITY_UPDATES   true
+Installer baseMap: MYORACLESUPPORT_PASSWORD   
+Installer baseMap: SHOW_CONFIG_TOOL_PAGE   false
+Installer baseMap: MYORACLESUPPORT_USERNAME   
+Installer baseMap: SHOW_CUSTOM_TREE_PAGE   false
+Installer baseMap: SELECTED_LANGUAGES   en
+Installer baseMap: SECURITY_UPDATES_VIA_METALINK   false
+Installer baseMap: METALINK_USERNAME   
+Installer baseMap: s_swsecrypto_value   null
+Installer baseMap: s_progFolder_Var   null
+Installer baseMap: COLLECTOR_IGNORE_FAILURES   true
+Installer baseMap: SHOW_INSTALL_PROGRESS_PAGE   false
+Installer baseMap: SHOW_WELCOME_PAGE   false
+Installer baseMap: TLDepModes   Custom
+Installer baseMap: COMPONENT_LANGUAGES   en
+Installer baseMap: INSTALL_TYPE   Custom
+Installer baseMap: DEP_MODE   Custom
+Installer baseMap: ORACLE_HOME_NAME   SES_HOME
+Installer baseMap: COLLECTOR_IGNORE_CONFIGURATION   false
+Gateway Installed? true
+Siebel Server Installed? true
+DB Utils Installed? true
+EAI Installed? false
+Gateway Dep List4
+Gateway Base Dependency List: "ses.gateway.main:8.1.1.11.0","ses.gateway.misc:8.1.1.11.0","ses.gateway.config:8.1.1.11.0","ses.gateway.thirdparty:8.1.1.11.0",
+Gateway Base Dependency List: {"ses.gateway.main:8.1.1.11.0","ses.gateway.misc:8.1.1.11.0","ses.gateway.config:8.1.1.11.0","ses.gateway.thirdparty:8.1.1.11.0"}
+Siebel Server Dep List
+Siebel Base Dependency List: {"ses.siebel.agent:8.1.1.11.0","ses.siebel.bscripts:8.1.1.11.0","ses.siebel.cfg:8.1.1.11.0","ses.siebel.config:8.1.1.11.0","ses.siebel.isstempl:8.1.1.11.0","ses.siebel.javabean:8.1.1.11.0","ses.siebel.lex:8.1.1.11.0","ses.siebel.marketing:8.1.1.11.0","ses.siebel.obj:8.1.1.11.0","ses.siebel.objmgr:8.1.1.11.0","ses.siebel.pimsi:8.1.1.11.0","ses.siebel.sample:8.1.1.11.0","ses.siebel.sdqconnector:8.1.1.11.0","ses.siebel.search:8.1.1.11.0","ses.siebel.siebsrvr:8.1.1.11.0","ses.siebel.syncsrvr:8.1.1.11.0","ses.siebel.xml:8.1.1.11.0","ses.siebel.xmlp:8.1.1.11.0","ses.siebel.xslt:8.1.1.11.0","ses.siebel.thirdparty:8.1.1.11.0"}
+DB Utils List
+DB Utils Base Dependency List:: {"ses.db.always:8.1.1.11.0","ses.db.config:8.1.1.11.0","ses.db.db2udb:8.1.1.11.0","ses.db.db2390:8.1.1.11.0","ses.db.dbcommon:8.1.1.11.0","ses.db.dblang:8.1.1.11.0","ses.db.files:8.1.1.11.0","ses.db.mssql:8.1.1.11.0","ses.db.oracle:8.1.1.11.0","ses.db.thirdparty:8.1.1.11.0"}
+SES Base Dependency List: {"ses.db:8.1.1.11.0","ses.siebel:8.1.1.11.0","ses.gateway:8.1.1.11.0"}

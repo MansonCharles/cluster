@@ -1,0 +1,189 @@
+Creating two nodes cluster
+0)
+--
+YUM proxy:
+vi /etc/yum.conf
+proxy=http://10.0.80.240:8080
+
+--
+service iptables stop
+chkconfig iptables off
+
+--
+disable selinux
+
+--
+export http_proxy="http://10.0.80.240:8080"
+export https_proxy="http://10.0.80.240:8080"
+
+--
+ssh keyless auth
+
+--
+node names in /etc/hosts
+
+1) Repositories
+##EPEL repo:
+##wget http://download.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
+##yum localinstall epel-release-6-8.noarch.rpm -y
+
+ELrepo:
+rpm --import https://www.elrepo.org/RPM-GPG-KEY-elrepo.org
+rpm -Uvh http://www.elrepo.org/elrepo-release-6-6.el6.elrepo.noarch.rpm
+
+
+2)Required cluster packages installation:
+yum install -y drbd83-utils.x86_64 pcs.x86_64 cman.x86_64 pacemaker.x86_64
+yum remove -y drbd83-utils.x86_64
+yum install -y drbd84-utils.x86_64
+
+
+3)HA SuSe repo + crmsh package:
+cd /etc/yum.repos.d/
+wget http://download.opensuse.org/repositories/network:ha-clustering:Stable/RedHat_RHEL-6/network:ha-clustering:Stable.repo
+yum install -y crmsh.x86_64
+rm -rfv network:ha-clustering:Stable.repo
+cd
+
+
+3)Create and prepare cluster:
+ccs -f /etc/cluster/cluster.conf --createcluster TESTCLUSTER
+ccs -f /etc/cluster/cluster.conf --addnode msk01-pcstmp01
+ccs -f /etc/cluster/cluster.conf --addnode msk01-pcstmp02
+ccs -f /etc/cluster/cluster.conf --addfencedev pcmk agent=fence_pcmk
+ccs -f /etc/cluster/cluster.conf --addmethod pcmk-redirect msk01-pcstmp01
+ccs -f /etc/cluster/cluster.conf --addmethod pcmk-redirect msk01-pcstmp02
+ccs -f /etc/cluster/cluster.conf --addfenceinst pcmk msk01-pcstmp01 pcmk-redirect port=msk01-pcstmp01
+ccs -f /etc/cluster/cluster.conf --addfenceinst pcmk msk01-pcstmp02 pcmk-redirect port=msk01-pcstmp02
+echo "CMAN_QUORUM_TIMEOUT=0" >> /etc/sysconfig/cman
+
+For UDPU transport in use change:
+    RHEL 6: <cman transport="udpu"/> in `/etc/cluster/cluster.conf
+    RHEL 7: totem { transport: udpu } in /etc/corosync/corosync.conf
+
+
+scp /etc/sysconfig/cman msk01-pcstmp02:"/etc/sysconfig/cman"
+scp /etc/cluster/cluster.conf msk01-pcstmp02:"/etc/cluster/cluster.conf"
+
+-- ON BOTH NODES --
+chkconfig pacemaker on
+chkconfig cman on
+chkconfig corosync off
+chkconfig drbd off
+service cman start
+service pacemaker start
+--	--	 --
+pcs property set stonith-enabled=false
+pcs property set no-quorum-policy=ignore
+pcs property set maintenance-mode=true
+
+4)DRBD setup:
+
+mkdir -p /DRBD
+
+--
+File /etc/drbd.d/drbd0.res (on node01 and node02):
+{addon = drbd0.res}
+
+scp /etc/drbd.d/drbd0.res msk01-pcstmp02:"/etc/drbd.d/drbd0.res"
+
+-- ON BOTH NODES --
+drbdadm create-md drbd0
+drbdadm up drbd0
+--	--	 --
+
+drbdadm primary --force drbd0
+drbd-overview
+
+--
+mkfs.ext4 /dev/drbd0
+
+
+pcs cluster cib add_drbd
+pcs -f add_drbd resource create drbd_data ocf:linbit:drbd drbd_resource=drbd0 op monitor interval=15s
+pcs -f add_drbd resource master drbd_data_sync drbd_data master-max=1 master-node-max=1 clone-max=2 clone-node-max=1 notify=true
+pcs -f add_drbd resource show
+pcs cluster cib-push add_drbd
+
+
+5)Resources and groups setup:
+pcs cluster cib fs_mnt
+pcs -f fs_mnt resource create res_drbd_mnt ocf:heartbeat:Filesystem device="/dev/drbd0" directory="/DRBD" fstype="ext4" op monitor interval="20s"
+pcs -f fs_mnt resource group add gr_main res_drbd_mnt
+pcs -f fs_mnt constraint colocation add gr_main drbd_data_sync INFINITY with-rsc-role=Master
+pcs -f fs_mnt constraint order promote drbd_data_sync then start gr_main
+pcs -f fs_mnt resource show
+
+--Migration failover--
+pcs resource defaults migration-threshold=3
+
+--EXAMPLE RESOURCES--
+yum install -y haproxy.x86_64 httpd.x86_64 wget.x86_64 samba.x86_64
+mkdir /mounts_example
+mkdir /mnt_point_example
+pcs cluster cib resources_example
+pcs -f resources_example resource create res_smb_share lsb:smb op monitor interval="20s" timeout="10s" --group gr_main
+pcs -f resources_example resource create res_nfs_share lsb:nfs op monitor interval="20s" timeout="10s" --group gr_main
+pcs -f resources_example resource create res_apache apache configfile="/etc/httpd/conf/httpd.conf" statusurl="http://127.0.0.1/server-status" --group gr_main
+pcs -f resources_example resource create res_haproxy lsb:haproxy op monitor interval=30s op start interval=0s op stop interval=0s --group gr_main
+pcs -f resources_example resource show
+
+
+
+--STONITH CONFIGURATION--
+pcs cluster cib stonith_cfg
+pcs -f stonith_cfg stonith create fence_vm01 fence_vmware_soap pcmk_host_list="msk01-pcstmp01" ipaddr="10.0.80.87" action="reboot" login="pcstmp_svc" passwd="P@ssw0rd" port="msk01-pcstmp01" ssl=1 delay="15" shell_timeout=60 login_timeout=60 op monitor interval=120s timeout=160s op start interval=0s timeout=90s
+pcs -f stonith_cfg stonith create fence_vm02 fence_vmware_soap pcmk_host_list="msk01-pcstmp02" ipaddr="10.0.80.87" action="reboot" login="pcstmp_svc" passwd="P@ssw0rd" port="msk01-pcstmp02" ssl=1 shell_timeout=60 login_timeout=60 op monitor interval=90s timeout=160s op start interval=0s timeout=90s
+pcs cluster cib-push stonith_cfg
+
+pcs property set stonith-enabled=true
+pcs property set no-quorum-policy=ignore
+pcs property
+
+
+
+---MONITORING---
+{if $? > 0 = very_bad}
+visudo
+zabbix ALL=(ALL) NOPASSWD:/usr/sbin/drbd-overview
+zabbix ALL=(ALL) NOPASSWD:/usr/sbin/pcs status --full
+zabbix ALL=(ALL) NOPASSWD:/usr/sbin/crm_mon -1f
+Defaults:zabbix    !requiretty
+
+
+1)/usr/sbin/drbd-overview | grep -i -c Unknown
+Нарушена блочная репликация на кластере между нодами.
+
+
+2)/usr/sbin/drbd-overview | grep -i -c StandAlone
+Блочная репликация на кластере остановлена.
+
+
+3)/usr/sbin/pcs status --full | grep -i -c unmanaged
+Ресурс кластера перешел в состояние unmanaged
+
+
+4)/usr/sbin/pcs status --full | grep -i -c Error
+Подключение к кластеру невозможно, кластерное ПО остановлено либо переведено в стендбай.
+
+
+5)/usr/sbin/pcs status --full | grep -i -c failed
+Ресурс кластера перешел в состояние failed.
+
+
+6)/usr/sbin/pcs status --full | grep -i -c stopped
+Ресурс кластера перешел в состояние stopped
+
+
+7)/usr/sbin/crm_mon -1f | grep -i -c fail-count
+Количество неудачных запусков ресурса выше нормы.
+
+8)usr/sbin/drbd-overview | grep Inconsistent
+Нарушена синхронизация блочных устройств кластера
+
+/usr/sbin/drbd-overview | grep -i -c Unknown
+/usr/sbin/drbd-overview | grep -i -c StandAlone
+/usr/sbin/pcs status --full | grep -i -c unmanaged
+/usr/sbin/pcs status --full | grep -i -c Error
+/usr/sbin/pcs status --full | grep -i -c failed
+/usr/sbin/pcs status --full | grep -i -c stopped

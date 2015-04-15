@@ -1,0 +1,27 @@
+Exception in thread "main" java.lang.ExceptionInInitializerError
+	at oracle.siebel.configurator.screen.Configurator.<clinit>(Configurator.java:46)
+Caused by: java.lang.StringIndexOutOfBoundsException: String index out of range: -1
+	at java.lang.String.substring(String.java:1937)
+	at oracle.siebel.configurator.utility.SiebelConfiguratorLogger.getLogFileName(SiebelConfiguratorLogger.java:73)
+	at oracle.siebel.configurator.utility.SiebelConfiguratorLogger.initializeSiebelLogger(SiebelConfiguratorLogger.java:99)
+	at oracle.siebel.configurator.utility.SiebelConfiguratorLogger.<clinit>(SiebelConfiguratorLogger.java:32)
+	... 1 more
+Could not find the main class: oracle.siebel.configurator.screen.Configurator. Program will exit.
+Exception in thread "main" java.lang.ExceptionInInitializerError
+	at oracle.siebel.configurator.screen.Configurator.<clinit>(Configurator.java:46)
+Caused by: java.lang.StringIndexOutOfBoundsException: String index out of range: -1
+	at java.lang.String.substring(String.java:1937)
+	at oracle.siebel.configurator.utility.SiebelConfiguratorLogger.getLogFileName(SiebelConfiguratorLogger.java:73)
+	at oracle.siebel.configurator.utility.SiebelConfiguratorLogger.initializeSiebelLogger(SiebelConfiguratorLogger.java:99)
+	at oracle.siebel.configurator.utility.SiebelConfiguratorLogger.<clinit>(SiebelConfiguratorLogger.java:32)
+	... 1 more
+Could not find the main class: oracle.siebel.configurator.screen.Configurator. Program will exit.
+Exception in thread "main" java.lang.ExceptionInInitializerError
+	at oracle.siebel.configurator.screen.Configurator.<clinit>(Configurator.java:46)
+Caused by: java.lang.StringIndexOutOfBoundsException: String index out of range: -1
+	at java.lang.String.substring(String.java:1937)
+	at oracle.siebel.configurator.utility.SiebelConfiguratorLogger.getLogFileName(SiebelConfiguratorLogger.java:73)
+	at oracle.siebel.configurator.utility.SiebelConfiguratorLogger.initializeSiebelLogger(SiebelConfiguratorLogger.java:99)
+	at oracle.siebel.configurator.utility.SiebelConfiguratorLogger.<clinit>(SiebelConfiguratorLogger.java:32)
+	... 1 more
+Could not find the main class: oracle.siebel.configurator.screen.Configurator. Program will exit.

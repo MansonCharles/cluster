@@ -1,0 +1,1351 @@
+<!DOCTYPE html>
+<html class="js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage no-websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients no-cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths contenteditable bgsizecover bgpositionshorthand no-bgpositionxy no-bgrepeatround no-bgrepeatspace boxsizing display-table no-cssfilters mediaqueries pointerevents lastchild csspositionsticky no-regions cssresize no-cssscrollbar supports subpixelfont dataview classlist no-createelement-attrs datalistelem no-ie8compat json scriptasync svgfilters datauri no-blobworkers legacy-portal" style="" dir="ltr" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/terms/" xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:og="http://ogp.me/ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:sioc="http://rdfs.org/sioc/ns#" xmlns:sioct="http://rdfs.org/sioc/types#" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xmlns:xsd="http://www.w3.org/2001/XMLSchema#" lang="ru"><head profile="http://www.w3.org/1999/xhtml/vocab">
+	  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="shortcut icon" href="https://access.redhat.com/sites/default/files/shadowman.ico" type="image/vnd.microsoft.icon">
+<meta name="generator" content="Drupal 7 (http://drupal.org)">
+<link rel="canonical" href="https://access.redhat.com/node/162193">
+<link rel="shortlink" href="https://access.redhat.com/node/162193">
+<meta name="id" content="162193">
+<meta name="product" content="Red Hat Enterprise Linux">
+<meta name="category" content="Supportability">
+<meta name="tags" content="gfs2">
+<meta name="language" content="en">
+<meta name="publication_date" content="19 Dec 2014, 4:47 PM GMT">
+<meta name="access_state" content="Активно">
+<meta name="update_date" content="19 Dec 2014, 4:47 PM GMT">
+<meta name="rating" content="60">
+<meta name="collection_name" content="Решение KCS">
+  <title>Why is UDP unicast (UDPU) not recommended for use in a cluster 
+with GFS2 in a RHEL 6 or 7 Resilient Storage cluster? - Red Hat Customer
+ Portal</title>
+  
+
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<!-- metaInclude -->
+	<meta name="avalon-host-info" content="gss-webjava01">
+	<meta name="avalon-version" content="2.0.19.0">
+	<meta name="google-site-verification" content="nP0a2DWUcOxjRgDDACHEbDptiGIGBrChbghrC0ZzcK0">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- /metaInclude -->
+	<!-- ^ meta and X-UA-Compatible must come first -->
+	
+	<meta http-equiv="cleartype" content="on">
+
+	
+
+	
+	 
+	
+	
+
+	<!-- cssInclude -->
+
+	<link rel="shortcut icon" href="https://access.redhat.com/webassets/avalon/g/favicon.ico">
+	<link rel="stylesheet" type="text/css" media="screen, print" href="Why%20is%20UDP%20unicast%20%28UDPU%29%20not%20recommended%20for%20use%20in%20a%20cluster%20with%20GFS2%20in%20a%20RHEL%206%20or%207%20Resilient%20Storage%20cluster%3F%20-%20Red%20Hat%20Customer%20Portal_files/jquery-ui-1.css">
+
+	<!-- TODO: What is pageCssLinks and do we still need it? -->
+	<link media="all" rel="stylesheet" type="text/css" href="Why%20is%20UDP%20unicast%20%28UDPU%29%20not%20recommended%20for%20use%20in%20a%20cluster%20with%20GFS2%20in%20a%20RHEL%206%20or%207%20Resilient%20Storage%20cluster%3F%20-%20Red%20Hat%20Customer%20Portal_files/legacy.css">
+	<link media="all" rel="stylesheet" type="text/css" href="Why%20is%20UDP%20unicast%20%28UDPU%29%20not%20recommended%20for%20use%20in%20a%20cluster%20with%20GFS2%20in%20a%20RHEL%206%20or%207%20Resilient%20Storage%20cluster%3F%20-%20Red%20Hat%20Customer%20Portal_files/bootstrap.css">
+	<link media="all" rel="stylesheet" type="text/css" href="Why%20is%20UDP%20unicast%20%28UDPU%29%20not%20recommended%20for%20use%20in%20a%20cluster%20with%20GFS2%20in%20a%20RHEL%206%20or%207%20Resilient%20Storage%20cluster%3F%20-%20Red%20Hat%20Customer%20Portal_files/master-blessed1.css">
+	<link media="all" rel="stylesheet" type="text/css" href="Why%20is%20UDP%20unicast%20%28UDPU%29%20not%20recommended%20for%20use%20in%20a%20cluster%20with%20GFS2%20in%20a%20RHEL%206%20or%207%20Resilient%20Storage%20cluster%3F%20-%20Red%20Hat%20Customer%20Portal_files/master.css">
+
+	<link href="Why%20is%20UDP%20unicast%20%28UDPU%29%20not%20recommended%20for%20use%20in%20a%20cluster%20with%20GFS2%20in%20a%20RHEL%206%20or%207%20Resilient%20Storage%20cluster%3F%20-%20Red%20Hat%20Customer%20Portal_files/chosen.css" rel="stylesheet" type="text/css">
+	<!--[if lte IE 9]>
+	<link media="all" rel="stylesheet" type="text/css" href="https://access.redhat.com/chrome_themes/nimbus/css/ie.css" />
+    <![endif]-->
+    
+
+	<!-- .primary-nav starts out hidden (at sm res and higher), and
+	is later revealed with JS after the megamenu has been built
+	out.  here, use noscript to un-hide the nav, in case the user
+	has JS disabled. -->
+	<noscript>
+		<style type="text/css" media="screen"> .primary-nav { display: block; } </style>
+	</noscript>
+
+	<!-- /cssInclude -->
+
+	<!-- jsInclude -->
+	<script src="Why%20is%20UDP%20unicast%20%28UDPU%29%20not%20recommended%20for%20use%20in%20a%20cluster%20with%20GFS2%20in%20a%20RHEL%206%20or%207%20Resilient%20Storage%20cluster%3F%20-%20Red%20Hat%20Customer%20Portal_files/tly.js" async="" type="text/javascript"></script><script type="text/javascript">
+		window.portal = {
+			analytics             : {},
+			host                  : "https://access.redhat.com",
+			kbaseContext          : "/preview_faq",
+			cspContext            : "/preview_jbossnetwork",
+			customerCenterContext : "/wapps",
+			lang                  : "ru",
+			version               : "2.0.19.0",
+			decorationWhitelist   : ["https://access.redhat.com","https://rhn.redhat.com", "docs.redhat.com"]
+		};
+
+		/*
+		* TODO
+		* deprecate this avalon object
+		*/
+		window.avalon = window.portal;
+		window.avalonHost = avalon.host; // deprecate this?
+
+		/********************************
+		*  Temporary pagename shim     *
+		*  TODO: Remove this           *
+		********************************/
+
+		portal.analytics.shim = {};
+		portal.analytics.shim.pageTitle = "";
+		portal.analytics.shim.siteMapState = "";
+
+	</script>
+	<script type="text/javascript" src="Why%20is%20UDP%20unicast%20%28UDPU%29%20not%20recommended%20for%20use%20in%20a%20cluster%20with%20GFS2%20in%20a%20RHEL%206%20or%207%20Resilient%20Storage%20cluster%3F%20-%20Red%20Hat%20Customer%20Portal_files/jquery.js"></script>
+	<script type="text/javascript" src="Why%20is%20UDP%20unicast%20%28UDPU%29%20not%20recommended%20for%20use%20in%20a%20cluster%20with%20GFS2%20in%20a%20RHEL%206%20or%207%20Resilient%20Storage%20cluster%3F%20-%20Red%20Hat%20Customer%20Portal_files/require_002.js" data-main="/webassets/avalon/j/"></script>
+	<!-- TODO: can we please upgrade jquery?! -->
+	<script type="text/javascript">
+		/*
+		 * THIS IS NEEDED! Integrated apps include their own jQuery lib.
+		 * We need this *before* base.js so we can effectvley pass messages (trigger, bind) to base.js
+		 * *DO NOT* remove! window.jQuery the object is still accessible.
+		*/
+		window.ajq = jQuery.noConflict();
+	</script>
+	<script type="text/javascript" src="Why%20is%20UDP%20unicast%20%28UDPU%29%20not%20recommended%20for%20use%20in%20a%20cluster%20with%20GFS2%20in%20a%20RHEL%206%20or%207%20Resilient%20Storage%20cluster%3F%20-%20Red%20Hat%20Customer%20Portal_files/outageJson_ru_002.js"></script>
+	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+	
+	
+	<!-- /jsInclude -->
+	  <style type="text/css" media="all">
+@import url("https://access.redhat.com/modules/system/system.base.css?nlha21");
+@import url("https://access.redhat.com/modules/system/system.menus.css?nlha21");
+@import url("https://access.redhat.com/modules/system/system.messages.css?nlha21");
+</style>
+<style type="text/css" media="all">
+@import url("https://access.redhat.com/modules/jquery_update/replace/ui/themes/base/minified/jquery.ui.core.min.css?nlha21");
+@import url("https://access.redhat.com/modules/jquery_update/replace/ui/themes/base/minified/jquery.ui.theme.min.css?nlha21");
+</style>
+<style type="text/css" media="all">
+@import url("https://access.redhat.com/modules/book/book.css?nlha21");
+@import url("https://access.redhat.com/modules/comment/comment.css?nlha21");
+@import url("https://access.redhat.com/modules/date/date_api/date.css?nlha21");
+@import url("https://access.redhat.com/modules/date/date_popup/themes/datepicker.1.7.css?nlha21");
+@import url("https://access.redhat.com/modules/fences/field.css?nlha21");
+@import url("https://access.redhat.com/modules/node/node.css?nlha21");
+@import url("https://access.redhat.com/modules/user/user.css?nlha21");
+@import url("https://access.redhat.com/modules/views/css/views.css?nlha21");
+</style>
+<style type="text/css" media="all">
+@import url("https://access.redhat.com/sites/all/libraries/chosen/chosen/chosen.css?nlha21");
+@import url("https://access.redhat.com/modules/ctools/css/ctools.css?nlha21");
+@import url("https://access.redhat.com/modules/locale/locale.css?nlha21");
+@import url("https://access.redhat.com/modules/context/plugins/context_reaction_block.css?nlha21");
+@import url("https://access.redhat.com/sites/all/modules/custom/fivestar/css/fivestar.css?nlha21");
+</style>
+<style type="text/css" media="all">
+<!--/*--><![CDATA[/*><!--*/
+div.video-info{visibility:hiden;display:none;}
+
+/*]]>*/-->
+</style>
+<style type="text/css" media="all">
+@import url("https://access.redhat.com/modules/filter/filter.css?nlha21");
+</style>
+<link type="text/css" rel="stylesheet" href="Why%20is%20UDP%20unicast%20%28UDPU%29%20not%20recommended%20for%20use%20in%20a%20cluster%20with%20GFS2%20in%20a%20RHEL%206%20or%207%20Resilient%20Storage%20cluster%3F%20-%20Red%20Hat%20Customer%20Portal_files/messages.css" media="all">
+<style type="text/css" media="all">
+@import url("https://access.redhat.com/sites/all/themes/kcs/css/html-reset.css?nlha21");
+@import url("https://access.redhat.com/sites/all/themes/kcs/css/wireframes.css?nlha21");
+@import url("https://access.redhat.com/sites/all/themes/kcs/css/layout-fixed.css?nlha21");
+@import url("https://access.redhat.com/sites/all/themes/kcs/css/page-backgrounds.css?nlha21");
+@import url("https://access.redhat.com/sites/all/themes/kcs/css/tabs.css?nlha21");
+@import url("https://access.redhat.com/sites/all/themes/kcs/css/pages.css?nlha21");
+@import url("https://access.redhat.com/sites/all/themes/kcs/css/blocks.css?nlha21");
+@import url("https://access.redhat.com/sites/all/themes/kcs/css/navigation.css?nlha21");
+@import url("https://access.redhat.com/sites/all/themes/kcs/css/views-styles.css?nlha21");
+@import url("https://access.redhat.com/sites/all/themes/kcs/css/nodes.css?nlha21");
+@import url("https://access.redhat.com/sites/all/themes/kcs/css/comments.css?nlha21");
+@import url("https://access.redhat.com/sites/all/themes/kcs/css/forms.css?nlha21");
+@import url("https://access.redhat.com/sites/all/themes/kcs/css/fields.css?nlha21");
+@import url("https://access.redhat.com/sites/all/themes/kcs/css/kcs.css?nlha21");
+</style>
+<style type="text/css" media="print">
+@import url("https://access.redhat.com/sites/all/themes/kcs/css/print.css?nlha21");
+</style>
+
+<!--[if lte IE 9]>
+<style type="text/css" media="all">
+@import url("https://access.redhat.com/sites/all/themes/kcs/css/ie.css?nlha21");
+</style>
+<![endif]-->
+
+<!--[if lte IE 7]>
+<style type="text/css" media="all">
+@import url("https://access.redhat.com/sites/all/themes/kcs/css/ie7.css?nlha21");
+</style>
+<![endif]-->
+
+<!--[if lte IE 6]>
+<style type="text/css" media="all">
+@import url("https://access.redhat.com/sites/all/themes/kcs/css/ie6.css?nlha21");
+</style>
+<![endif]-->
+  <link rel="stylesheet" type="text/css" media="all" href="Why%20is%20UDP%20unicast%20%28UDPU%29%20not%20recommended%20for%20use%20in%20a%20cluster%20with%20GFS2%20in%20a%20RHEL%206%20or%207%20Resilient%20Storage%20cluster%3F%20-%20Red%20Hat%20Customer%20Portal_files/list.css">
+  <script type="text/javascript" src="Why%20is%20UDP%20unicast%20%28UDPU%29%20not%20recommended%20for%20use%20in%20a%20cluster%20with%20GFS2%20in%20a%20RHEL%206%20or%207%20Resilient%20Storage%20cluster%3F%20-%20Red%20Hat%20Customer%20Portal_files/jquery_008.js"></script><script src="Why%20is%20UDP%20unicast%20%28UDPU%29%20not%20recommended%20for%20use%20in%20a%20cluster%20with%20GFS2%20in%20a%20RHEL%206%20or%207%20Resilient%20Storage%20cluster%3F%20-%20Red%20Hat%20Customer%20Portal_files/chrome_lib.js" data-requiremodule="chrome_lib" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="Why%20is%20UDP%20unicast%20%28UDPU%29%20not%20recommended%20for%20use%20in%20a%20cluster%20with%20GFS2%20in%20a%20RHEL%206%20or%207%20Resilient%20Storage%20cluster%3F%20-%20Red%20Hat%20Customer%20Portal_files/common.js" data-requiremodule="common" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="Why%20is%20UDP%20unicast%20%28UDPU%29%20not%20recommended%20for%20use%20in%20a%20cluster%20with%20GFS2%20in%20a%20RHEL%206%20or%207%20Resilient%20Storage%20cluster%3F%20-%20Red%20Hat%20Customer%20Portal_files/jquery_002.js" data-requiremodule="jquery" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="Why%20is%20UDP%20unicast%20%28UDPU%29%20not%20recommended%20for%20use%20in%20a%20cluster%20with%20GFS2%20in%20a%20RHEL%206%20or%207%20Resilient%20Storage%20cluster%3F%20-%20Red%20Hat%20Customer%20Portal_files/jsuri-1.js" data-requiremodule="jsUri" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="Why%20is%20UDP%20unicast%20%28UDPU%29%20not%20recommended%20for%20use%20in%20a%20cluster%20with%20GFS2%20in%20a%20RHEL%206%20or%207%20Resilient%20Storage%20cluster%3F%20-%20Red%20Hat%20Customer%20Portal_files/require.js" data-requiremodule="https://access.redhat.com/webassets/avalon/j/lib/require-css/require.css.min.js" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="Why%20is%20UDP%20unicast%20%28UDPU%29%20not%20recommended%20for%20use%20in%20a%20cluster%20with%20GFS2%20in%20a%20RHEL%206%20or%207%20Resilient%20Storage%20cluster%3F%20-%20Red%20Hat%20Customer%20Portal_files/failsafe.js" data-requiremodule="analytics/failsafe" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script>
+<script type="text/javascript" src="Why%20is%20UDP%20unicast%20%28UDPU%29%20not%20recommended%20for%20use%20in%20a%20cluster%20with%20GFS2%20in%20a%20RHEL%206%20or%207%20Resilient%20Storage%20cluster%3F%20-%20Red%20Hat%20Customer%20Portal_files/drupal.js"></script>
+<script type="text/javascript" src="Why%20is%20UDP%20unicast%20%28UDPU%29%20not%20recommended%20for%20use%20in%20a%20cluster%20with%20GFS2%20in%20a%20RHEL%206%20or%207%20Resilient%20Storage%20cluster%3F%20-%20Red%20Hat%20Customer%20Portal_files/jquery_004.js"></script>
+<script type="text/javascript" src="Why%20is%20UDP%20unicast%20%28UDPU%29%20not%20recommended%20for%20use%20in%20a%20cluster%20with%20GFS2%20in%20a%20RHEL%206%20or%207%20Resilient%20Storage%20cluster%3F%20-%20Red%20Hat%20Customer%20Portal_files/jquery_011.js"></script>
+<script type="text/javascript" src="Why%20is%20UDP%20unicast%20%28UDPU%29%20not%20recommended%20for%20use%20in%20a%20cluster%20with%20GFS2%20in%20a%20RHEL%206%20or%207%20Resilient%20Storage%20cluster%3F%20-%20Red%20Hat%20Customer%20Portal_files/jquery_005.js"></script>
+<script type="text/javascript" src="Why%20is%20UDP%20unicast%20%28UDPU%29%20not%20recommended%20for%20use%20in%20a%20cluster%20with%20GFS2%20in%20a%20RHEL%206%20or%207%20Resilient%20Storage%20cluster%3F%20-%20Red%20Hat%20Customer%20Portal_files/jquery_010.js"></script>
+<script type="text/javascript" src="Why%20is%20UDP%20unicast%20%28UDPU%29%20not%20recommended%20for%20use%20in%20a%20cluster%20with%20GFS2%20in%20a%20RHEL%206%20or%207%20Resilient%20Storage%20cluster%3F%20-%20Red%20Hat%20Customer%20Portal_files/jquery_009.js"></script>
+<script type="text/javascript" src="Why%20is%20UDP%20unicast%20%28UDPU%29%20not%20recommended%20for%20use%20in%20a%20cluster%20with%20GFS2%20in%20a%20RHEL%206%20or%207%20Resilient%20Storage%20cluster%3F%20-%20Red%20Hat%20Customer%20Portal_files/jquery_003.js"></script>
+<script type="text/javascript" src="Why%20is%20UDP%20unicast%20%28UDPU%29%20not%20recommended%20for%20use%20in%20a%20cluster%20with%20GFS2%20in%20a%20RHEL%206%20or%207%20Resilient%20Storage%20cluster%3F%20-%20Red%20Hat%20Customer%20Portal_files/jquery_007.js"></script>
+<script type="text/javascript" src="Why%20is%20UDP%20unicast%20%28UDPU%29%20not%20recommended%20for%20use%20in%20a%20cluster%20with%20GFS2%20in%20a%20RHEL%206%20or%207%20Resilient%20Storage%20cluster%3F%20-%20Red%20Hat%20Customer%20Portal_files/jquery_006.js"></script>
+<script type="text/javascript" src="Why%20is%20UDP%20unicast%20%28UDPU%29%20not%20recommended%20for%20use%20in%20a%20cluster%20with%20GFS2%20in%20a%20RHEL%206%20or%207%20Resilient%20Storage%20cluster%3F%20-%20Red%20Hat%20Customer%20Portal_files/form.js"></script>
+<script type="text/javascript" src="Why%20is%20UDP%20unicast%20%28UDPU%29%20not%20recommended%20for%20use%20in%20a%20cluster%20with%20GFS2%20in%20a%20RHEL%206%20or%207%20Resilient%20Storage%20cluster%3F%20-%20Red%20Hat%20Customer%20Portal_files/ajax.js"></script>
+<script type="text/javascript" src="Why%20is%20UDP%20unicast%20%28UDPU%29%20not%20recommended%20for%20use%20in%20a%20cluster%20with%20GFS2%20in%20a%20RHEL%206%20or%207%20Resilient%20Storage%20cluster%3F%20-%20Red%20Hat%20Customer%20Portal_files/ru_NtGHunT-yyOXTVzcqWI-3ebvp_kpxw62j_EwTP61Zbk.js"></script>
+<script type="text/javascript" src="Why%20is%20UDP%20unicast%20%28UDPU%29%20not%20recommended%20for%20use%20in%20a%20cluster%20with%20GFS2%20in%20a%20RHEL%206%20or%207%20Resilient%20Storage%20cluster%3F%20-%20Red%20Hat%20Customer%20Portal_files/chosen_002.js"></script>
+<script type="text/javascript" src="Why%20is%20UDP%20unicast%20%28UDPU%29%20not%20recommended%20for%20use%20in%20a%20cluster%20with%20GFS2%20in%20a%20RHEL%206%20or%207%20Resilient%20Storage%20cluster%3F%20-%20Red%20Hat%20Customer%20Portal_files/chosen.js"></script>
+<script type="text/javascript" src="Why%20is%20UDP%20unicast%20%28UDPU%29%20not%20recommended%20for%20use%20in%20a%20cluster%20with%20GFS2%20in%20a%20RHEL%206%20or%207%20Resilient%20Storage%20cluster%3F%20-%20Red%20Hat%20Customer%20Portal_files/memcache.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+
+    jQuery(function() {
+        jQuery("#edit-subscriptions-node-save-button").hover(
+          function(){
+            if(jQuery(this).val() == "Follow") {
+              jQuery(this).removeClass("btn-danger");
+              jQuery(this).addClass("btn-primary");
+            }
+            else if(jQuery(this).val() == "Following") {
+              jQuery(this).val("Unfollow");
+              jQuery(this).addClass("btn-danger");
+              jQuery(this).removeClass("btn-primary");
+            }
+          },
+          function(){
+            if(jQuery(this).val() == "Follow") {
+              jQuery(this).removeClass("btn-danger");
+              jQuery(this).addClass("btn-primary");
+            }
+            else if(jQuery(this).val() == "Unfollow") {
+              jQuery(this).val("Following");
+              jQuery(this).removeClass("btn-danger");
+              jQuery(this).removeClass("btn-primary");
+            }
+          }
+        );
+      });
+    
+//--><!]]>
+</script>
+<script type="text/javascript" src="Why%20is%20UDP%20unicast%20%28UDPU%29%20not%20recommended%20for%20use%20in%20a%20cluster%20with%20GFS2%20in%20a%20RHEL%206%20or%207%20Resilient%20Storage%20cluster%3F%20-%20Red%20Hat%20Customer%20Portal_files/context_reaction_block.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+breadcrumbs = [ ["Products &amp; Services", "/products"], ["\u0411\u0430\u0437\u0430 \u0437\u043d\u0430\u043d\u0438\u0439", "/"], ["\u0420\u0435\u0448\u0435\u043d\u0438\u044f", "https://access.redhat.com/search/browse/solutions"], ["Why is UDP unicast (UDPU) not recommended for use in a cluster with GFS2 in a RHEL 6 or 7 Resilient ...", "/solutions/162193"] ];
+//--><!]]>
+</script>
+<script type="text/javascript" src="Why%20is%20UDP%20unicast%20%28UDPU%29%20not%20recommended%20for%20use%20in%20a%20cluster%20with%20GFS2%20in%20a%20RHEL%206%20or%207%20Resilient%20Storage%20cluster%3F%20-%20Red%20Hat%20Customer%20Portal_files/progress.js"></script>
+<script type="text/javascript" src="Why%20is%20UDP%20unicast%20%28UDPU%29%20not%20recommended%20for%20use%20in%20a%20cluster%20with%20GFS2%20in%20a%20RHEL%206%20or%207%20Resilient%20Storage%20cluster%3F%20-%20Red%20Hat%20Customer%20Portal_files/fivestar_002.js"></script>
+<script type="text/javascript" src="Why%20is%20UDP%20unicast%20%28UDPU%29%20not%20recommended%20for%20use%20in%20a%20cluster%20with%20GFS2%20in%20a%20RHEL%206%20or%207%20Resilient%20Storage%20cluster%3F%20-%20Red%20Hat%20Customer%20Portal_files/fivestar.js"></script>
+<script type="text/javascript" src="Why%20is%20UDP%20unicast%20%28UDPU%29%20not%20recommended%20for%20use%20in%20a%20cluster%20with%20GFS2%20in%20a%20RHEL%206%20or%207%20Resilient%20Storage%20cluster%3F%20-%20Red%20Hat%20Customer%20Portal_files/tableheader.js"></script>
+<script type="text/javascript" src="Why%20is%20UDP%20unicast%20%28UDPU%29%20not%20recommended%20for%20use%20in%20a%20cluster%20with%20GFS2%20in%20a%20RHEL%206%20or%207%20Resilient%20Storage%20cluster%3F%20-%20Red%20Hat%20Customer%20Portal_files/subscriptions_tableselect.js"></script>
+<script type="text/javascript" src="Why%20is%20UDP%20unicast%20%28UDPU%29%20not%20recommended%20for%20use%20in%20a%20cluster%20with%20GFS2%20in%20a%20RHEL%206%20or%207%20Resilient%20Storage%20cluster%3F%20-%20Red%20Hat%20Customer%20Portal_files/collapse.js"></script>
+<script type="text/javascript" src="Why%20is%20UDP%20unicast%20%28UDPU%29%20not%20recommended%20for%20use%20in%20a%20cluster%20with%20GFS2%20in%20a%20RHEL%206%20or%207%20Resilient%20Storage%20cluster%3F%20-%20Red%20Hat%20Customer%20Portal_files/textarea.js"></script>
+<script type="text/javascript" src="Why%20is%20UDP%20unicast%20%28UDPU%29%20not%20recommended%20for%20use%20in%20a%20cluster%20with%20GFS2%20in%20a%20RHEL%206%20or%207%20Resilient%20Storage%20cluster%3F%20-%20Red%20Hat%20Customer%20Portal_files/filter.js"></script>
+<script type="text/javascript" src="Why%20is%20UDP%20unicast%20%28UDPU%29%20not%20recommended%20for%20use%20in%20a%20cluster%20with%20GFS2%20in%20a%20RHEL%206%20or%207%20Resilient%20Storage%20cluster%3F%20-%20Red%20Hat%20Customer%20Portal_files/ajax_comments.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+chrometwo_require(["analytics/attributes"], function(attributes) {attributes.set('ResourceID', 'kp-162193');  
+attributes.set('ResourceTitle', 'Why is UDP unicast (UDPU) not recommended for use in a cluster with GFS2 in a RHEL 6 or 7 Resilient Storage cluster?');  
+attributes.set('Rating', '60');  
+attributes.set('Category', 'Supportability');  
+attributes.set('Component', ["corosync"]);  
+attributes.set('Products', ["Red Hat Enterprise Linux"]);  
+attributes.set('Language', 'en');  
+attributes.set('KCSState', 'verified');  
+attributes.set('Tags', ["gfs2"]);  
+attributes.set('SBR', ["Clusterha"]);  
+attributes.set('PublicationState', ["active","published"]);  
+});
+//--><!]]>
+</script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+
+            chrometwo_require(["more_like_this"], function (mlt) {
+                      mlt.create({
+                                block_header: "More Like This",
+                                id: "162193",
+                                selector: "#sidebar .section",
+                                no_results_text: "No recommendations found.",
+                                type: "solutions"
+                      });
+            });
+  
+//--><!]]>
+</script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+chrometwo_require(["analytics/main", "analytics/attributes"], function (analytics, attributes) {
+                      analytics.trigger("ABTestImpression");
+                      attributes.set("ABTestCampaign", ["MLTTitleTest", "group1"]);
+                    });
+//--><!]]>
+</script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+ajq( function() {
+                  ajq("#sidebar .section").on("click", "#moreLikeThis a", function (ev) {
+                    chrometwo_require(["analytics/main"], function (analytics) {
+                      analytics.trigger("ABTestSuccess", ev);
+                    });
+                  });
+                });
+//--><!]]>
+</script>
+<script type="text/javascript" src="Why%20is%20UDP%20unicast%20%28UDPU%29%20not%20recommended%20for%20use%20in%20a%20cluster%20with%20GFS2%20in%20a%20RHEL%206%20or%207%20Resilient%20Storage%20cluster%3F%20-%20Red%20Hat%20Customer%20Portal_files/kcs_base.js"></script>
+<script type="text/javascript" src="Why%20is%20UDP%20unicast%20%28UDPU%29%20not%20recommended%20for%20use%20in%20a%20cluster%20with%20GFS2%20in%20a%20RHEL%206%20or%207%20Resilient%20Storage%20cluster%3F%20-%20Red%20Hat%20Customer%20Portal_files/showdown.js"></script>
+<script type="text/javascript" src="Why%20is%20UDP%20unicast%20%28UDPU%29%20not%20recommended%20for%20use%20in%20a%20cluster%20with%20GFS2%20in%20a%20RHEL%206%20or%207%20Resilient%20Storage%20cluster%3F%20-%20Red%20Hat%20Customer%20Portal_files/case_links.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+(function(){var b=this._tly={q:[],mark:function(a,c){b.q.push(["mark",a,c||(new Date).getTime()])},measure:function(a,c,e){b.q.push(["measure",a,c,e||(new Date).getTime()])},done:function(a){b.q.push(["done",a])},cid:"Gf1RWYTZaFM4LqZzJ3SwugOCOhM=",xt:"1BE4EA07D7E5222AC005A2020303D439B12B1B00558E6F848F59B9863A"};b.mark("firstbyte");this.onerror=function(a,c,e){b.measure(["_jserror ",a,"|",c,"|",e].join(""))};var d=this.attachEvent,f=this.addEventListener;var g=function(){b.measure("winload");b.done()};d?d("onload",g):f&&f("load",g,!1);var h=document.createElement("script");
+h.type="text/javascript";h.async=!0;h.src=("http:"===document.location.protocol?"http:":"https:")+"//d2gfdmu30u15x7.cloudfront.net/1/tly.js";var i=document.getElementsByTagName("script")[0];i.parentNode.insertBefore(h,i);}());
+
+//--><!]]>
+</script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"kcs","theme_token":"4WfQg5Ci3KdkYCNr05wuoy3hoZTeKyhjZYQ4APp6TVY","js":{"misc\/jquery.once.js":1,"misc\/drupal.js":1,"modules\/jquery_update\/replace\/ui\/ui\/minified\/jquery.ui.core.min.js":1,"modules\/jquery_update\/replace\/ui\/ui\/minified\/jquery.ui.widget.min.js":1,"modules\/jquery_update\/replace\/ui\/ui\/minified\/jquery.ui.mouse.min.js":1,"modules\/jquery_update\/replace\/ui\/ui\/minified\/jquery.ui.draggable.min.js":1,"modules\/jquery_update\/replace\/ui\/ui\/minified\/jquery.ui.droppable.min.js":1,"modules\/jquery_update\/replace\/ui\/ui\/minified\/jquery.ui.sortable.min.js":1,"modules\/jquery_update\/replace\/ui\/external\/jquery.cookie.js":1,"modules\/jquery_update\/replace\/misc\/jquery.form.js":1,"misc\/form.js":1,"misc\/ajax.js":1,"public:\/\/languages\/ru_NtGHunT-yyOXTVzcqWI-3ebvp_kpxw62j_EwTP61Zbk.js":1,"sites\/all\/libraries\/chosen\/chosen\/chosen.jquery.min.js":1,"modules\/chosen\/chosen.js":1,"modules\/memcache\/memcache_admin\/memcache.js":1,"0":1,"modules\/context\/plugins\/context_reaction_block.js":1,"1":1,"misc\/progress.js":1,"sites\/all\/modules\/custom\/fivestar\/js\/fivestar.ajax.js":1,"sites\/all\/modules\/custom\/fivestar\/js\/fivestar.js":1,"misc\/tableheader.js":1,"modules\/subscriptions\/subscriptions_tableselect.js":1,"misc\/collapse.js":1,"misc\/textarea.js":1,"modules\/filter\/filter.js":1,"modules\/ajax_comments\/ajax_comments.js":1,"sites\/all\/themes\/kcs\/js\/kcs_base.js":1,"sites\/all\/themes\/kcs\/js\/showdown.js":1,"sites\/all\/themes\/kcs\/js\/case_links.js":1,"2":1,"3":1,"4":1,"5":1,"6":1,"7":1,"8":1,"9":1,"10":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"misc\/ui\/jquery.ui.core.css":1,"misc\/ui\/jquery.ui.theme.css":1,"modules\/book\/book.css":1,"modules\/comment\/comment.css":1,"modules\/date\/date_api\/date.css":1,"modules\/date\/date_popup\/themes\/datepicker.1.7.css":1,"modules\/field\/theme\/field.css":1,"modules\/node\/node.css":1,"modules\/user\/user.css":1,"modules\/views\/css\/views.css":1,"sites\/all\/libraries\/chosen\/chosen\/chosen.css":1,"modules\/ctools\/css\/ctools.css":1,"modules\/locale\/locale.css":1,"modules\/context\/plugins\/context_reaction_block.css":1,"sites\/all\/modules\/custom\/fivestar\/css\/fivestar.css":1,"0":1,"modules\/filter\/filter.css":1,"https:\/\/access.redhat.com\/webassets\/avalon\/s\/messages.css":1,"sites\/all\/themes\/kcs\/css\/html-reset.css":1,"sites\/all\/themes\/kcs\/css\/wireframes.css":1,"sites\/all\/themes\/kcs\/css\/layout-fixed.css":1,"sites\/all\/themes\/kcs\/css\/page-backgrounds.css":1,"sites\/all\/themes\/kcs\/css\/tabs.css":1,"sites\/all\/themes\/kcs\/css\/pages.css":1,"sites\/all\/themes\/kcs\/css\/blocks.css":1,"sites\/all\/themes\/kcs\/css\/navigation.css":1,"sites\/all\/themes\/kcs\/css\/views-styles.css":1,"sites\/all\/themes\/kcs\/css\/nodes.css":1,"sites\/all\/themes\/kcs\/css\/comments.css":1,"sites\/all\/themes\/kcs\/css\/forms.css":1,"sites\/all\/themes\/kcs\/css\/fields.css":1,"sites\/all\/themes\/kcs\/css\/kcs.css":1,"sites\/all\/themes\/kcs\/css\/print.css":1,"sites\/all\/themes\/kcs\/css\/ie.css":1,"sites\/all\/themes\/kcs\/css\/ie7.css":1,"sites\/all\/themes\/kcs\/css\/ie6.css":1}},"chosen":{"selector":"#edit-field-kcs-component-select-und, #edit-field-kcs-sbr-select-und, #edit-field-kcs-product-select-und, #edit-field-kcs-type-select-und, #edit-language, #edit-field-kcs-a-category-select-und, #edit-field-kcs-state-select-und, #edit-field-kcs-tags-select-und, #edit-field-kcs-state-select-value, #edit-field-vid-reference-product-und, #edit-state, #edit-product, #edit-category, #edit-field-kcs-product-select-tid, #edit-field-kcs-type-select-tid, #edit-field-kcs-a-category-select-tid, #edit-sort-bef-combine, #edit-kcs-state, #edit-field-category-tid, #edit-field-product-tid, #edit-field-tags-tid, #edit-field-category-und, #edit-field-product-und, #edit-field-tags-und, #views-exposed-form-questions-list-questions-filter-block #edit-field-category, #edit-field-tags-und, #views-exposed-form-questions-list-questions-filter-block #edit-field-product, #views-exposed-form-questions-list-questions-filter-block #edit-field-tags, #edit-field-mega-menu-tab-und, #edit-field-internal-tags-tid, #edit-tags, #edit-field-internal-tags-und, #edit-field-kcs-tags-select-tid, #edit-subscriptions-and-choose-field-select, #edit-subscriptions-and-type, #edit-vid-13, #edit-vid-4, #edit-vid-5, #edit-vid-53, #edit-vid-1, #edit-vid-3, #edit-group-blog, #edit-group-group, #edit-subscriptions-and-choose-field-select-two, #edit-subscriptions-and-type-two, #edit-vid-13-two, #edit-vid-4-two, #edit-vid-5-two, #edit-vid-53-two, #edit-vid-1-two, #edit-vid-3-two, #edit-group-blog-two, #edit-group-group-two, #edit-subscriptions-and-edit-choose-field-select, #edit-subscriptions-and-type-edit, #edit-subscriptions-and-edit-type-two, #edit-vid-13-edit-two, #edit-vid-4-edit-two, #edit-vid-5-edit-two, #edit-vid-53-edit-two, #edit-vid-1-edit-two, #edit-vid-3-edit-two, #edit-group-group-edit-two, #edit-subscriptions-and-edit-choose-field-select-two, #edit-vid-13-edit, #edit-vid-4-edit, #edit-vid-5-edit, #edit-vid-53-edit, #edit-vid-1-edit, #edit-vid-3-edit, #edit-group-group-edit, #edit-group-blog-edit, #edit-field-supported-languages-tid, #edit-field-geography-und, #edit-field-supported-products-und, #edit-field-supported-languages-und, #edit-field-vendor-und, #edit-field-errata-type-text-und, #edit-field-errata-severity-text-und, #edit-field-software-partner-level-und, #edit-field-scert-product-category-und, #edit-field-certifications-und-0-field-product-und, #edit-kcs-article-type, #edit-field-eco-industry-tag-select-tid, #edit-field-eco-software-catego-select-tid, #edit-field-ecosystem-tag-select-und, #edit-field-eco-industry-tag-select-und, #edit-field-eco-software-catego-select-und, #edit-field-vendor-tsanet-member-ref-und, #edit-field-og-vendor-ref-und-0-default, #edit-field-eco-products-enabled-col-und-0-field-eco-subscription-model-ref-und, #edit-field-eco-products-enabled-col-und-0-field-eco-support-level-ref-und, #edit-field-eco-products-enabled-col-und-0-field-eco-product-select-und, #edit-field-eco-certifications-select-und-0-field-eco-product-select-und, #edit-field-eco-certifications-select-und-0-field-eco-product-archite-select-und, #edit-field-eco-certifications-select-und-0-field-eco-certificati-lvl-select-und, #edit-field-eco-certifications-select-und-0-field-eco-hypervisor-str-und, #edit-field-eco-supported-language-ref-und, #edit-field-eco-region-ref-und, #edit-field-cs-product-category-str-und, #edit-field-eco-certifications-select-und-0-field-eco-format-ref-und, #edit-field-eco-group-access-ref-und, #edit-field-hw-category-tag-ref-und, #edit-field-profile-industry-und, #edit-field-profile-tech-interests-und, #edit-field-product-page-features-ref-und, #edit-field-eco-product-select-und, #edit-field-base-product-ref-und, #edit-field-eco-product-archite-select-und, #edit-field-eco-format-ref-und, #edit-field-certification-status-ref-und, #edit-field-certification-result-ref-und, #edit-field-og-certified-product-ref-und-0-default, #edit-field-eco-subscription-model-ref-und, #edit-field-eco-support-level-ref-und, #edit-field-eco-certificati-lvl-select-und, #edit-field-eco-hypervisor-str-und, #edit-field-ccp-thirdparty-cert-select-und, .use_chosen","minimum":"0"},"ajax":{"edit-vote--4":{"callback":"fivestar_ajax_submit","event":"change","url":"\/system\/ajax","submit":{"_triggering_element_name":"vote"}},"edit-subscriptions-node-save-button":{"callback":"redhat_subscriptions_block_form_ajax_submit","wrapper":"subscriptions_and_add_notification","method":"replaceWith","effect":"fade","event":"mousedown","keypress":true,"prevent":"click","url":"\/system\/ajax","submit":{"_triggering_element_name":"op","_triggering_element_value":"Follow"}},"edit-submit":{"callback":"ajax_comments_submit_js","wrapper":"ajax-comment-070652200-1428503179","method":"replaceWith","effect":"fade","event":"mousedown","keypress":true,"prevent":"click","url":"\/system\/ajax","submit":{"_triggering_element_name":"op","_triggering_element_value":"\u0414\u043e\u0431\u0430\u0432\u0438\u0442\u044c \u043a\u043e\u043c\u043c\u0435\u043d\u0442\u0430\u0440\u0438\u0439"}}},"section":"why is udp unicast (udpu) not recommended for use in a cluster with gfs2 in a rhel 6 or 7 resilient storage cluster?"});
+//--><!]]>
+</script>
+    <!--[if lt IE 9]>
+  <script src="https://access.redhat.com/sites/all/themes/kcs/js/html5shiv.js"></script>
+  <![endif]-->
+  
+        
+
+
+    <!--kcs02-->
+<script type="text/javascript">
+  Drupal.portal = {"version":{"redhat_portal":"5.2.35"}};
+  </script>
+
+<script src="Why%20is%20UDP%20unicast%20%28UDPU%29%20not%20recommended%20for%20use%20in%20a%20cluster%20with%20GFS2%20in%20a%20RHEL%206%20or%207%20Resilient%20Storage%20cluster%3F%20-%20Red%20Hat%20Customer%20Portal_files/main.js" data-requiremodule="analytics/main" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="Why%20is%20UDP%20unicast%20%28UDPU%29%20not%20recommended%20for%20use%20in%20a%20cluster%20with%20GFS2%20in%20a%20RHEL%206%20or%207%20Resilient%20Storage%20cluster%3F%20-%20Red%20Hat%20Customer%20Portal_files/attributes.js" data-requiremodule="analytics/attributes" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="Why%20is%20UDP%20unicast%20%28UDPU%29%20not%20recommended%20for%20use%20in%20a%20cluster%20with%20GFS2%20in%20a%20RHEL%206%20or%207%20Resilient%20Storage%20cluster%3F%20-%20Red%20Hat%20Customer%20Portal_files/google_remarketing.js" data-requiremodule="google_remarketing" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="Why%20is%20UDP%20unicast%20%28UDPU%29%20not%20recommended%20for%20use%20in%20a%20cluster%20with%20GFS2%20in%20a%20RHEL%206%20or%207%20Resilient%20Storage%20cluster%3F%20-%20Red%20Hat%20Customer%20Portal_files/dismiss.js" data-requiremodule="dismiss" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="Why%20is%20UDP%20unicast%20%28UDPU%29%20not%20recommended%20for%20use%20in%20a%20cluster%20with%20GFS2%20in%20a%20RHEL%206%20or%207%20Resilient%20Storage%20cluster%3F%20-%20Red%20Hat%20Customer%20Portal_files/data-annex.js" data-requiremodule="data-annex" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="Why%20is%20UDP%20unicast%20%28UDPU%29%20not%20recommended%20for%20use%20in%20a%20cluster%20with%20GFS2%20in%20a%20RHEL%206%20or%207%20Resilient%20Storage%20cluster%3F%20-%20Red%20Hat%20Customer%20Portal_files/url.js" data-requiremodule="analytics/url" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="Why%20is%20UDP%20unicast%20%28UDPU%29%20not%20recommended%20for%20use%20in%20a%20cluster%20with%20GFS2%20in%20a%20RHEL%206%20or%207%20Resilient%20Storage%20cluster%3F%20-%20Red%20Hat%20Customer%20Portal_files/urls.js" data-requiremodule="analytics/sites/portal/urls" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="Why%20is%20UDP%20unicast%20%28UDPU%29%20not%20recommended%20for%20use%20in%20a%20cluster%20with%20GFS2%20in%20a%20RHEL%206%20or%207%20Resilient%20Storage%20cluster%3F%20-%20Red%20Hat%20Customer%20Portal_files/separators.js" data-requiremodule="analytics/separators" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="Why%20is%20UDP%20unicast%20%28UDPU%29%20not%20recommended%20for%20use%20in%20a%20cluster%20with%20GFS2%20in%20a%20RHEL%206%20or%207%20Resilient%20Storage%20cluster%3F%20-%20Red%20Hat%20Customer%20Portal_files/old_fns.js" data-requiremodule="analytics/adapters/omniture/old_fns" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="Why%20is%20UDP%20unicast%20%28UDPU%29%20not%20recommended%20for%20use%20in%20a%20cluster%20with%20GFS2%20in%20a%20RHEL%206%20or%207%20Resilient%20Storage%20cluster%3F%20-%20Red%20Hat%20Customer%20Portal_files/s_code.js" data-requiremodule="s_code" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="Why%20is%20UDP%20unicast%20%28UDPU%29%20not%20recommended%20for%20use%20in%20a%20cluster%20with%20GFS2%20in%20a%20RHEL%206%20or%207%20Resilient%20Storage%20cluster%3F%20-%20Red%20Hat%20Customer%20Portal_files/events_003.js" data-requiremodule="analytics/adapters/omniture/events" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="Why%20is%20UDP%20unicast%20%28UDPU%29%20not%20recommended%20for%20use%20in%20a%20cluster%20with%20GFS2%20in%20a%20RHEL%206%20or%207%20Resilient%20Storage%20cluster%3F%20-%20Red%20Hat%20Customer%20Portal_files/events.js" data-requiremodule="analytics/adapters/eloqua/events" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="Why%20is%20UDP%20unicast%20%28UDPU%29%20not%20recommended%20for%20use%20in%20a%20cluster%20with%20GFS2%20in%20a%20RHEL%206%20or%207%20Resilient%20Storage%20cluster%3F%20-%20Red%20Hat%20Customer%20Portal_files/events_002.js" data-requiremodule="analytics/events" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="Why%20is%20UDP%20unicast%20%28UDPU%29%20not%20recommended%20for%20use%20in%20a%20cluster%20with%20GFS2%20in%20a%20RHEL%206%20or%207%20Resilient%20Storage%20cluster%3F%20-%20Red%20Hat%20Customer%20Portal_files/attributes_002.js" data-requiremodule="analytics/adapters/omniture/attributes" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="Why%20is%20UDP%20unicast%20%28UDPU%29%20not%20recommended%20for%20use%20in%20a%20cluster%20with%20GFS2%20in%20a%20RHEL%206%20or%207%20Resilient%20Storage%20cluster%3F%20-%20Red%20Hat%20Customer%20Portal_files/old_props.js" data-requiremodule="analytics/adapters/omniture/old_props" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="Why%20is%20UDP%20unicast%20%28UDPU%29%20not%20recommended%20for%20use%20in%20a%20cluster%20with%20GFS2%20in%20a%20RHEL%206%20or%207%20Resilient%20Storage%20cluster%3F%20-%20Red%20Hat%20Customer%20Portal_files/attributes_003.js" data-requiremodule="analytics/adapters/eloqua/attributes" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="Why%20is%20UDP%20unicast%20%28UDPU%29%20not%20recommended%20for%20use%20in%20a%20cluster%20with%20GFS2%20in%20a%20RHEL%206%20or%207%20Resilient%20Storage%20cluster%3F%20-%20Red%20Hat%20Customer%20Portal_files/outageJson_ru.js" data-requiremodule="portal_outage" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script></head>
+
+<body class="portal-page  kcs_external ru loggedIn">
+
+    
+
+	<!-- Chrome: Full -->
+	<div id="page-wrap" class="page-wrap">
+		<div class="top-page-wrap">
+<!--googleoff: all-->
+
+			<header class="masthead"><div class="mobile-bar-wrap hidden-sm hidden-md hidden-lg">
+	<a class="logo" href="https://access.redhat.com/">
+		<span class="logo-crop"><img src="Why%20is%20UDP%20unicast%20%28UDPU%29%20not%20recommended%20for%20use%20in%20a%20cluster%20with%20GFS2%20in%20a%20RHEL%206%20or%207%20Resilient%20Storage%20cluster%3F%20-%20Red%20Hat%20Customer%20Portal_files/l_redhat-lg.png"></span>
+		<span class="site-title"><span>Портал </span><span>пользователей</span></span>
+	</a>
+	<button style="height: auto;" id="mobile-nav-btn" class="btn btn-navbar collapse in" data-toggle="collapse" data-target="#mobile-nav">
+		<span class="web-icon-mobile-menu"></span>
+		<span class="link-text">global.menu</span>
+	</button>
+	<button class="btn btn-search btn-utility" data-target="#site-search">
+		<span class="web-icon-search"></span>
+		<span class="link-text">Поиск</span>
+	</button>
+</div>
+
+<div class="utility-wrap">
+	<div class="utility-container">
+		<div class="utility-bar visible-sm visible-md visible-lg">
+			<menu class="top-nav">
+				<ul>
+					<li id="nav-subscription"><a class="top-nav-subscriptions" href="https://access.redhat.com/management/">Подписки</a></li>
+					<li id="nav-downloads"><a class="top-nav-downloads" href="https://access.redhat.com/downloads/">Загрузки</a></li>
+					<li id="nav-support"><a class="top-nav-support-cases" href="https://access.redhat.com/support/cases/">Запросы поддержки</a></li>
+				</ul>
+			</menu>
+
+			<menu class="utility-nav">
+				<ul>
+					<li>
+						<a class="btn-search" data-target="#site-search">
+							<span class="web-icon-search"></span>
+							<span class="link-text">Поиск</span>
+						</a>
+					</li>
+					<li>
+						<a class="btn-profile" data-target="#account-info">
+							<span class="web-icon-user"></span>
+							<span class="link-text">Учетная запись</span>
+							<span class="account-user filled" id="accountUserName">GPL GPL</span>
+						</a>
+					</li>
+					<li>
+						<a class="btn-language" data-target="#language">
+							<span class="web-icon-globe"></span>
+							<span class="link-text">Язык</span>
+						</a>
+					</li>
+				</ul>
+			</menu>
+		</div>
+		<!-- Utility Tray -->
+		<div class="utility-tray-container">
+			<div class="utility-tray">
+				<div id="site-search" class="utility-link site-search">
+					<div class="content">
+            			<form class="ng-pristine ng-valid topSearchForm" id="topSearchForm" name="topSearchForm" action="/search/browse/search/" method="get" enctype="application/x-www-form-urlencoded">
+							<div class="input-group">
+
+                    			<input class="form-control searchField" id="topSearchInput" name="keyword" placeholder="Введите искомый текст" type="text">
+								<span class="input-group-btn">
+				    				<button type="submit" class="btn btn-primary">Поиск</button>
+								</span>
+							</div>
+						</form>
+					</div>
+				</div>
+				<div id="account-info" class="utility-link account-info">
+					<div class="content">
+
+						<!-- Account Unauthenticated -->
+						<div id="accountLinksLoggedOut" class="unauthenticated">
+							<h2 class="utility-header">Авторизация Red Hat</h2>
+							<div class="row col-border-row">
+								<div class="col-sm-6 col-border">
+									<p><a href="https://access.redhat.com/login?redirectTo=https%3A//access.redhat.com/solutions/162193" id="accountLogin" class="btn btn-primary">Вход</a></p>
+									<p>Учетная запись Red Hat содержит профиль пользователя и в зависимости от его статуса определяет доступные службы:</p>
+								</div>
+								<div class="col-sm-6 col-border col-border-left">
+									<p><a href="https://www.redhat.com/wapps/ugc/register.html" class="btn btn-primary">Регистрация</a></p>
+									<p>Если вы впервые обращаетесь к Red Hat, то для доступа к полному каталогу продуктов рекомендуется зарегистрироваться.</p>
+
+									<strong>Нужен доступ к учетной записи?</strong><p>Если у вашей организации уже есть учетная запись Red Hat, обратитесь к администратору.</p>
+
+									<p><a href="https://access.redhat.com/support/contact/customerService/">Если у вас есть вопросы, обратитесь к службе обслуживания клиентов.</a></p>
+								</div>
+							</div>
+						</div>
+
+						<!-- Account Authenticated -->
+						<div style="display: block;" id="accountLinksLoggedIn" class="authenticated">
+							<h2 class="utility-header"><span id="userFirstName">Здравствуйте,  GPL GPL</span></h2>
+							<div class="row col-border-row">
+								<div class="col-sm-6 col-border col-border-right">
+									<div class="account-info" id="accountUser">
+										<div class="avatar"><!-- placeholder--></div>
+										<div class="account-name"><strong id="userFullName">GPL GPL</strong></div>
+										<div class="account-org"><span id="userOrg"></span></div>
+										<div class="account-number accountNumber"><span class="property">Номер учетной записи Red Hat:</span> <span class="value">1403636</span></div>
+									</div>
+
+									<div class="row account-settings">
+										<div class="col-md-6">
+											<h3>Учетная запись Red Hat</h3>
+											<ul class="reset">
+												<li><a href="https://www.redhat.com/wapps/ugc/protected/personalInfo.html">Параметры учетной записи</a></li>
+												<li><a href="https://www.redhat.com/wapps/ugc/protected/prefs.html">Контактные данные и рассылки</a></li>
+												<li><a href="https://www.redhat.com/wapps/ugc/protected/usermgt/userList.html">Управление пользователями</a></li>
+												<li><a href="https://www.redhat.com/wapps/ugc/protected/account.html">Учетная запись</a></li>
+											</ul>
+										</div>
+										<div class="col-md-6">
+											<h3>Портал пользователей</h3>
+											<ul class="reset">
+												<li><a href="https://access.redhat.com/user">Профиль</a></li>
+												<li><a href="https://access.redhat.com/user" id="userNotificationsLink">Уведомления</a></li>
+												<li><a href="https://access.redhat.com/help/">Помощь</a></li>
+											</ul>
+										</div>
+									</div>
+
+								</div>
+								<div class="col-sm-6 col-border">
+									<p>Если вы используете общедоступный компьютер, завершив работу, не забудьте завершить сеанс Red Hat.</p>
+									<p><a href="https://www.redhat.com/wapps/sso/logout.html?redirect=https://access.redhat.com/logout" id="accountLogout" class="btn btn-primary">Выход</a></p>
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+				<div id="language" class="utility-link language">
+					<div class="content">
+						<h2 class="utility-header">Выберите язык</h2>
+						<div class="row" id="localesMenu">
+							<div class="col-sm-4">
+								<ul class="reset">
+									<li><a href="https://access.redhat.com/changeLanguage?language=en&amp;redirectTo=https%3A//access.redhat.com/solutions/162193" id="en">English</a></li>
+									<li><a href="https://access.redhat.com/changeLanguage?language=es&amp;redirectTo=https%3A//access.redhat.com/solutions/162193" id="es">español</a></li>
+									<li><a href="https://access.redhat.com/changeLanguage?language=de&amp;redirectTo=https%3A//access.redhat.com/solutions/162193" id="de">Deutsch</a></li>
+									<li><a href="https://access.redhat.com/changeLanguage?language=it&amp;redirectTo=https%3A//access.redhat.com/solutions/162193" id="it">italiano</a></li>
+									<li><a href="https://access.redhat.com/changeLanguage?language=ko&amp;redirectTo=https%3A//access.redhat.com/solutions/162193" id="ko">한국어</a></li>
+								</ul>
+							</div>
+							<div class="col-sm-4">
+								<ul class="reset">
+									<li><a href="https://access.redhat.com/changeLanguage?language=fr&amp;redirectTo=https%3A//access.redhat.com/solutions/162193" id="fr">français</a></li>
+									<li><a href="https://access.redhat.com/changeLanguage?language=ja&amp;redirectTo=https%3A//access.redhat.com/solutions/162193" id="ja">日本語</a></li>
+									<li><a href="https://access.redhat.com/changeLanguage?language=pt&amp;redirectTo=https%3A//access.redhat.com/solutions/162193" id="pt">português</a></li>
+									<li><a href="https://access.redhat.com/changeLanguage?language=zh_CN&amp;redirectTo=https%3A//access.redhat.com/solutions/162193" id="zh_CN">中文 (中国)</a></li>
+									<li><a class="selected" href="https://access.redhat.com/changeLanguage?language=ru&amp;redirectTo=https%3A//access.redhat.com/solutions/162193" id="ru">русский</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div id="scroll-anchor" class="affix-top">
+</div>
+
+<div class="header-nav visible-sm visible-md visible-lg">
+	<div style="top: 0px;" id="header-nav" class="affix">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12">
+
+					<a href="https://access.redhat.com/" class="logo">
+						<span class="logo-crop"><img src="Why%20is%20UDP%20unicast%20%28UDPU%29%20not%20recommended%20for%20use%20in%20a%20cluster%20with%20GFS2%20in%20a%20RHEL%206%20or%207%20Resilient%20Storage%20cluster%3F%20-%20Red%20Hat%20Customer%20Portal_files/l_redhat-lg.png"></span>
+						<span class="site-title"><span>Портал </span><span>пользователей</span></span>
+					</a>
+
+					<menu style="display: block;" class="primary-nav">
+						<ul>
+							<li class="on" id="nav-products"><a class="products" data-link="mega" data-target="products-menu" href="https://access.redhat.com/products/">Продукты и услуги</a></li>
+							<li id="nav-tools"><a class="tools" data-link="mega" data-target="tools-menu" href="https://access.redhat.com/labs/">Инструменты</a></li><!-- #Need URL -->
+							<li id="nav-security"><a class="security" data-link="mega" data-target="security-menu" href="https://access.redhat.com/security/">Безопасность</a></li>
+							<li id="nav-community"><a class="community" data-link="mega" data-target="community-menu" href="https://access.redhat.com/community/">Сообщество</a></li><!-- #Need URL -->
+						</ul>
+					</menu>
+				</div>
+			</div>
+			<div id="to-top"><a class="btn_slideto"><span class="web-icon-upload"></span></a></div>
+		</div>
+	</div>
+</div>
+
+<div class="mobile-nav-wrap hidden-sm hidden-md hidden-lg">
+	<div id="mobile-nav" class="mobile-nav navbar collapse navbar-collapse">
+		<div class="navbar-inner">
+
+			<menu>
+				<ul class="mobile-utility">
+					<li>
+						<a class="btn-profile" data-target="#account-info-mobile">
+							<span class="web-icon-user"></span>
+							<span class="link-text">Учетная запись</span>
+						</a>
+					</li><!-- white space inline
+					--><li>
+						<a class="btn-language" data-target="#language-mobile">
+							<span class="web-icon-globe"></span>
+							<span class="link-text">Язык</span>
+						</a>
+					</li>
+				</ul>
+				<div id="account-info-mobile" class="mobile-utility-wrap">
+					<!-- Account Unauthenticated -->
+					<div id="mobile-accountLinksLoggedOut" class="unauthenticated">
+						<ul class="nav mobile-utility-nav">
+							<li><a href="https://access.redhat.com/login">Вход</a></li>
+							<li><a href="https://www.redhat.com/wapps/ugc/register.html">Регистрация</a></li>
+						</ul>
+					</div>
+					<!-- Account Authenticated -->
+					<div style="display: block;" id="mobile-accountLinksLoggedIn" class="authenticated">
+						<div class="account-info" id="mobile-accountUser">
+							<div class="account-name"><strong id="mobile-userFullName">GPL GPL</strong></div>
+							<div class="account-org"><span id="mobile-userOrg"></span></div>
+							<div class="account-number mobile-accountNumber"><span class="property">Номер учетной записи Red Hat:</span> <span class="value">1403636</span></div>
+						</div>
+						<ul class="nav mobile-utility-nav">
+							<li><a href="https://www.redhat.com/wapps/ugc/protected/personalInfo.html">Параметры учетной записи</a></li>
+							<li><a href="https://www.redhat.com/wapps/ugc/protected/prefs.html">Контактные данные и рассылки</a></li>
+							<li><a href="https://www.redhat.com/wapps/ugc/protected/usermgt/userList.html">Управление пользователями</a></li>
+							<li><a href="https://www.redhat.com/wapps/ugc/protected/account.html">Учетная запись</a></li>
+							<li><a href="https://access.redhat.com/user">Профиль</a></li>
+							<li><a href="https://access.redhat.com/user" id="userNotificationsLink">Уведомления</a></li>
+							<li><a href="https://access.redhat.com/help/">Помощь</a></li>
+							<li class="logout"><a href="https://www.redhat.com/wapps/sso/logout.html?redirect=https://access.redhat.com/logout">Выход</a>
+						</li></ul>
+					</div>
+				</div>
+				<div id="language-mobile" class="mobile-utility-wrap">
+					<ul class="nav mobile-utility-nav">
+						<li><a href="https://access.redhat.com/changeLanguage?language=en" id="mobile-en">English</a></li>
+						<li><a href="https://access.redhat.com/changeLanguage?language=es" id="mobile-es">español</a></li>
+						<li><a href="https://access.redhat.com/changeLanguage?language=de" id="mobile-de">Deutsch</a></li>
+						<li><a href="https://access.redhat.com/changeLanguage?language=it" id="mobile-it">italiano</a></li>
+						<li><a href="https://access.redhat.com/changeLanguage?language=ko" id="mobile-ko">한국어</a></li>
+						<li><a href="https://access.redhat.com/changeLanguage?language=fr" id="mobile-fr">français</a></li>
+						<li><a href="https://access.redhat.com/changeLanguage?language=ja" id="mobile-ja">日本語</a></li>
+						<li><a href="https://access.redhat.com/changeLanguage?language=pt" id="mobile-pt">português</a></li>
+						<li><a href="https://access.redhat.com/changeLanguage?language=zh_CN" id="mobile-zh_CN">中文 (中国)</a></li>
+						<li><a class="selected" href="https://access.redhat.com/changeLanguage?language=ru" id="mobile-ru">русский</a></li>
+					</ul>
+				</div>
+				<ul class="main-mobile-nav nav">
+					<li id="mnav-home"><a href="https://access.redhat.com/">Home</a></li>
+					<li class="on" id="mnav-products"><a href="https://access.redhat.com/products/">Продукты и услуги</a></li>
+					<li id="mnav-tools"><a href="https://access.redhat.com/tools/">Инструменты</a></li>
+					<li id="mnav-security"><a href="https://access.redhat.com/security/">Безопасность</a></li>
+					<li id="mnav-community"><a href="https://access.redhat.com/community/">Сообщество</a></li><!-- #Need URL -->
+					<li id="mnav-downloads"><a href="https://access.redhat.com/downloads/">Загрузки</a></li>
+					<li id="mnav-subscription"><a href="https://access.redhat.com/management/">Подписки</a></li>
+					<li id="mnav-support"><a href="https://access.redhat.com/support/cases/">Запросы поддержки</a></li>
+				</ul>
+			</menu>
+		</div>
+	</div>
+</div>
+
+<div class="mega-wrap visible-sm visible-md visible-lg">
+	<menu class="mega">
+		<div class="container">
+			<div class="mega-menu-wrap">
+				<!-- Products Menu -->
+				<div aria-labelledby="products-menu" class="products-menu mega-menu" data-eh="mega-menu" role="menu">
+					<div class="row">
+						<div class="col-md-6 col-sm-8">
+							<nav class="root">
+								<div class="row">
+									<ul class="subnav subnav-root col-sm-6">
+										<li data-target="infrastructure-menu" class="active">
+											<a href="https://access.redhat.com/products/">Инфраструктура и управление</a>
+										</li>
+										<li data-target="cloud-menu">
+											<a href="https://access.redhat.com/products/">Облачные вычисления</a>
+										</li>
+										<li data-target="jboss-dev-menu">
+											<a href="https://access.redhat.com/products/">Разработка и управление JBoss</a>
+										</li>
+										<li data-target="jboss-int-menu">
+											<a href="https://access.redhat.com/products/">Интеграция и автоматизация JBoss</a>
+										</li>
+										<li data-target="services-menu">
+											<a href="https://access.redhat.com/products/">Услуги</a>
+										</li>
+									</ul>
+									<div class="subnav subnav-child col-sm-6" data-eh="subnav-child" data-menu-local="infrastructure-menu" style="display: block;">
+										<ul>
+											<li>
+												<a href="https://access.redhat.com/products/red-hat-enterprise-linux/">Red Hat Enterprise Linux</a>
+											</li>
+											<li>
+												<a href="https://access.redhat.com/products/red-hat-enterprise-virtualization/">Red Hat Enterprise Virtualization</a>
+											</li>
+											<li>
+												<a href="https://access.redhat.com/products/Identity_Management/">Управление удостоверениями Red Hat</a>
+											</li>
+											<li>
+												<a href="https://access.redhat.com/products/red-hat-directory-server/">Сервер каталогов Red Hat</a>
+											</li>
+											<li>
+												<a href="https://access.redhat.com/products/red-hat-certificate-system/">Система сертификатов Red Hat</a>
+											</li>
+											<li>
+												<a href="https://access.redhat.com/products/red-hat-satellite/">Red Hat Satellite</a>
+											</li>
+											<li>
+												<a href="https://access.redhat.com/products/subscription-asset-manager/">Subscription Asset Manager</a>
+											</li>
+											<li>
+												<a href="https://access.redhat.com/products/red-hat-update-infrastructure/">Обновление Red Hat </a>
+											</li>
+											<li>
+												<a href="https://access.redhat.com/products/red-hat-storage/">Red Hat Gluster Storage</a>
+											</li>
+											<li>
+												<a href="https://access.redhat.com/products/red-hat-ceph-storage/">Red Hat Ceph Storage</a>
+											</li>
+										</ul>
+									</div>
+									<div class="subnav subnav-child col-sm-6" data-eh="subnav-child" data-menu-local="cloud-menu">
+										<ul>
+											<li>
+												<a href="https://access.redhat.com/products/red-hat-cloudforms/">Red Hat CloudForms</a>
+											</li>
+											<li>
+												<a href="https://access.redhat.com/products/red-hat-enterprise-linux-openstack-platform/">Red Hat Enterprise Linux OpenStack</a>
+											</li>
+											<li>
+												<a href="https://access.redhat.com/products/red-hat-cloud-infrastructure/">Облачная инфраструктура Red Hat</a>
+											</li>
+											<li>
+												<a href="https://access.redhat.com/products/openshift-enterprise-red-hat/">Red Hat OpenShift Enterprise</a>
+											</li>
+											<li>
+												<a href="https://access.redhat.com/products/openshift-online-red-hat/">Red Hat OpenShift Online</a>
+											</li>
+										</ul>
+									</div>
+									<div class="subnav subnav-child col-sm-6" data-eh="subnav-child" data-menu-local="jboss-dev-menu">
+										<ul>
+											<li>
+												<a href="https://access.redhat.com/products/red-hat-jboss-enterprise-application-platform/">Red Hat JBoss Enterprise Application Platform</a>
+											</li>
+											<li>
+												<a href="https://access.redhat.com/products/red-hat-jboss-data-grid/">Red Hat JBoss Data Grid</a>
+											</li>
+											<li>
+												<a href="https://access.redhat.com/products/red-hat-jboss-web-server/">Red Hat JBoss Web Server</a>
+											</li>
+											<li>
+												<a href="https://access.redhat.com/products/red-hat-jboss-portal/">Red Hat JBoss Portal</a>
+											</li>
+											<li>
+												<a href="https://access.redhat.com/products/red-hat-jboss-operations-network/">Red Hat JBoss Operations Network</a>
+											</li>
+											<li>
+												<a href="https://access.redhat.com/products/red-hat-jboss-developer-studio/">Red Hat JBoss Developer Studio</a>
+											</li>
+										</ul>
+									</div>
+									<div class="subnav subnav-child col-sm-6" data-eh="subnav-child" data-menu-local="jboss-int-menu">
+										<ul>
+											<li>
+												<a href="https://access.redhat.com/products/red-hat-jboss-fuse-service-works/">Red Hat JBoss Fuse Service Works</a>
+											</li>
+											<li>
+												<a href="https://access.redhat.com/products/red-hat-jboss-data-virtualization/">Red Hat JBoss Data Virtualization</a>
+											</li>
+											<li>
+												<a href="https://access.redhat.com/products/red-hat-jboss-fuse/">Red Hat JBoss Fuse</a>
+											</li>
+											<li>
+												<a href="https://access.redhat.com/products/red-hat-jboss-a-mq/">Red Hat JBoss A-MQ</a>
+											</li>
+											<li>
+												<a href="https://access.redhat.com/products/red-hat-jboss-bpm-suite/">Red Hat JBoss BPM Suite</a>
+											</li>
+											<li>
+												<a href="https://access.redhat.com/products/red-hat-jboss-brms/">Red Hat JBoss BRMS</a>
+											</li>
+										</ul>
+									</div>
+									<div class="subnav subnav-child col-sm-6" data-eh="subnav-child" data-menu-local="services-menu">
+										<ul>
+											<li><a href="https://access.redhat.com/products/Consulting/">Консалтинг</a></li>
+			                    			<li><a href="https://access.redhat.com/products/red-hat-access/">Red Hat Access</a></li>
+			                    			<li><a href="https://access.redhat.com/products/Red_Hat_Enterprise_Linux/Developer/">Программа разработчиков Red Hat Enterprise Linux</a></li>
+			                    			<li><a href="https://access.redhat.com/products/Training/">Обучение</a></li>
+			                    			<li><a href="https://access.redhat.com/support/offerings/tam/">Техническое управление учетными записями</a></li>
+										</ul>
+									</div>
+								</div>
+							</nav>
+							<a href="https://access.redhat.com/products" class="btn btn-primary">Просмотр продуктов и услуг</a>
+						</div>
+
+						<div class="col-md-6 col-sm-4 pull-right">
+							<div class="row">
+								<div class="col-md-4">
+									<h3 class="nav-title">Экосистема</h3>
+									<ul>
+										<li><a href="https://access.redhat.com/certification">Обзор</a></li>
+										<li><a href="https://access.redhat.com/search/browse/certified-hardware#?">Сертифицированное оборудование</a></li>
+										<li><a href="https://access.redhat.com/search/browse/certified-software#?">Сертифицированные программы</a></li>
+										<li><a href="https://access.redhat.com/search/browse/certified-cloud-providers#?">Сертифицированные облачные провайдеры</a></li>
+									</ul>
+								</div>
+								<div class="col-md-4">
+									<h3 class="nav-title">База знаний</h3>
+									<ul>
+										<li><a href="https://access.redhat.com/search/browse/search/">Советы экспертов</a></li>
+										<li><a href="https://access.redhat.com/documentation/">Документация</a></li>
+									</ul>
+								</div>
+								<div class="col-md-4">
+									<h3 class="nav-title">Политика поддержки</h3>
+									<ul>
+										<li><a href="https://access.redhat.com/support/offerings/production/">Производственная поддержка</a></li>
+										<li><a href="https://access.redhat.com/support/offerings/developer/">Поддержка разработки</a></li>
+									</ul>
+								</div>
+
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Tools Menu -->
+				<div aria-labelledby="tools-menu" class="tools-menu mega-menu" data-eh="mega-menu" role="menu">
+					<div class="row">
+
+						<nav class="col-sm-9">
+							<div class="mega-menu-feature">
+								<div class="row">
+									<div class="col-sm-4">
+										<h2 class="mega-menu-feature-title">Лаборатория Red Hat</h2>
+										<p>Чтобы полностью раскрыть потенциал продуктов Red Hat, наши специалисты разработали набор дополнительных инструментов.</p>
+										<p class="push-top"><a href="https://access.redhat.com/labs/" class="btn btn-primary">Каталог Labs</a></p>
+									</div>
+									<div class="col-sm-4">
+										<a href="https://access.redhat.com/labs/#?type=config">
+											<h3 class="nav-title">Конфигурация</h3>
+										</a>
+										<ul>
+											<li><a href="https://access.redhat.com/labs/jvmconfig/">JVM Config</a></li>
+											<li><a href="https://access.redhat.com/labs/networkbondinghelper/">Network Bonding Helper</a></li>
+											<li><a href="https://access.redhat.com/labs/linterfordockerfile/">Linter for Dockerfile</a></li>
+										</ul>
+
+										<a href="https://access.redhat.com/labs/#?type=deploy">
+											<h3 class="nav-title">Внедрение</h3>
+										</a>
+										<ul>
+											<li><a href="https://access.redhat.com/labs/registrationassistant/">Registration Assistant</a></li>
+											<li><a href="https://access.redhat.com/labs/kickstartconfig/">Kickstart Generator</a></li>
+											<li><a href="https://access.redhat.com/labs/rhevupgradehelper/">RHEV Upgrade Helper</a></li>
+										</ul>
+									</div>
+									<div class="col-sm-4">
+										<a href="https://access.redhat.com/labs/#?type=troubleshoot">
+											<h3 class="nav-title">Диагностика</h3>
+										</a>
+										<ul>
+											<li><a href="https://access.redhat.com/labs/garbagedog/">Garbage Collection Analysis</a></li>
+											<li><a href="https://access.redhat.com/labs/kerneloopsanalyzer/">Kernel Oops Analyzer</a></li>
+											<li><a href="https://access.redhat.com/labs/kdumphelper/">Kdump Helper</a></li>
+										</ul>
+										<a href="https://access.redhat.com/labs/#?type=security">
+											<h3 class="nav-title">Безопасность</h3>
+										</a>
+										<ul>
+											<li><a href="https://access.redhat.com/labs/ghost/">GHOST - gethostbyname Detector</a></li>
+											<li><a href="https://access.redhat.com/labs/poodle/">SSLv3 (POODLE) Detector</a></li>
+											<li><a href="https://access.redhat.com/labs/shellshock/">Shellshock - Bash Vulnerability Detector</a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</nav>
+
+						<nav class="col-sm-3">
+							<h3 class="nav-title">Дополнительные инструменты</h3>
+							<ul>
+								<li><a href="https://access.redhat.com/products/red-hat-access/">Обзор Red Hat Access</a></li>
+								<li><a href="https://access.redhat.com/labs/hacat/">Анализ архитектуры кластера Red Hat</a></li>
+								<li><a href="https://access.redhat.com/tools/satcert/">Генерация сертификата Red Hat Satellite </a></li>
+							</ul>
+						</nav>
+
+					</div>
+				</div>
+
+				<!-- Security Menu -->
+				<div aria-labelledby="security-menu" class="security-menu mega-menu" data-eh="mega-menu" role="menu">
+					<div class="row">
+						<nav class="col-sm-12 basic">
+							<div class="row">
+								<div class="col-md-3 col-sm-4">
+									<h3 class="nav-title">Обновления безопасности</h3>
+									<ul>
+										<li><a href="https://access.redhat.com/security/cve">База данных Red Hat CVE</a></li>
+										<li><a href="https://access.redhat.com/security/updates/active/">Активные продукты</a></li>
+										<li><a href="https://access.redhat.com/security/updates/eol/">Продукты с истекающим сроком службы</a></li>
+										<li><a href="https://access.redhat.com/security/updates/advisory/">Как получать уведомления</a></li>
+									</ul>
+								</div>
+								<div class="col-md-3 col-sm-4">
+									<h3 class="nav-title">Защита Red Hat</h3>
+									<ul>
+										<li><a href="https://access.redhat.com/security/team/">О компании</a></li>
+										<li><a href="https://securityblog.redhat.com/">Блог по защите</a></li>
+										<li><a href="https://access.redhat.com/security/team/contact/">Контакты</a></li>
+									</ul>
+								</div>
+								<div class="col-md-3 col-sm-4">
+									<h3 class="nav-title">Ресурсы</h3>
+									<ul>
+										<li><a href="https://www.redhat.com/security/data/metrics/">Анализ защиты</a></li>
+										<li><a href="https://access.redhat.com/security/updates/classification/">Классификация уязвимостей</a></li>
+										<li><a href="https://access.redhat.com/security/updates/backporting/">Обратная совместимость</a></li>
+										<li><a href="https://access.redhat.com/security/team/key/">Ключи GPG</a></li>
+									</ul>
+								</div>
+							</div>
+						</nav>
+						<a href="https://access.redhat.com/security/" class="btn btn-primary">Обзор безопасности</a>
+					</div>
+				</div>
+
+				<!-- Community Menu -->
+				<div aria-labelledby="community-menu" class="community-menu mega-menu" data-eh="mega-menu" role="menu">
+					<div class="row">
+            			<nav class="col-sm-12 basic">
+							<div class="row">
+								<div class="col-sm-3">
+									<h3 class="nav-title">Обсуждения</h3>
+									<ul>
+
+										<li><a href="https://access.redhat.com/discussions?product=25&amp;category=All&amp;tags=All">Red Hat Enterprise Linux</a></li>
+										<li><a href="https://access.redhat.com/discussions?product=8163&amp;category=All&amp;tags=All">Red Hat Enterprise Virtualization</a></li>
+										<li><a href="https://access.redhat.com/discussions?product=36&amp;category=All&amp;tags=All">Red Hat Satellite</a></li>
+										<li><a href="https://access.redhat.com/discussions?product=22&amp;category=All&amp;tags=All">Портал пользователей</a></li>
+										<li><a href="https://access.redhat.com/groups/">Закрытые группы</a></li>
+										<li class="more-link"><a href="https://access.redhat.com/discussions?keyword=&amp;name=&amp;product=All&amp;category=All&amp;tags=All">Все обсуждения</a></li>
+										<li class="more-link"><a href="https://access.redhat.com/node/add/discussion">Начать обсуждение</a></li>
+									</ul>
+								</div>
+								<div class="col-sm-3">
+									<h3 class="nav-title">Блоги</h3>
+									<ul>
+										<li><a href="https://access.redhat.com/blogs/767163">Портал пользователей</a></li>
+										<li><a href="https://access.redhat.com/blogs/759303">Лаборатория Red Hat</a></li>
+										<li><a href="https://access.redhat.com/blogs/766093">Отдел безопасности</a></li>
+										<li class="more-link"><a href="https://access.redhat.com/blogs/">Все блоги</a></li>
+									</ul>
+								</div>
+								<div class="col-sm-3">
+									<h3 class="nav-title">События</h3>
+									<ul>
+										<li><a href="https://access.redhat.com/customer-convergence">Мероприятия</a></li>
+										<li><a href="http://www.redhat.com/summit/">Саммит Red Hat</a></li>
+									</ul>
+								</div>
+								<div class="col-sm-3">
+									<h3 class="nav-title">Очерки</h3>
+									<ul>
+										<li><a href="https://access.redhat.com/subscription-value/">Преимущества подписки Red Hat</a></li>
+										<li><a href="https://access.redhat.com/customer-success/">Вы просили — мы сделали</a></li>
+										<li><a href="http://www.redhat.com/en/open-source">Сообщества разработчиков открытого кода</a></li>
+									</ul>
+								</div>
+							</div>
+						</nav>
+						<a href="https://access.redhat.com/community/" class="btn btn-primary">Знакомство с сообществом</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</menu>
+</div>
+
+				<div id="site-section"></div>
+
+			<div class="breadcrumbs"><div id="breadcrumbs" class="container"><a href="https://access.redhat.com/products">Products &amp; Services</a><a href="https://access.redhat.com/">База знаний</a><a href="https://access.redhat.com/search/browse/solutions">Решения</a>Why is UDP unicast (UDPU) not recommended for use in a cluster with GFS2 in a RHEL 6 or 7 Resilient ...</div></div></header>
+<!--googleon: all-->
+			<main id="cp-main" class="portal-content-area" role="main">
+				<div id="cp-content" class="main-content">
+					<!-- legacy divs start here -->
+					<div id="legacy-portal">
+						<div class="content-area">
+							<div id="legacy-container" class="legacy-container">
+									
+  <div id="content-narrow">
+      <script type="text/javascript">
+   siteMapState = "products & services";
+</script>
+<div class="wrapi">
+    <div id="container" class="clearWrap c-mF state-active status-published">
+        <div id="drupal-content" class="clearfix">
+            <div id="drupal-main" class="">
+                
+                <!-- googleoff: all-->
+                                <!--googleon: all-->
+
+                                    <article id="main-content" class="kcs_solution">
+
+                      <span id="watermark"></span>
+                                <header>
+                            <h1 class="title" id="page-title">Why is UDP unicast (UDPU) not recommended for use in a cluster with GFS2 in a RHEL 6 or 7 Resilient Storage cluster?</h1>                                            <div class="pubdate"><span class="icon-clock" aria-hidden="true"></span> Обновлено <span title="19.12.2014" class="moment_date">19.12.2014</span></div>
+                          </header>
+          
+                                    <div class="content-area kcs_solution-area">
+                                                    <aside id="sidebar">
+                    <div class="region region-sidebar-second column sidebar "><div class="section">
+    <div id="block-boxes-rate" class="block block-boxes block-boxes-simple first odd count-1">
+
+        <h2 class="block-title">Оценить</h2>
+    
+  <div class="content">
+    <form class="fivestar-widget" action="/solutions/162193" method="post" id="fivestar-custom-widget--2" accept-charset="UTF-8"><div><div class="clearfix fivestar-average-text fivestar-average-stars fivestar-form-item fivestar-default fivestar-processed"><div class="form-item form-type-fivestar form-item-vote">
+ <div class="form-item form-type-select form-item-vote">
+ <select style="display: none;" id="edit-vote--4" name="vote" class="form-select ajax-processed"><option value="-">Выбрать рейтинг</option><option value="20">Присвоить 1 из 5</option><option value="40">Присвоить 2 из 5</option><option value="60" selected="selected">Присвоить 3 из 5</option><option value="80">Присвоить 4 из 5</option><option value="100">Присвоить 5 из 5</option><option value="0">Отменить рейтинг</option></select><div class="fivestar-widget clearfix fivestar-widget-5"><div class="cancel"><a href="#0" title="Отменить рейтинг">Отменить рейтинг</a></div><div class="star star-1 odd star-first on"><a href="#20" title="Присвоить 1 из 5">Присвоить 1 из 5</a></div><div class="star star-2 even on"><a href="#40" title="Присвоить 2 из 5">Присвоить 2 из 5</a></div><div class="star star-3 odd on"><a href="#60" title="Присвоить 3 из 5">Присвоить 3 из 5</a></div><div class="star star-4 even"><a href="#80" title="Присвоить 4 из 5">Присвоить 4 из 5</a></div><div class="star star-5 odd star-last"><a href="#100" title="Присвоить 5 из 5">Присвоить 5 из 5</a></div></div>
+<div class="description"><div class="fivestar-summary fivestar-summary-average-count"><span class="average-rating">Среднее: <span>3</span></span> <span class="total-votes">(<span>1</span> vote)</span></div></div>
+</div>
+
+</div>
+</div><input class="fivestar-submit form-submit" id="edit-fivestar-submit--2" name="op" value="Оценить" type="submit"><input name="form_build_id" value="form-i6sI8T-B7OGVKvuJwkFjP4NGBnoCbswrujc1PuBgSmo" type="hidden">
+<input name="form_token" value="cuL3n9r8r1vwq1lW-maQzJ8eK2BL-dz4qvdgkeP4jck" type="hidden">
+<input name="form_id" value="fivestar_custom_widget" type="hidden">
+</div></form>  </div>
+
+</div><!-- /.block -->
+<div id="block-subscriptions-ui-0" class="block block-subscriptions-ui even count-2">
+  <div class="content">
+    <form action="/solutions/162193" method="post" id="subscriptions-ui-node-form" accept-charset="UTF-8">
+      <div>
+        <fieldset id="subscribe" class="form-wrapper">
+          <div class="fieldset-wrapper">
+            <input class="btn btn-primary form-submit ajax-processed" id="edit-subscriptions-node-save-button" name="op" value="Follow" type="submit">             <a href="https://access.redhat.com/user/1544273/subscriptions/all" class="edit_notification_preferences">Edit notification preferences</a>            <input name="subscriptions_block_field" value="follow" type="hidden">
+          </div>
+        </fieldset>
+        <input name="form_build_id" value="form-8xJm726dfut4YPYWQjJKc2D2LNoDhcZh2NL5o7jc2-w" type="hidden">
+        <input name="form_token" value="hwBKxE5F9ZecfZ1Vu4vrFLnR8jk6IGLlR9_8NampN_g" type="hidden">
+        <input name="form_id" value="subscriptions_ui_node_form" type="hidden">
+      </div>
+    </form>
+  </div>
+</div><!-- /.block --><div id="moreLikeThis" class="block block-boxes-simple block-mlt block block-boxes block-boxes-simple odd count-3">
+<h2 class="block-title">More Like This</h2>
+<div class="content"><ul></ul><p>No recommendations found.</p></div></div><div id="block-locale-language" class="block block-locale even count-4">
+
+        <h2 class="block-title">Available Translations</h2>
+    
+  <div class="content">
+    <ul class="language-switcher-locale-url"><li class="en first last active"><a href="https://access.redhat.com/solutions/162193" class="language-link active" lang="en">English</a></li>
+</ul><a id="context-block-locale-language" class="context-block editable edit-kcs_solution_unentitled"></a>  </div>
+
+</div><!-- /.block -->
+
+		            	    <div id="verified" class="block block-boxes block-boxes-simple last odd count-5 kcsStatus">
+
+  	      	      	    
+  	    <div class="content">
+  	      <h2 class="block-title">Проверено</h2><div class="content"><p class="status">Это решение одобрено для использования пользователями Red Hat и специалистами поддержки для выбранной редакции продукта.</p><p class="detail">Это
+ решение предоставлено в рамках ускоренной программы публикации Red Hat,
+ целью которой является расширение диапазона доступных статей. Мы 
+стремимся как можно скорее предложить возможные варианты решений, но в 
+некоторых случаях формат статей может оказаться неполным.</p></div><!-- /.content -->
+  	    </div>
+
+  	    </div><!-- /.block -->
+      <a class="context-block-region" id="context-block-region-sidebar_second">Вторая боковая панель</a>  </div></div><!-- /.section, /.region -->
+                </aside>
+                                
+                                                  <div id="doc">
+                                <div class="section">
+                                                                                                                        <div class="region region-content">
+        <div id="block-system-main" class="block block-system first last odd count-1">
+
+      
+  <div class="content">
+    <div id="node-162193" class="node node-kcs-solution view-mode-full clearfix">
+      
+  <div class="content">
+    <div class="field field-name-field-kcs-issue-txt field-type-text-long field-label-above ">
+	<h2 class="field-label">
+				Вопрос	</h2>
+
+    <ul>
+<li>IP multicast is disabled in my environment, but I want to create a GFS2 cluster.  </li>
+<li>I want to use udpu as it is an available alternative, but it is said that it is not recommended in a cluster that<br>
+uses GFS2.</li>
+</ul>
+</div><div class="field field-name-field-kcs-environment-txt field-type-text-long field-label-above ">
+      <h2 class="field-label">Окружение</h2>
+    <div class="field-items" id="md3">
+          <div class="field-item even"><ul>
+<li>Red Hat Enterprise Linux (RHEL) 6 Update 2 or higher or RHEL 7 with the Resilient Storage Add-on</li>
+<li>GFS2</li>
+<li>UDPU transport in use
+<ul>
+<li>RHEL 6: <code>&lt;cman transport="udpu"/&gt;</code> in `/etc/cluster/cluster.conf</li>
+<li>RHEL 7: <code>totem { transport: udpu }</code> in <code>/etc/corosync/corosync.conf</code></li>
+</ul>
+</li>
+</ul>
+</div>
+      </div>
+</div>
+<div class="field field-name-field-kcs-rootcause-txt field-type-text-long field-label-above ">
+      <h2 class="field-label">Причина</h2>
+    <div class="field-items" id="md4">
+          <div class="field-item even"><p>As of the Red Hat Enterprise 
+Linux 6 Update 2 release and the release of RHEL 7, Red Hat 
+High-Availability Add-On nodes can communicate with  each other using 
+the <a href="https://access.redhat.com/site/solutions/178423">UDP Unicast transport mechanism</a>.
+ It is recommended, however, that you use IP multicast for the cluster 
+network. UDP unicast is an alternative that can be used when IP 
+multicast is not available.</p>
+<p>The recommendation to avoid UDPU is especially true when using GFS2. 
+ UDPU works by sending group messages directly to all nodes separately, 
+rather than sending a single packet to the multicast address and 
+allowing the network infrastructure to deliver it to subscribed members.
+  This method has higher overhead, and thus does not scale as well with 
+very large numbers of messages as well as multicast would.  Because 
+GFS2-based workloads often can result in these increased levels of 
+communication, they are often susceptible to demonstrating worse 
+performance on UDP-unicast than with UDP-multicast.  As such, Red Hat 
+does not recommend using UDPU with GFS2-based workloads.</p>
+<p>The performance implications of UDPU can also be expected to increase with larger clusters.</p>
+<p>NOTE: In some cases other workloads besides those based on GFS2 with 
+large amounts of group-messing traffic such as those that use <code>cmirror</code>
+ or messaging applications could suffer similar degradation by the use 
+of UDPU.  It is recommended that each use deployment with UDPU be 
+thoroughly evaluated and tested to determine which transport is optimal.</p>
+</div>
+      </div>
+</div>
+<footer class="compact"><div class="footer-inner"><div class="taxonomy-group"><div class="taxonomy-list field_kcs_sbr_select"></div></div><div class="taxonomy-group"><div class="taxonomy-list field_kcs_product_select">  <h3 class="field-label">
+    Продукты  </h3>
+
+<ul class="field field-name-field-kcs-product-select field-type-taxonomy-term-reference field-label-above">
+
+      <li id="md10">
+      <a href="https://access.redhat.com/search/browse/solutions#?&amp;portal_product=Red+Hat+Enterprise+Linux" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">Red Hat Enterprise Linux</a>    </li>
+  
+</ul>
+</div><div class="taxonomy-list field_kcs_component_select">  <h3 class="field-label">
+    Компонент  </h3>
+
+<ul class="field field-name-field-kcs-component-select field-type-taxonomy-term-reference field-label-above">
+
+      <li id="md8">
+      <a href="https://access.redhat.com/search/browse/solutions#?&amp;portal_component=corosync" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">corosync</a>    </li>
+  
+</ul>
+</div></div><div class="taxonomy-group"><div class="taxonomy-list field_kcs_a_category_select">  <h3 class="field-label">
+    Категория  </h3>
+
+<ul class="field field-name-field-kcs-a-category-select field-type-taxonomy-term-reference field-label-above">
+
+      <li id="md14">
+      <a href="https://access.redhat.com/search/browse/solutions#?&amp;portal_category=Supportability" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">Supportability</a>    </li>
+  
+</ul>
+</div><div class="taxonomy-list field_kcs_tags_select">  <h3 class="field-label">
+    Теги  </h3>
+
+<ul class="field field-name-field-kcs-tags-select field-type-taxonomy-term-reference field-label-above">
+
+      <li id="md5">
+      <a href="https://access.redhat.com/search/browse/solutions#?&amp;portal_tag=gfs2" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">gfs2</a>    </li>
+  
+</ul>
+</div></div></div></footer>  </div><!-- /content -->
+  <div id="comments-footer"> 
+	<ul class="links inline"><li class="comment-add first last active"><a href="https://access.redhat.com/solutions/162193#comment-form" title="Share your thoughts and opinions related to this posting." class="active">Добавить комментарий</a></li>
+</ul><div id="comments" class="comment-wrapper">
+          <h2 class="title">Комментарии</h2>
+      
+  <div id="comment-wrapper-nid-162193"></div><div class="ajax-comment-wrapper" id="comment-wrapper-460823"><a id="comment-460823"></a>
+  <div class="ajax-comment-wrapper indented" id="comment-wrapper-460833"><a id="comment-460833"></a>
+  </div></div><div class="ajax-comment-wrapper" id="comment-wrapper-765123"><a id="comment-765123"></a>
+  <div class="comment odd public">
+
+    
+    <div class="submitted">
+        <div class="user-picture">
+    <a href="https://access.redhat.com/user/505073" title="View user profile."><img typeof="foaf:Image" src="Why%20is%20UDP%20unicast%20%28UDPU%29%20not%20recommended%20for%20use%20in%20a%20cluster%20with%20GFS2%20in%20a%20RHEL%206%20or%207%20Resilient%20Storage%20cluster%3F%20-%20Red%20Hat%20Customer%20Portal_files/default-user.png" alt="Greg Procunier's picture" title="Greg Procunier's picture"></a>  </div>
+      <a href="https://access.redhat.com/user/505073">Greg Procunier</a>      <div class="user_badges"><span class="badge badge-3 active-contributor">Active Contributor</span><span class="points">230 points</span></div>    </div>
+    
+    <div class="content clearfix clearleft">
+      <span class="tip"></span>
+      <div class="field field-name-comment-body field-type-text-long field-label-hidden ">
+    <div class="field-items" id="md19">
+          <div class="field-item even"><p>Can anyone from Red Hat 
+comment on the validity of this recommendation (to not use udpu) for 
+2-node clusters?  Based on this information I would not expect 
+performance degradation in a 2-node cluster configuration as there are 
+no extra nodes being flooded to.</p>
+</div>
+      </div>
+</div>
+              <div class="timestamp comment-meta">
+          <a href="https://access.redhat.com/solutions/162193#comment-765123" rel="bookmark"><span title="02.06.2014" class="moment_date">02.06.2014</span></a>                  </div>
+                  <ul class="links inline"><li class="comment-reply first last"><a href="https://access.redhat.com/ajax_comments/reply/162193/765123" class="use-ajax ajax-comment-reply ajax-processed" id="reply-765123" title="ответить" data-toggle="tooltip"><span>ответить</span></a></li>
+</ul>                  </div>
+  </div>
+</div><div class="ajax-comment-wrapper" id="comment-wrapper-845943"><a id="comment-845943"></a>
+  <div class="comment last even public">
+
+    
+    <div class="submitted">
+        <div class="user-picture">
+    <a href="https://access.redhat.com/user/1227813" title="View user profile."><img typeof="foaf:Image" src="Why%20is%20UDP%20unicast%20%28UDPU%29%20not%20recommended%20for%20use%20in%20a%20cluster%20with%20GFS2%20in%20a%20RHEL%206%20or%207%20Resilient%20Storage%20cluster%3F%20-%20Red%20Hat%20Customer%20Portal_files/default-user.png" alt="Transport for London's picture" title="Transport for London's picture"></a>  </div>
+      <a href="https://access.redhat.com/user/1227813">Transport for London</a>      <div class="user_badges"><span class="badge badge-83 newbie">Newbie</span><span class="points">5 точки</span></div>    </div>
+    
+    <div class="content clearfix clearleft">
+      <span class="tip"></span>
+      <div class="field field-name-comment-body field-type-text-long field-label-hidden ">
+    <div class="field-items" id="md20">
+          <div class="field-item even"><p>Yes, I would also appreciate 
+have Greg Procunier's comment validated as we use a 2-node GFS2 cluster 
+with UDPU in our environment</p>
+</div>
+      </div>
+</div>
+              <div class="timestamp comment-meta">
+          <a href="https://access.redhat.com/solutions/162193#comment-845943" rel="bookmark"><span title="04.11.2014" class="moment_date">04.11.2014</span></a>                  </div>
+                  <ul class="links inline"><li class="comment-reply first last"><a href="https://access.redhat.com/ajax_comments/reply/162193/845943" class="use-ajax ajax-comment-reply ajax-processed" id="reply-845943" title="ответить" data-toggle="tooltip"><span>ответить</span></a></li>
+</ul>                  </div>
+  </div>
+</div>
+      <h3 class="title comment-form">Добавить комментарий</h3>
+    <form id="ajax-comment-070652200-1428503179" class="comment-form" action="/comment/reply/162193" method="post" accept-charset="UTF-8"><div><div class="field-type-text-long field-name-comment-body field-widget-text-textarea form-wrapper" id="edit-comment-body"><div id="comment-body-add-more-wrapper"><div class="text-format-wrapper"><div class="form-item form-type-textarea form-item-comment-body-und-0-value">
+ <div class="form-textarea-wrapper resizable textarea-processed resizable-textarea"><textarea class="text-full form-textarea required" id="edit-comment-body-und-0-value" name="comment_body[und][0][value]" cols="60" rows="5"></textarea><div class="grippie"></div></div>
+</div>
+<fieldset class="filter-wrapper form-wrapper" id="edit-comment-body-und-0-format"><div class="fieldset-wrapper"><div class="filter-help form-wrapper" id="edit-comment-body-und-0-format-help"><a href="#formatHelp" class="format-link" data-toggle="modal">Formatting Help</a></div><div style="display: none;" class="form-item form-type-select form-item-comment-body-und-0-format">
+  <label for="edit-comment-body-und-0-format--2">Text format </label>
+ <select class="filter-list form-select noDelete" id="edit-comment-body-und-0-format--2" name="comment_body[und][0][format]"><option value="markdown" selected="selected">Markdown</option><option value="plain_text">Plain text</option></select>
+</div>
+<div class="filter-guidelines form-wrapper filter-guidelines-processed" id="edit-comment-body-und-0-format-guidelines"><div style="display: block;" class="filter-guidelines-item filter-guidelines-markdown"><h3 style="display: none;">Markdown</h3><ul class="tips"><li>Quick Tips:<ul>
+      <li>Two or more spaces at a line's end = Line break</li>
+      <li>Double returns = Paragraph</li>
+      <li>*Single asterisks* or _single underscores_ = <em>Emphasis</em></li>
+      <li>**Double** or __double__ = <strong>Strong</strong></li>
+      <li>This is [a link](http://the.link.example.com "The optional title text")</li>
+      </ul>For complete details on the Markdown syntax, see the <a href="http://daringfireball.net/projects/markdown/syntax">Markdown documentation</a> and <a href="http://michelf.com/projects/php-markdown/extra/">Markdown Extra documentation</a> for tables, footnotes, and more.</li><li>Lines and paragraphs break automatically.</li></ul></div><div style="display: none;" class="filter-guidelines-item filter-guidelines-plain_text"><h3 style="display: none;">Plain text</h3><ul class="tips"><li>No HTML tags allowed.</li><li>Lines and paragraphs break automatically.</li></ul></div></div></div></fieldset>
+</div>
+</div></div><input name="form_build_id" value="form-sNC4IfgJAueQcLmLpXVAXo_oFNYdUzPc0SqVpbze6Mw" type="hidden">
+<input name="form_token" value="26Yj_Yu1FcwHfJPmPTdYHbN2O56bYd_CcZBMs9JCHHU" type="hidden">
+<input name="form_id" value="comment_node_kcs_solution_form" type="hidden">
+<div class="form-actions form-wrapper" id="edit-actions"><input class="btn form-submit ajax-processed" id="edit-submit" name="op" value="Добавить комментарий" type="submit"></div></div></form>  </div>
+	</div>
+</div><!-- /.node -->
+  </div>
+
+</div><!-- /.block -->
+<meta itemscope="" itemref="md1 md2 md3 md4 md6 md7 md9 md11 md13 md15 md16 md21"><meta itemscope="" id="md6" itemref="md5"><meta itemscope="" id="md9" itemref="md8"><meta itemscope="" id="md11" itemref="md10"><meta itemscope="" id="md13" itemref="md12"><meta itemscope="" id="md15" itemref="md14"><meta itemscope="" itemref="md17"><meta itemscope="" itemref="md18"><meta itemscope="" itemref="md19"><meta itemscope="" itemref="md20">      </div><!-- /.region -->
+  
+                                                                            
+                                </div><!-- /.section -->
+                            </div><!-- /#doc -->
+                    </div>
+                                    </article><!-- /article#main-content -->
+                            </div><!--  /#main -->
+
+                    </div><!-- /#content -->
+            </div><!-- /#container -->
+</div><!-- /.wrapi -->
+  </div>
+
+  
+
+
+							</div>
+						</div>
+					</div>
+					<!-- end of legacy -->
+				</div>
+			</main>
+		</div>
+	<!--googleoff: all-->
+	<footer class="footer-main">
+		<div class="container footer-top">
+			<div class="row">
+
+				<div class="col-sm-2 brand">
+					<img src="Why%20is%20UDP%20unicast%20%28UDPU%29%20not%20recommended%20for%20use%20in%20a%20cluster%20with%20GFS2%20in%20a%20RHEL%206%20or%207%20Resilient%20Storage%20cluster%3F%20-%20Red%20Hat%20Customer%20Portal_files/l_redhat-reverse.png" alt="Red Hat">
+				</div><menu class="col-sm-2">
+					<h3>Быстрые ссылки</h3>
+					<ul>
+						<li><a class="download-software" href="https://access.redhat.com/downloads/">Загрузки</a></li>
+						<li><a class="manage-subscriptions" href="https://access.redhat.com/management/subscriptions/#active">Подписки</a></li>
+						<li><a class="support-cases" href="https://access.redhat.com/support">Запросы поддержки</a></li>
+					</ul>
+				</menu>
+
+				<menu class="col-sm-2">
+					<h3>Помощь</h3>
+					<ul>
+						<li><a class="contact-us" href="https://access.redhat.com/support/contact/">Контакты</a></li>
+						<li><a class="login-problems" href="https://access.redhat.com/help/login_assistance">Помощь в авторизации</a></li>
+						<li><a class="accessibility" href="https://access.redhat.com/help/accessibility/">Специальные возможности</a></li>
+						<li><a class="browser-support-policy" href="https://access.redhat.com/help/browsers/">Условия поддержки браузера</a></li>
+					</ul>
+				</menu>
+
+				<menu class="col-sm-2">
+					<h3>Сайт</h3>
+					<ul>
+						<li><a class="recognition" href="https://access.redhat.com/recognition/">Награды и достижения</a></li>
+						<li><a class="colophon" href="https://access.redhat.com/help/colophon/">Оформление</a></li>
+						<li><a class="cp-faqs" href="https://access.redhat.com/articles/33844">Вопросы и ответы по работе портала клиентов</a></li>
+					</ul>
+				</menu>
+
+				<menu class="col-sm-2">
+					<h3>О компании</h3>
+					<ul>
+						<li><a href="https://access.redhat.com/subscription-value" class="subscription-value">Достоинства подписки Red Hat</a></li>
+						<li><a href="https://www.redhat.com/about/" class="about-red-hat">О Red Hat</a></li>
+					</ul>
+				</menu>
+
+				<menu class="col-sm-2">
+					<h3>Другие сайты</h3>
+					<ul>
+						<li><a href="https://www.redhat.com/" class="red-hat-com">RedHat.com</a></li>
+						<li><a href="https://www.jboss.org/" class="jboss-org">JBoss.org</a></li>
+						<li><a href="https://www.openshift.com/" class="openshift-com">OpenShift.com</a></li>
+						<li><a href="https://partnercenter.force.com/" class="partner-connect">Партнерская программа Red Hat Connect</a></li>
+					</ul>
+				</menu>
+
+			</div>
+		</div>
+
+		<div class="anchor">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-4 social">
+						<a target="_blank" href="http://www.redhat.com/summit/" class="summit"><img src="Why%20is%20UDP%20unicast%20%28UDPU%29%20not%20recommended%20for%20use%20in%20a%20cluster%20with%20GFS2%20in%20a%20RHEL%206%20or%207%20Resilient%20Storage%20cluster%3F%20-%20Red%20Hat%20Customer%20Portal_files/l_summit.png" alt="Red Hat Summit"></a>
+						<a target="_blank" href="https://twitter.com/RedHatSupport" class="sm-icon twitter"><span class="nicon-twitter"></span><span class="offscreen">Twitter</span></a>
+						<a target="_blank" href="https://www.facebook.com/RedHatSupport" class="sm-icon facebook"><span class="nicon-facebook"></span><span class="offscreen">Facebook</span></a>
+						<a target="_blank" href="https://plus.google.com/100456039940694908045/posts" class="sm-icon googleplus"><span class="nicon-googleplus"></span><span class="offscreen">Google+</span></a>
+					</div>
+					<div class="col-sm-8 legal">
+						<menu class="legal-nav">
+							<ul>
+								<li><a href="http://www.redhat.com/en/about/privacy-policy" class="privacy-policy">Заявление о конфиденциальности</a></li>
+								<li><a href="https://access.redhat.com/help/terms/" class="terms-of-use">Условия использования портала</a></li>
+								<li><a href="http://www.redhat.com/en/about/all-policies-guidelines" class="all-policies">Политики и руководящие принципы</a></li>
+							</ul>
+						</menu>							
+						<small class="copyright">© 2015 Red Hat, Inc.
+						</small>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		
+	</footer>
+	<!--googleon: all-->
+	</div>
+	  <script type="text/javascript">
+<!--//--><![CDATA[//><!--
+this._tly&&this._tly.measure("domload");
+
+//--><!]]>
+</script>
+  <div id="formatHelp" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="formatTitle" aria-hidden="true"><div class="modal-dialog"><div class="modal-content">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+      <h3 id="formatTitle">Formatting Tips</h3>
+    </div>
+    <div class="modal-body">
+      Here are the common uses of Markdown.<dl class="formatting-help"><dt class="bold">Bold</dt><dd class="bold"><code>**I am important!**</code></dd>
+    <dt class="italics">Italics</dt><dd class="italics"><code>*I am emphasized*</code></dd>
+    <dt class="ul">Bulleted list</dt><dd class="ul"><pre><code>- Lists look great
+- I like lists
+</code></pre></dd>
+    <dt class="ol">Numbered list</dt><dd class="ul"><pre><code>1. Only for ordered steps
+2. Numbering starts over if the sequence is interrupted
+</code></pre></dd>
+    <dt class="codeblock">Code blocks</dt><dd class="codeblock"><pre><code>~~~
+Code surrounded in tildes is easier to read
+~~~</code></pre></dd>
+    <dt class="urls">Links/URLs</dt><dd class="urls"><code>[Red Hat Customer Portal](https://access.redhat.com)</code></dd></dl>
+    </div>
+    <div class="modal-footer">
+      <a target="_blank" href="https://access.redhat.com/help/markdown" class="btn btn-primary">Learn more</a>
+      <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+    </div>
+  </div></div></div>
+
+</body></html>

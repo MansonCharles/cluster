@@ -1,0 +1,49 @@
+pcstmp_svc / P@ssw0rd
+10.0.80.87
+fence_vmware_soap -a 10.0.80.87 -l ppgw_fence_svc -p P@ssw0rd --ssl -z -v -o list |grep node
+fence_vmware_soap -a 10.0.80.87 -l pcstmp_svc -p P@ssw0rd --ssl -z -v -o list |grep node
+
+pcs cluster cib stonith_cfg
+pcs -f stonith_cfg stonith create fence_vm01 fence_vmware_soap pcmk_host_list="msk01-pcstmp01" ipaddr="10.0.80.87" action="reboot" login="pcstmp_svc" passwd="P@ssw0rd" port="msk01-pcstmp01" ssl=1 delay=15 op monitor interval=10s
+pcs -f stonith_cfg stonith create fence_vm02 fence_vmware_soap pcmk_host_list="msk01-pcstmp02" ipaddr="10.0.80.87" action="reboot" login="pcstmp_svc" passwd="P@ssw0rd" port="msk01-pcstmp02" ssl=1 op monitor interval=10s
+pcs cluster cib-push stonith_cfg
+
+pcs property set stonith-enabled=true
+pcs property set no-quorum-policy=ignore
+pcs property
+
+
+pcs -f stonith_cfg stonith create vmfence1 fence_vmware_soap pcmk_host_list=prod231-118.xxx.yyy.com  pcmk_host_map=prod231-118.xxx.yyy.com:node-6u5-2  delay=30 ipaddr=vcenter-IP ssl=1 login=username passwd=xxx
+
+pcs cluster cib stonith_cfg
+pcs -f stonith_cfg stonith create fence_vm01 fence_vmware_soap ipaddr="10.0.80.87" action="reboot" login="pcstmp_svc" passwd="P@ssw0rd" port="msk01-pcstmp01" ssl=1 op monitor interval=20s
+pcs -f stonith_cfg stonith create fence_vm02 fence_vmware_soap ipaddr="10.0.80.87" action="reboot" login="pcstmp_svc" passwd="P@ssw0rd" port="msk01-pcstmp02" ssl=1 op monitor interval=20s
+pcs cluster cib-push stonith_cfg
+
+10.20.23.16
+10.20.23.30
+
+pcs cluster cib stonith_cfg
+pcs -f stonith_cfg stonith create fence_vm01 fence_vmware_soap ipaddr="10.0.80.87" action="reboot" login="ppgw_fence_svc" passwd="P@ssw0rd" port="msk01-pprodgw1" ssl=1 op monitor interval=20s
+pcs -f stonith_cfg stonith create fence_vm02 fence_vmware_soap ipaddr="10.0.80.87" action="reboot" login="ppgw_fence_svc" passwd="P@ssw0rd" port="msk01-pprodgw2" ssl=1 op monitor interval=20s
+pcs cluster cib-push stonith_cfg
+
+pcs property set stonith-enabled=true
+pcs property set no-quorum-policy=ignore
+pcs property
+
+!!!!!!!!!
+pcs cluster cib stonith_cfg
+pcs -f stonith_cfg stonith create fence_vm01 fence_vmware_soap pcmk_host_list="msk01-pcstmp01" ipaddr="10.0.80.87" action="reboot" login="pcstmp_svc" passwd="P@ssw0rd" port="msk01-pcstmp01" ssl=1 delay="15" shell_timeout=60 login_timeout=60 op monitor interval=120s timeout=160s op start interval=0s timeout=90s
+pcs -f stonith_cfg stonith create fence_vm02 fence_vmware_soap pcmk_host_list="msk01-pcstmp02" ipaddr="10.0.80.87" action="reboot" login="pcstmp_svc" passwd="P@ssw0rd" port="msk01-pcstmp02" ssl=1 shell_timeout=60 login_timeout=60 op monitor interval=90s timeout=160s op start interval=0s timeout=90s
+pcs cluster cib-push stonith_cfg
+!!!!!!!!!
+
+pcs cluster cib stonith_cfg
+pcs -f stonith_cfg stonith create fence_vm01 fence_vmware_soap pcmk_host_list="msk01-pprodgw1" ipaddr="10.0.80.87" action="reboot" login="ppgw_fence_svc" passwd="P@ssw0rd" port="msk01-pprodgw1" ssl=1 delay="15" shell_timeout=60 login_timeout=60 op monitor interval=120s timeout=160s op start interval=0 timeout=70s
+pcs -f stonith_cfg stonith create fence_vm02 fence_vmware_soap pcmk_host_list="msk01-pprodgw2" ipaddr="10.0.80.87" action="reboot" login="ppgw_fence_svc" passwd="P@ssw0rd" port="msk01-pprodgw2" ssl=1 shell_timeout=60 login_timeout=60 op monitor interval=90s 
+pcs cluster cib-push stonith_cfg
+
+pcs property set stonith-enabled=true
+pcs property set no-quorum-policy=ignore
+pcs property

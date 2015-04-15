@@ -1,0 +1,128 @@
+﻿addr:10.20.15.93
+
+pcs resource create res_cluster_ip ocf:heartbeat:IPaddr2 ip=192.168.17.223 cidr_netmask=24 op monitor interval=30s
+
+pcs resource create res_mnt_sieb_fs ocf:heartbeat:Filesystem options="bind" device="/mounts/mount1" directory="/mounts/mnt_point1" fstype="none" op monitor interval="20s"
+pcs resource create res_mnt_sieb_fs2 ocf:heartbeat:Filesystem options="bind" device="/mounts/mount2" directory="/mounts/mnt_point2" fstype="none" op monitor interval="20s"
+pcs resource create res_mnt_sieb_fs3 ocf:heartbeat:Filesystem options="bind" device="/mounts/mount3" directory="/mounts/mnt_point3" fstype="none" op monitor interval="20s"
+pcs resource create res_mnt_sieb_fs4 ocf:heartbeat:Filesystem options="bind" device="/mounts/mount4" directory="/mounts/mnt_point4" fstype="none" op monitor interval="20s"
+
+
+C:\Users\Administrator>wevtutil qe System /q:"*[System[(EventID =1074) or (Event
+ID =1076) or (EventID =6008)]]" /c:3 /f:text /rd:true
+Event[0]:
+  Log Name: System
+  Source: USER32
+  Date: 2015-03-18T12:12:03.000
+  Event ID: 1074
+  Task: N/A
+  Level: Information
+  Opcode: N/A
+  Keyword: Classic
+  User: S-1-5-21-1078081533-651377827-839522115-14677
+  User Name: DETMIR-GROUP\AMokhnatkina
+  Computer: DM-QLIK02.detmir-group.ru
+  Description:
+The process C:\Windows\system32\winlogon.exe (DM-QLIK02) has initiated the resta
+rt of computer DM-QLIK02 on behalf of user DETMIR-GROUP\AMokhnatkina for the fol
+lowing reason: No title for this reason could be found
+ Reason Code: 0x500ff
+ Shutdown Type: restart
+ Comment:
+
+
+--
+Зеленский Сергей Александрович
+Инфосистемы Джет
+Тел. +7 (495) 411 76 01 (м.2619)
+e-mail: sa.zelensky@jet.msk.su
+
+
+
+hagrp -add dbsg
+hagrp -modify dbsg SystemList sym3 0 sym4 1
+hagrp -modify dbsg AutoStartList sym3 sym4
+hagrp -modify dbsg SourceFile "./main.cf"
+hares -add dbdg FileOnOff dbsg
+hares -modify dbdg PathName "/var/tmp/dbdg"
+hares -modify dbdg Enabled 1
+hares -add dbip FileOnOff dbsg
+hares -modify dbip PathName "/var/tmp/dbip"
+hares -modify dbip Enabled 1
+hares -add dblistener FileOnOff dbsg
+hares -modify dblistener PathName "/var/tmp/dblistener"
+hares -modify dblistener Enabled 1
+hares -add dbmnt FileOnOff dbsg
+hares -modify dbmnt PathName "/var/tmp/dbmnt"
+hares -modify dbmnt Enabled 1
+hares -add dbnic FileOnOff dbsg
+hares -modify dbnic PathName "/var/tmp/dbnic"
+hares -modify dbnic Enabled 1
+hares -add dboracle FileOnOff dbsg
+hares -modify dboracle PathName "/var/tmp/dboracle"
+hares -modify dboracle Enabled 1
+hares -add dbvol FileOnOff dbsg
+hares -modify dbvol PathName "/var/tmp/dbvol"
+hares -modify dbvol Enabled 1
+hagrp -add testappsg
+hagrp -modify testappsg SystemList sym3 0 sym4 1
+hagrp -modify testappsg AutoStartList sym3 sym4
+hagrp -modify testappsg Operators oper
+hagrp -modify testappsg SourceFile "./main.cf"
+hares -add testappdg FileOnOff testappsg
+hares -modify testappdg PathName "/var/tmp/testappdg"
+hares -modify testappdg Enabled 1
+hares -add testappmnt FileOnOff testappsg
+hares -modify testappmnt PathName "/var/tmp/testappmnt"
+hares -modify testappmnt Enabled 1
+hares -add testappnic FileOnOff testappsg
+hares -modify testappnic PathName "/var/tmp/testappnic"
+hares -modify testappnic Enabled 1
+hares -add testappproc FileOnOff testappsg
+hares -modify testappproc PathName "/var/tmp/testappproc"
+hares -modify testappproc Enabled 1
+hares -add testappip FileOnOff testappsg
+hares -modify testappip PathName "/var/tmp/testappip"
+hares -modify testappip Enabled 1
+hares -add testappvol FileOnOff testappsg
+hares -modify testappvol PathName "/var/tmp/testappvol"
+hares -modify testappvol Enabled 1
+hagrp -add websg
+hagrp -modify websg SystemList sym3 0 sym4 1
+hagrp -modify websg AutoStartList sym3 sym4
+hagrp -modify websg Operators oper
+hagrp -modify websg SourceFile "./main.cf"
+hares -add webapache FileOnOff websg
+hares -modify webapache PathName "/var/tmp/webapache"
+hares -modify webapache Enabled 1
+hares -add webdg FileOnOff websg
+hares -modify webdg PathName "/var/tmp/webdg"
+hares -modify webdg Enabled 1
+hares -add webmnt FileOnOff websg
+hares -modify webmnt PathName "/var/tmp/webmnt"
+hares -modify webmnt Enabled 1
+hares -add webnic FileOnOff websg
+hares -modify webnic PathName "/var/tmp/webnic"
+hares -modify webnic Enabled 1
+hares -add webvip FileOnOff websg
+hares -modify webvip PathName "/var/tmp/webvip"
+hares -modify webvip Enabled 1
+hares -add webvol FileOnOff websg
+hares -modify webvol PathName "/var/tmp/webvol"
+hares -modify webvol Enabled 1
+hares -link dbip dbnic
+hares -link dblistener dbip
+hares -link dblistener dboracle
+hares -link dbmnt dbvol
+hares -link dboracle dbmnt
+hares -link dbvol dbdg
+hares -link testappmnt testappvol
+hares -link testappproc testappmnt
+hares -link testappproc testappip
+hares -link testappip testappnic
+hares -link testappvol testappdg
+hares -link webapache webmnt
+hares -link webapache webvip
+hares -link webmnt webvol
+hares -link webvip webnic
+hares -link webvol webdg
