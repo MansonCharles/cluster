@@ -142,6 +142,11 @@ pcs property
 
 
 
+--Resource Critical/NonCritical--
+pcs resource update res_zabbix op monitor interval=30s timeout=30s on-fail="ignore" meta migration-threshold="infinity" target-role="Started"
+
+
+
 ---MONITORING---
 {if $? > 0 = very_bad}
 visudo
