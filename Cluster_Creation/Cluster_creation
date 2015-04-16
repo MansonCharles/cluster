@@ -141,6 +141,9 @@ pcs property set no-quorum-policy=ignore
 pcs property
 
 
+--FAILOVER failed resources--
+pcs resource defaults migration-threshold=3
+
 
 --Resource Critical/NonCritical--
 pcs resource update res_zabbix op monitor interval=30s timeout=30s on-fail="ignore" meta migration-threshold="infinity" target-role="Started"
